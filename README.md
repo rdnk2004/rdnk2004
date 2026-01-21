@@ -1,6 +1,6 @@
 <!-- Logo -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/iamge.png"
+  <img src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/icon.png"
        width="160"
        alt="RDNK Logo" />
 </p>
@@ -9,7 +9,7 @@
 <h2 align="center">@rdnk2004</h2>
 
 <h3 align="center">
-  Data Analytics • Full Stack • ML Systems
+  Data Analyst • Automation & Backend • ML Systems
 </h3>
 
 <br/>
@@ -36,7 +36,7 @@
 ### 🛠️ Languages & Tools
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,r,js,html,css,react,nextjs,flask,django,streamlit,nodejs,express,mongodb,postgresql,sqlite,git,github,tailwind,bootstrap,tensorflow,pytorch,sklearn,opencv&perline=8" />
+  <img src="https://skillicons.dev/icons?i=python,r,js,html,css,react,nextjs,flask,django,nodejs,express,mongodb,postgresql,sqlite,git,github,tailwind,bootstrap,tensorflow,pytorch,sklearn,opencv&perline=8" />
 </p>
 
 ---
