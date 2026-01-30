@@ -107,20 +107,20 @@
 <div align="center">
 
 ### 🔥 Contribution Streak
-<img src="https://streak-stats.demolab.com?user=Dharundp6&theme=tokyonight&hide_border=true" 
+<img src="https://streak-stats.demolab.com?user=rdnk2004&theme=tokyonight&hide_border=true" 
      alt="GitHub Streak" 
      height="180"/>
 
 ---
 
 ### 🏆 GitHub Achievements
-<img src="https://github-trophies.vercel.app/?username=Dharundp6&theme=tokyonight&no-frame=true&margin-w=15&row=1&column=7" 
+<img src="https://github-trophies.vercel.app/?username=rdnk2004&theme=tokyonight&no-frame=true&margin-w=15&row=1&column=7" 
      alt="GitHub Trophies"/>
 
 ---
 
 ### 🧠 Most Used Languages
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dharundp6&layout=compact&theme=tokyonight&hide_border=true" 
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rdnk2004&layout=compact&theme=tokyonight&hide_border=true" 
      alt="Top Languages" 
      height="170"/>
 
