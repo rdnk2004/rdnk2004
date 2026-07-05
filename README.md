@@ -37,7 +37,7 @@
 - Strong interest in backend systems, analytics pipelines, and ML-powered applications  
 - Hands-on experience deploying machine learning models through lightweight web apps  
 - Currently working with a core team on **NLP & LLM-based systems**  
-- Developing **CyberArcade** — a modern web platform reimagining classic games like Snake, Tetris, and Pong  
+- Currently exploring the **FINTECH** domain, and doing projects using RBI Data. 
 
 ---
 ## 🧩 Skills & Technologies
