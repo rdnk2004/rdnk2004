@@ -9,7 +9,7 @@
 <h2 align="center">@rdnk2004</h2>
 
 <h3 align="center">
-  Data Analyst • Automation & Backend • ML Systems
+  AI/ML Engineer • Data Systems • Automation
 </h3>
 
 <br/>
@@ -33,11 +33,10 @@
 
 ### About Me
 
-- Building data-driven systems focused on reliability, automation, and clean architecture  
-- Strong interest in backend systems, analytics pipelines, and ML-powered applications  
-- Hands-on experience deploying machine learning models through lightweight web apps  
-- Currently working with a core team on **NLP & LLM-based systems**  
-- Currently exploring the **FINTECH** domain, and doing projects using RBI Data. 
+- Building AI/ML systems with an emphasis on rigorous validation, explainability, and production deployment — not just training accuracy
+- Hands-on across the full ML lifecycle: modeling, explainability (SHAP), experiment tracking (MLflow), and deployment (Docker, FastAPI, Flask)
+- Actively building with **NLP & LLM-based systems** (Gemini API, Ollama)
+- Exploring the **FINTECH** domain — applying ML and statistical rigor to RBI monetary policy and inflation data
 
 ---
 ## 🧩 Skills & Technologies
@@ -63,10 +62,17 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-0E7C7B?style=for-the-badge&logoColor=white)
+![SHAP](https://img.shields.io/badge/SHAP-8A2BE2?style=for-the-badge&logoColor=white)
+![Prophet](https://img.shields.io/badge/Prophet-0668E1?style=for-the-badge&logoColor=white)
+![YOLO](https://img.shields.io/badge/YOLO-111F68?style=for-the-badge&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![pandera](https://img.shields.io/badge/pandera-3776AB?style=for-the-badge&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)
+![Gemini API](https://img.shields.io/badge/Gemini_API-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
 
 </details>
 
@@ -87,7 +93,6 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 
-
 </details>
 
 ---
@@ -99,9 +104,10 @@
 ![Git](https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
+![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
 
 </details>
-
 ---
 
 ## 📊 GitHub Stats
