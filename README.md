@@ -115,9 +115,7 @@
 <div align="center">
 
 ### 🔥 Contribution Streak
-<img src="https://streak-stats.demolab.com?user=rdnk2004&theme=tokyonight&hide_border=true" 
-     alt="GitHub Streak" 
-     height="180"/>
+[![GitHub Streak](https://streak-stats.demolab.com?user=rdnk2004&theme=github-dark-blue)](https://git.io/streak-stats)
 
 ---
 
