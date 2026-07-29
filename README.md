@@ -164,7 +164,6 @@ When I'm not building systems, I'm telling stories — as a <strong>Writer, Scre
 - 📖 **Family** — completed
 - 📖 **Thambiii** — completed
 - 🎬 **Hack-A-Thon** — third script, in progress
-*(Same instinct either way — calm surface, a lot going on underneath.)*
 
 ---
 
