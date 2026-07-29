@@ -1,3 +1,8 @@
+<!-- Profile Views -->
+<div align="right">
+  <img src="https://komarev.com/ghpvc/?username=rdnk2004&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
+</div>
+
 <!-- Logo -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/icon.png"
@@ -14,6 +19,7 @@
 
 <br/>
 
+
 <p align="center">
   <em>
     I like building systems that feel calm on the surface,<br/>
@@ -27,7 +33,6 @@
     <img src="https://img.shields.io/badge/🌐 Visit My Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" />
   </a>
 </p>
-
 
 ---
 
@@ -108,11 +113,15 @@
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
 
 </details>
+
 ---
 
 ## 📊 GitHub Stats
 
 <div align="center">
+
+### 📈 Overview
+<img src="https://github-readme-stats.vercel.app/api?username=rdnk2004&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github" alt="GitHub Stats" width="48%" />
 
 ### 🔥 Contribution Streak
 <a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=rdnk2004&theme=github-dark-blue" alt="GitHub Streak" /></a>
@@ -132,13 +141,30 @@
 
 </div>
 
-
 ### 🌊 Contribution Flow
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=rdnk2004&theme=tokyo-night&hide_border=true"
        alt="GitHub Activity Graph"/>
 </p>
+
+---
+
+## ✍️ Off the Keyboard
+
+<p align="center">
+  <img
+    src="https://readme-typing-svg.demolab.com?font=Georgia&weight=500&size=20&pause=1200&color=D4A373&center=true&vCenter=true&width=700&lines=Writer+%7C+Screenwriter+%7C+Director;Currently+writing%3A+Hack-A-Thon"
+    alt="Writing Typing SVG"
+  />
+
+</p>
+When I'm not building systems, I'm telling stories — as a **Writer, Screenwriter, and Director**.
+ 
+- 📖 **Family** — completed
+- 📖 **Thambiii** — completed
+- 🎬 **Hack-A-Thon** — third script, in progress
+*(Same instinct either way — calm surface, a lot going on underneath.)*
 
 ---
 
