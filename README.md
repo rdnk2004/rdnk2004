@@ -121,7 +121,7 @@
 <div align="center">
 
 ### 📈 Overview
-<img src="https://github-readme-stats.vercel.app/api?username=rdnk2004&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github" alt="GitHub Stats" width="48%" />
+<img src="https://github-readme-stats.shion.dev/api?username=rdnk2004&theme=dark&hide_border=false&include_all_commits=true" alt="GitHub Stats" width="48%" />
 
 ### 🔥 Contribution Streak
 <a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=rdnk2004&theme=github-dark-blue" alt="GitHub Streak" /></a>
