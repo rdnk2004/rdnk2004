@@ -159,7 +159,7 @@
   />
 
 </p>
-When I'm not building systems, I'm telling stories — as a **Writer, Screenwriter, and Director**.
+When I'm not building systems, I'm telling stories — as a <strong>Writer, Screenwriter, and Director</strong>.
  
 - 📖 **Family** — completed
 - 📖 **Thambiii** — completed
