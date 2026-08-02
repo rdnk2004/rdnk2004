@@ -17,12 +17,17 @@
   AI/ML Engineer • Data Systems • Automation
 </h3>
 
-<!-- Animated Portfolio Banner: cinema camera + marquee-light button, click-through to portfolio -->
+<p align="center">
+  <em>
+    <br/>I like building systems that feel calm on the surface,<br/>
+    but run deep underneath — like backwaters.
+  </em>
+</p>
+
+<!-- Portfolio Button -->
 <p align="center">
   <a href="https://rdnkportfolio.vercel.app/" target="_blank">
-    <img src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/portfolio_banner.gif"
-         width="700"
-         alt="Visit my portfolio" />
+    <img src="https://img.shields.io/badge/🌐 Visit My Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" />
   </a>
 </p>
 
