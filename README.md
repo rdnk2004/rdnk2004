@@ -37,11 +37,9 @@
 
 ### About Me
 
-I build systems the way a director builds a scene — many moving parts, one clear intent.
-
-My focus is automation and applied ML that survive contact with reality: validated pipelines, explainable models, and workflows people can actually trust.
-
-Beyond the codebase, I've led hackathon teams, organized campus events, and mentored 30+ peers along the way.
+- I build systems the way a director builds a scene — many moving parts, one clear intent.
+- My focus is automation and applied ML that survive contact with reality: validated pipelines, explainable models, and workflows people can actually trust.
+- Beyond the codebase, I've led hackathon teams, organized campus events, and mentored 30+ peers along the way.
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
@@ -153,12 +151,12 @@ Beyond the codebase, I've led hackathon teams, organized campus events, and ment
 <div align="center">
 
 ### 🔥 Contribution Streak
-<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=rdnk2004&theme=gruvbox" alt="GitHub Streak" /></a>
+<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=rdnk2004&theme=github-dark-blue" alt="GitHub Streak" /></a>
 
 ### 🌊 Contribution Flow
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rdnk2004&bg_color=1a1207&color=D4A373&line=D4A373&point=F4E9DC&area=true&area_color=6b4423&hide_border=true&custom_title=Contribution%20Flow"
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rdnk2004&theme=tokyo-night&hide_border=true"
        alt="GitHub Activity Graph"/>
 </p>
 
