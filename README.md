@@ -17,9 +17,6 @@
   AI/ML Engineer • Data Systems • Automation
 </h3>
 
-<br/>
-
-
 <p align="center">
   <em>
     I like building systems that feel calm on the surface,<br/>
@@ -34,16 +31,22 @@
   </a>
 </p>
 
----
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
+</p>
 
 ### About Me
 
-- Building AI/ML systems with an emphasis on rigorous validation, explainability, and production deployment — not just training accuracy
-- Hands-on across the full ML lifecycle: modeling, explainability (SHAP), experiment tracking (MLflow), and deployment (Docker, FastAPI, Flask)
-- Actively building with **NLP & LLM-based systems** (Gemini API, Ollama)
-- Exploring the **FINTECH** domain — applying ML and statistical rigor to RBI monetary policy and inflation data
+I build systems the way a director builds a scene — many moving parts, one clear intent.
 
----
+My focus is automation and applied ML that survive contact with reality: validated pipelines, explainable models, and workflows people can actually trust.
+
+Beyond the codebase, I've led hackathon teams, organized campus events, and mentored 30+ peers along the way.
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
+</p>
+
 ## 🧩 Skills & Technologies
 
 <details open>
@@ -51,6 +54,7 @@
 <br>
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -78,6 +82,7 @@
 ![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
 ![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)
 ![Gemini API](https://img.shields.io/badge/Gemini_API-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
+![Claude API](https://img.shields.io/badge/Claude_API-D97757?style=for-the-badge&logoColor=white)
 
 </details>
 
@@ -91,6 +96,7 @@
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
@@ -111,54 +117,59 @@
 ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
 ![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![Render](https://img.shields.io/badge/Render-000000?style=for-the-badge&logo=render&logoColor=white)
 
 </details>
 
----
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
+</p>
+
+## 🎬 Projects
+
+**Ongoing**
+
+| Project | Focus | Status | Link |
+|---|---|---|:---:|
+| **NyayaSetu** | Agentic AI · Multi-Agent Systems for Indian Legal Reasoning | ![Ongoing](https://img.shields.io/badge/Ongoing-D4A373?style=flat-square) | [![Repo](https://img.shields.io/badge/View_Repo-171515?style=flat-square&logo=github&logoColor=white)](https://github.com/rdnk2004/NyayaSetu-Multi-Agent) |
+| **Screenwriting Software** | Django · React · Fountain-based Script Editor | ![Ongoing](https://img.shields.io/badge/Ongoing-D4A373?style=flat-square) | [![Repo](https://img.shields.io/badge/View_Repo-171515?style=flat-square&logo=github&logoColor=white)](https://github.com/rdnk2004/screenwriting-software) |
+| **ICSWHMH 2027** | HTML · CSS · JS — International Conference Frontend | ![Ongoing](https://img.shields.io/badge/Ongoing-D4A373?style=flat-square) | [![Visit Site](https://img.shields.io/badge/Visit_Site-6b4423?style=flat-square&logo=googlechrome&logoColor=white)](https://icswhmh.com/) |
+
+**Completed**
+
+| Project | Focus | Status | Link |
+|---|---|---|:---:|
+| **CPI-MPC** | Data Engineering · ML Pipeline — RBI Rate Decision Analytics | ![Completed](https://img.shields.io/badge/Completed-2E7D32?style=flat-square) | [![Repo](https://img.shields.io/badge/View_Repo-171515?style=flat-square&logo=github&logoColor=white)](https://github.com/rdnk2004/cpi-mpc) |
+| **NPA-RBI** | Data Science · Explainable AI — Bank NPA Early-Warning System | ![Completed](https://img.shields.io/badge/Completed-2E7D32?style=flat-square) | [![Repo](https://img.shields.io/badge/View_Repo-171515?style=flat-square&logo=github&logoColor=white)](https://github.com/rdnk2004/NPA-RBI) |
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
+</p>
 
 ## 📊 GitHub Stats
 
 <div align="center">
 
-### 📈 Overview
-<img src="https://github-readme-stats.shion.dev/api?username=rdnk2004&theme=dark&hide_border=false&include_all_commits=true" alt="GitHub Stats" width="48%" />
-
 ### 🔥 Contribution Streak
-<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=rdnk2004&theme=github-dark-blue" alt="GitHub Streak" /></a>
-
----
-
-### 🏆 GitHub Achievements
-<img src="https://github-trophies.vercel.app/?username=rdnk2004&theme=tokyonight&no-frame=true&margin-w=15&row=1&column=7" 
-     alt="GitHub Trophies"/>
-
----
+<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=rdnk2004&theme=gruvbox" alt="GitHub Streak" /></a>
 
 ### 🌊 Contribution Flow
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rdnk2004&theme=tokyo-night&hide_border=true"
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rdnk2004&bg_color=1a1207&color=D4A373&line=D4A373&point=F4E9DC&area=true&area_color=6b4423&hide_border=true&custom_title=Contribution%20Flow"
        alt="GitHub Activity Graph"/>
 </p>
 
----
-
-## ✍️ Off the Keyboard
+</div>
 
 <p align="center">
-  <img
-    src="https://readme-typing-svg.demolab.com?font=Georgia&weight=500&size=20&pause=1200&color=D4A373&center=true&vCenter=true&width=700&lines=Writer+%7C+Screenwriter+%7C+Director;Currently+writing%3A+Hack-A-Thon"
-    alt="Writing Typing SVG"
-  />
-
+  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
 </p>
-When I'm not building systems, I'm telling stories — as a <strong>Writer, Screenwriter, and Director</strong>.
- 
-- 📖 **Family** — completed
-- 📖 **Thambiii** — completed
-- 🎬 **Hack-A-Thon** — third script, in progress
 
----
-
-⭐ From [rdnk2004](https://github.com/rdnk2004)  
-Building calm systems in a noisy world.
+<p align="center">
+⭐ From <a href="https://github.com/rdnk2004">rdnk2004</a><br/>
+Building calm systems in a noisy world.<br/>
+<sub><em>Cut. Print. Ship.</em></sub>
+</p>
