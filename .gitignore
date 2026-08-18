@@ -3,8 +3,10 @@
 # ═══════════════════════════════════════════════════════════════
 
 # Local generator scripts & utilities
+generate_*.py
 generate_banner.py
 generate_projects_svg.py
+generate_divider_svg.py
 __pycache__/
 *.pyc
 *.pyo
