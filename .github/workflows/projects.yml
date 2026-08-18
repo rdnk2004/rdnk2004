@@ -30,13 +30,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/fetch_data.py
 
-      - name: Generate dynamic projects SVGs
-        run: python3 .github/scripts/generate_projects.py
+      - name: Generate dynamic projects & skills SVGs
+        run: |
+          python3 .github/scripts/generate_projects.py
+          python3 .github/scripts/generate_skills.py
 
       - name: Commit and push updated assets
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/projects-*.svg merged.json
-          git commit -m "chore: update live dynamic projects panel [skip ci]" || exit 0
+          git add assets/projects-*.svg assets/skills-*.svg merged.json
+          git commit -m "chore: update live dynamic projects and skills assets [skip ci]" || exit 0
           git push
