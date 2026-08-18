@@ -143,8 +143,3 @@
 
 <br/>
 
-<!-- ===== CINEMATIC SIGN-OFF ===== -->
-<p align="center">
-  ⭐ <em>"I build systems that feel calm on the surface, but run deep underneath."</em><br/>
-  <sub><em>Cut. Print. Ship.</em> — <strong>Nikhil Krishna R D</strong></sub>
-</p>
