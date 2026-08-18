@@ -1,0 +1,30 @@
+# ═══════════════════════════════════════════════════════════════
+#  .gitignore — rdnk2004 GitHub Profile
+# ═══════════════════════════════════════════════════════════════
+
+# Local generator scripts & utilities
+generate_banner.py
+generate_projects_svg.py
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local previews, tests & logs
+assets/preview.html
+*.html
+*.log
+scratch/
+
+# Python Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# OS / Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

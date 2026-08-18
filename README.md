@@ -1,178 +1,150 @@
-<!-- Profile Views -->
-<div align="right">
-  <img src="https://komarev.com/ghpvc/?username=rdnk2004&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
-</div>
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  THE DIRECTOR'S CUT — NIKHIL KRISHNA R D (@rdnk2004)            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
 
-<!-- Logo -->
+<!-- ===== HERO VISUAL MAP BANNER (DARK THEME) ===== -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/icon.png"
-       width="160"
-       alt="RDNK Logo" />
+  <img alt="Nikhil Krishna R D — The Director's Cut Visual Map" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/dark.svg" width="100%">
 </p>
 
-<!-- Username -->
-<h2 align="center">@rdnk2004</h2>
-
-<h3 align="center">
-  AI/ML Engineer • Data Systems • Automation
-</h3>
-
-<p align="center">
-  <em>
-    <br/>I like building systems that feel calm on the surface,<br/>
-    but run deep underneath — like backwaters.
-  </em>
-</p>
-
-<!-- Portfolio Button -->
-<p align="center">
-  <a href="https://rdnkportfolio.vercel.app/" target="_blank">
-    <img src="https://img.shields.io/badge/🌐 Visit My Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
-</p>
-
-### About Me
-
-- I build systems the way a director builds a scene — many moving parts, one clear intent.
-- My focus is automation and applied ML that survive contact with reality: validated pipelines, explainable models, and workflows people can actually trust.
-- Beyond the codebase, I've led hackathon teams, organized campus events, and mentored 30+ peers along the way.
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
-</p>
-
-## 🧩 Skills & Technologies
- 
-<details open>
-<summary><b>▾ Languages</b></summary>
-<br>
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
- 
-</details>
-
----
- 
-<details open>
-<summary><b>▾ Machine Learning / Data</b></summary>
-<br>
-  
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-0E7C7B?style=for-the-badge&logoColor=white)
-![SHAP](https://img.shields.io/badge/SHAP-8A2BE2?style=for-the-badge&logoColor=white)
-![Prophet](https://img.shields.io/badge/Prophet-0668E1?style=for-the-badge&logoColor=white)
-![YOLO](https://img.shields.io/badge/YOLO-111F68?style=for-the-badge&logo=yolo&logoColor=white)
-![Ultralytics](https://img.shields.io/badge/Ultralytics-111F68?style=for-the-badge&logo=ultralytics&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-white?style=for-the-badge&logo=opencv&logoColor=black)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![pandera](https://img.shields.io/badge/pandera-3776AB?style=for-the-badge&logoColor=white)
-![SciPy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
-![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)
-![Gemini API](https://img.shields.io/badge/Gemini_API-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
- 
-</details>
-
----
- 
-<details open>
-<summary><b>▾ Web & Databases</b></summary>
-<br>
-  
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
- 
-</details>
-
----
- 
-<details open>
-<summary><b>▾ Cloud, DevOps & Automation</b></summary>
-<br>
-  
-![Git](https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Nginx](https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
-![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)
-![n8n](https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)
-![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
-![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
- 
-</details>
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
-</p>
-
-## 🎬 Projects
-
-**Ongoing**
-
-| Project | Focus | Status | Link |
-|---|---|---|:---:|
-| **NyayaSetu** | Agentic AI · Multi-Agent Systems for Indian Legal Reasoning | ![Ongoing](https://img.shields.io/badge/Ongoing-D4A373?style=flat-square) | [![Repo](https://img.shields.io/badge/View_Repo-171515?style=flat-square&logo=github&logoColor=white)](https://github.com/rdnk2004/NyayaSetu-Multi-Agent) |
-| **Screenwriting Software** | Django · React · Fountain-based Script Editor | ![Ongoing](https://img.shields.io/badge/Ongoing-D4A373?style=flat-square) | [![Repo](https://img.shields.io/badge/View_Repo-171515?style=flat-square&logo=github&logoColor=white)](https://github.com/rdnk2004/screenwriting-software) |
-| **ICSWHMH 2027** | HTML · CSS · JS — International Conference Frontend | ![Ongoing](https://img.shields.io/badge/Ongoing-D4A373?style=flat-square) | [![Visit Site](https://img.shields.io/badge/Visit_Site-6b4423?style=flat-square&logo=googlechrome&logoColor=white)](https://icswhmh.com/) |
-
-**Completed**
-
-| Project | Focus | Status | Link |
-|---|---|---|:---:|
-| **CPI-MPC** | Data Engineering · ML Pipeline — RBI Rate Decision Analytics | ![Completed](https://img.shields.io/badge/Completed-2E7D32?style=flat-square) | [![Repo](https://img.shields.io/badge/View_Repo-171515?style=flat-square&logo=github&logoColor=white)](https://github.com/rdnk2004/cpi-mpc) |
-| **NPA-RBI** | Data Science · Explainable AI — Bank NPA Early-Warning System | ![Completed](https://img.shields.io/badge/Completed-2E7D32?style=flat-square) | [![Repo](https://img.shields.io/badge/View_Repo-171515?style=flat-square&logo=github&logoColor=white)](https://github.com/rdnk2004/NPA-RBI) |
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
-</p>
-
-## 📊 GitHub Stats
-
+<!-- ===== GITHUB STATS & ACTIVITY ===== -->
 <div align="center">
 
-### 🔥 Contribution Streak
-<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=rdnk2004&theme=github-dark-blue" alt="GitHub Streak" /></a>
+<!-- Commit Activity Soundwave (Vintage Film Palette) -->
+<picture>
+  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=rdnk2004&bg_color=0D0A06&color=D4A353&line=C0713A&point=F5E6D3&area=true&area_color=3A2312&hide_border=true" alt="Commit Activity Soundwave" />
+</picture>
 
-### 🌊 Contribution Flow
+<br/>
 
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rdnk2004&theme=tokyo-night&hide_border=true"
-       alt="GitHub Activity Graph"/>
-</p>
+<!-- Streak — full width -->
+<picture>
+  <img width="100%" src="https://streak-stats.demolab.com/?user=rdnk2004&hide_border=true&background=0D0A06&stroke=C0713A&ring=D4A353&fire=C0713A&currStreakLabel=D4A353&sideLabels=9C8B78&currStreakNum=F5E6D3&sideNums=F5E6D3&dates=6B5D4F&titleColor=D4A353&card_width=1180" alt="GitHub Streak" />
+</picture>
+
+<br/>
+
+<!-- Stats + Top languages — side by side -->
+<picture>
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=rdnk2004&show_icons=true&hide_rank=true&hide_border=true&bg_color=0D0A06&title_color=D4A353&text_color=F5E6D3&icon_color=C0713A&card_width=500" alt="GitHub Stats" />
+</picture>
+&nbsp;
+<picture>
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rdnk2004&layout=compact&langs_count=8&hide_border=true&bg_color=0D0A06&title_color=D4A353&text_color=F5E6D3&card_width=500" alt="Top Languages" />
+</picture>
 
 </div>
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:1a1207,50:6b4423,100:D4A373&height=6" width="100%"/>
-</p>
+<br/>
 
+<!-- ===== FEATURED PROJECTS SLATE (ANIMATED TERMINAL CARDS) ===== -->
+<div align="center">
+  <img alt="Nikhil Krishna R D — Featured Projects" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/projects-dark.svg" width="100%">
+</div>
+
+<br/>
+
+<!-- ===== APPLIED SKILL TRACEABILITY MATRIX ===== -->
+<details open>
+<summary><b>▾ 📌 Applied Skill ⇄ Project Traceability Matrix</b></summary>
+<br>
+
+| Domain & Capabilities | Technologies & Tooling | Applied in Production |
+|---|---|---|
+| **⚖️ Agentic AI & Legal Reasoning** | `Python` `Multi-Agent Orchestration` `LangChain` `ChromaDB` `Pydantic` `RAG` | [NyayaSetu-Multi-Agent](https://github.com/rdnk2004/NyayaSetu-Multi-Agent) |
+| **📈 ML Forecasting & Econometrics** | `Python` `XGBoost` `Prophet` `SHAP` `Pandas` `Statsmodels` `FastAPI` | [CPI-MPC](https://github.com/rdnk2004/cpi-mpc) |
+| **🏦 Financial Risk & Explainable AI** | `Python` `Panel Econometrics` `XGBoost` `SHAP` `Scikit-Learn` `FastAPI` `Streamlit` | [NPA-RBI](https://github.com/rdnk2004/NPA-RBI) |
+| **✍️ Creative Tooling & Story Systems** | `React` `JavaScript` `Django REST` `Fountain Parser` `PDFKit` `Document Gen` | [screenwriting-software](https://github.com/rdnk2004/screenwriting-software) |
+| **🚀 AI Automation & Career OS** | `Python` `TypeScript` `n8n` `Job APIs` `Telemetry` `ATS Synthesis` `Vercel` | [automated-career](https://github.com/rdnk2004/automated-career) |
+| **⚙️ Backend, Auth & DevOps** | `Python` `FastAPI` `PostgreSQL` `Docker` `JWT Auth` `SQLAlchemy` `Alembic` | [nexus-tasktrack](https://github.com/rdnk2004/nexus-tasktrack) |
+
+</details>
+
+<br/>
+
+<!-- ===== TECHNICAL ARSENAL & TOOLCHAIN ===== -->
+<details open>
+<summary><b>▾ 🛠️ Technical Arsenal & Comprehensive Stack</b></summary>
+<br>
+
+#### 💻 Core Languages & Data Schemas
+![Python](https://img.shields.io/badge/Python-0D0A06?style=for-the-badge&logo=python&logoColor=D4A353&labelColor=0D0A06)
+![SQL](https://img.shields.io/badge/SQL-0D0A06?style=for-the-badge&logo=postgresql&logoColor=D4A353&labelColor=0D0A06)
+![R](https://img.shields.io/badge/R-0D0A06?style=for-the-badge&logo=r&logoColor=D4A353&labelColor=0D0A06)
+![TypeScript](https://img.shields.io/badge/TypeScript-0D0A06?style=for-the-badge&logo=typescript&logoColor=D4A353&labelColor=0D0A06)
+![JavaScript](https://img.shields.io/badge/JavaScript-0D0A06?style=for-the-badge&logo=javascript&logoColor=D4A353&labelColor=0D0A06)
+![Pydantic](https://img.shields.io/badge/Pydantic-0D0A06?style=for-the-badge&logo=pydantic&logoColor=D4A353&labelColor=0D0A06)
+![pandera](https://img.shields.io/badge/pandera-0D0A06?style=for-the-badge&logoColor=D4A353&labelColor=0D0A06)
+![Bash](https://img.shields.io/badge/Bash-0D0A06?style=for-the-badge&logo=gnubash&logoColor=D4A353&labelColor=0D0A06)
+
+<br>
+
+#### 🧠 Machine Learning, AI & Automation
+![PyTorch](https://img.shields.io/badge/PyTorch-0D0A06?style=for-the-badge&logo=pytorch&logoColor=D4A353&labelColor=0D0A06)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-0D0A06?style=for-the-badge&logo=tensorflow&logoColor=D4A353&labelColor=0D0A06)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-0D0A06?style=for-the-badge&logo=scikit-learn&logoColor=D4A353&labelColor=0D0A06)
+![XGBoost](https://img.shields.io/badge/XGBoost-0D0A06?style=for-the-badge&logoColor=D4A353&labelColor=0D0A06)
+![SHAP](https://img.shields.io/badge/SHAP-0D0A06?style=for-the-badge&logoColor=D4A353&labelColor=0D0A06)
+![Prophet](https://img.shields.io/badge/Prophet-0D0A06?style=for-the-badge&logoColor=D4A353&labelColor=0D0A06)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-0D0A06?style=for-the-badge&logoColor=D4A353&labelColor=0D0A06)
+![LangChain](https://img.shields.io/badge/LangChain-0D0A06?style=for-the-badge&logoColor=D4A353&labelColor=0D0A06)
+![n8n](https://img.shields.io/badge/n8n-0D0A06?style=for-the-badge&logo=n8n&logoColor=D4A353&labelColor=0D0A06)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-0D0A06?style=for-the-badge&logo=huggingface&logoColor=D4A353&labelColor=0D0A06)
+
+<br>
+
+#### 📊 Data Processing & Analytics
+![Pandas](https://img.shields.io/badge/Pandas-0D0A06?style=for-the-badge&logo=pandas&logoColor=D4A353&labelColor=0D0A06)
+![NumPy](https://img.shields.io/badge/NumPy-0D0A06?style=for-the-badge&logo=numpy&logoColor=D4A353&labelColor=0D0A06)
+![SciPy](https://img.shields.io/badge/SciPy-0D0A06?style=for-the-badge&logo=scipy&logoColor=D4A353&labelColor=0D0A06)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-0D0A06?style=for-the-badge&logoColor=D4A353&labelColor=0D0A06)
+![Seaborn](https://img.shields.io/badge/Seaborn-0D0A06?style=for-the-badge&logoColor=D4A353&labelColor=0D0A06)
+
+<br>
+
+#### ⚙️ Backend, Cloud & Full Stack DevOps
+![FastAPI](https://img.shields.io/badge/FastAPI-0D0A06?style=for-the-badge&logo=fastapi&logoColor=D4A353&labelColor=0D0A06)
+![Django](https://img.shields.io/badge/Django-0D0A06?style=for-the-badge&logo=django&logoColor=D4A353&labelColor=0D0A06)
+![React](https://img.shields.io/badge/React-0D0A06?style=for-the-badge&logo=react&logoColor=D4A353&labelColor=0D0A06)
+![Streamlit](https://img.shields.io/badge/Streamlit-0D0A06?style=for-the-badge&logo=streamlit&logoColor=D4A353&labelColor=0D0A06)
+![Docker](https://img.shields.io/badge/Docker-0D0A06?style=for-the-badge&logo=docker&logoColor=D4A353&labelColor=0D0A06)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-0D0A06?style=for-the-badge&logo=postgresql&logoColor=D4A353&labelColor=0D0A06)
+![MongoDB](https://img.shields.io/badge/MongoDB-0D0A06?style=for-the-badge&logo=mongodb&logoColor=D4A353&labelColor=0D0A06)
+![Git](https://img.shields.io/badge/Git-0D0A06?style=for-the-badge&logo=git&logoColor=D4A353&labelColor=0D0A06)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-0D0A06?style=for-the-badge&logo=githubactions&logoColor=D4A353&labelColor=0D0A06)
+![MLflow](https://img.shields.io/badge/MLflow-0D0A06?style=for-the-badge&logo=mlflow&logoColor=D4A353&labelColor=0D0A06)
+![Render](https://img.shields.io/badge/Render-0D0A06?style=for-the-badge&logo=render&logoColor=D4A353&labelColor=0D0A06)
+![Vercel](https://img.shields.io/badge/Vercel-0D0A06?style=for-the-badge&logo=vercel&logoColor=D4A353&labelColor=0D0A06)
+
+</details>
+
+<br/>
+
+<!-- ===== THEMED SOCIAL BADGES ===== -->
+<div align="center">
+
+<a href="https://www.linkedin.com/in/nikhil-krishna-r-d-773b84259/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-0D0A06?style=for-the-badge&logo=linkedin&logoColor=D4A353&labelColor=0D0A06" alt="LinkedIn" />
+</a>
+&nbsp;&nbsp;
+<a href="https://rdnkportfolio.vercel.app/" target="_blank">
+  <img src="https://img.shields.io/badge/Portfolio-0D0A06?style=for-the-badge&logo=vercel&logoColor=D4A353&labelColor=0D0A06" alt="Portfolio" />
+</a>
+&nbsp;&nbsp;
+<a href="mailto:rdnikhilkrishna2004@gmail.com" target="_blank">
+  <img src="https://img.shields.io/badge/Gmail-0D0A06?style=for-the-badge&logo=gmail&logoColor=D4A353&labelColor=0D0A06" alt="Email" />
+</a>
+&nbsp;&nbsp;
+<a href="https://huggingface.co/rdnk-2004" target="_blank">
+  <img src="https://img.shields.io/badge/HuggingFace-0D0A06?style=for-the-badge&logo=huggingface&logoColor=D4A353&labelColor=0D0A06" alt="HuggingFace" />
+</a>
+
+</div>
+
+<br/>
+
+<!-- ===== CINEMATIC SIGN-OFF ===== -->
 <p align="center">
-⭐ From <a href="https://github.com/rdnk2004">rdnk2004</a><br/>
-Building calm systems in a noisy world.<br/>
-<sub><em>Cut. Print. Ship.</em></sub>
+  ⭐ <em>"I build systems that feel calm on the surface, but run deep underneath."</em><br/>
+  <sub><em>Cut. Print. Ship.</em> — <strong>Nikhil Krishna R D</strong></sub>
 </p>
