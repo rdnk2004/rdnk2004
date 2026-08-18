@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 """
-generate_projects.py — The Director's Cut: Pinned Projects & Traceability Matrix
+generate_projects.py — The Director's Cut: Pinned Projects & Embedded Skills Slate
 
-Combines:
-  1. 6-card live terminal project grid with dynamic language donuts & bespoke domain icons.
-  2. Applied Skill ⇄ Project Traceability Matrix rendered in crisp vector typography.
-Outputs:
-  assets/projects-dark.svg
-  assets/projects-light.svg
+Generates a single, cohesive, high-visibility 6-card terminal slate:
+  - assets/projects-dark.svg
+  - assets/projects-light.svg
 """
 
 import json, os, sys, math, html
@@ -18,29 +15,26 @@ ROOT_DIR   = os.path.dirname(os.path.dirname(SCRIPT_DIR))
 PROJECTS_JSON = os.path.join(ROOT_DIR, 'merged.json' if os.path.exists(os.path.join(ROOT_DIR, 'merged.json')) else 'projects.json')
 OUT_DIR = os.path.join(ROOT_DIR, 'assets')
 
-# ---------------- Theme Configurations ----------------
 THEMES = {
     "dark": {
         "BG": "#0D0A06",            # Burnt celluloid black
         "PANEL": "#140F09",         # Warm dark chocolate
-        "PANEL_BAR": "#100B06",     # Header bar
+        "PANEL_BAR": "#110B06",     # Header bar
         "ACCENT_1": "#C0713A",      # Burnt Sienna
         "ACCENT_2": "#D4A353",      # Warm Amber
         "ACCENT_3": "#F5E6D3",      # Cream
         "TEXT": "#F5E6D3",          # Title text
-        "MUTED": "#9C8B78",         # Muted description
-        "DIM": "#6B5D4F",           # Dim metadata
-        "STROKE": "rgba(212,163,83,0.30)",
-        "STROKE_HI": "rgba(212,163,83,0.65)",
-        "STROKE_LO": "rgba(192,113,58,0.25)",
+        "MUTED": "#D0BFAD",         # High-contrast readable description
+        "DIM": "#8C7B6B",           # Dim metadata
+        "STROKE": "rgba(212,163,83,0.38)",
+        "STROKE_HI": "rgba(212,163,83,0.80)",
+        "STROKE_LO": "rgba(192,113,58,0.28)",
         "BARLINE": "rgba(255,255,255,0.08)",
-        "RING_BG": "rgba(156,139,120,0.18)",
-        "PILL_BG": "rgba(58,35,18,0.75)",
-        "PILL_STROKE": "rgba(212,163,83,0.45)",
-        "CAT_BG": "rgba(192,113,58,0.25)",
-        "CAT_STROKE": "rgba(192,113,58,0.60)",
-        "ROW_BG": "rgba(20,15,9,0.9)",
-        "ROW_ALT": "rgba(26,18,10,0.9)",
+        "RING_BG": "rgba(156,139,120,0.22)",
+        "PILL_BG": "rgba(58,35,18,0.90)",
+        "PILL_STROKE": "rgba(212,163,83,0.55)",
+        "CAT_BG": "rgba(192,113,58,0.30)",
+        "CAT_STROKE": "rgba(192,113,58,0.75)",
         "MONO_TX": "#0D0A06",
         "ICON_BG": "#C0713A",
         "EMERALD": "#5B8C5A",
@@ -54,19 +48,17 @@ THEMES = {
         "ACCENT_2": "#A67B3D",      # Antique gold
         "ACCENT_3": "#C89D66",      # Muted amber
         "TEXT": "#1A1207",          # Deep ink
-        "MUTED": "#6B5D4F",         # Muted bronze
+        "MUTED": "#5A4C3E",         # High-contrast readable bronze
         "DIM": "#9C8B78",           # Dim metadata
-        "STROKE": "rgba(166,123,61,0.35)",
-        "STROKE_HI": "rgba(166,123,61,0.70)",
+        "STROKE": "rgba(166,123,61,0.40)",
+        "STROKE_HI": "rgba(166,123,61,0.80)",
         "STROKE_LO": "rgba(139,90,43,0.25)",
         "BARLINE": "rgba(0,0,0,0.08)",
-        "RING_BG": "rgba(107,93,79,0.18)",
-        "PILL_BG": "rgba(234,219,202,0.60)",
-        "PILL_STROKE": "rgba(166,123,61,0.50)",
-        "CAT_BG": "rgba(139,90,43,0.15)",
-        "CAT_STROKE": "rgba(139,90,43,0.40)",
-        "ROW_BG": "rgba(255,255,255,0.9)",
-        "ROW_ALT": "rgba(245,238,228,0.9)",
+        "RING_BG": "rgba(107,93,79,0.20)",
+        "PILL_BG": "rgba(234,219,202,0.70)",
+        "PILL_STROKE": "rgba(166,123,61,0.60)",
+        "CAT_BG": "rgba(139,90,43,0.18)",
+        "CAT_STROKE": "rgba(139,90,43,0.50)",
         "MONO_TX": "#FAF6F0",
         "ICON_BG": "#8B5A2B",
         "EMERALD": "#3D6B3C",
@@ -76,55 +68,19 @@ THEMES = {
 
 W        = 1180
 CARD_W   = 578
-CARD_H   = 174
+CARD_H   = 214
 GAP      = 14
 MARGIN   = 5
 FONT     = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
 
-MATRIX_DATA = [
-    {
-        "icon": "⚖️",
-        "domain": "Agentic AI & Legal Reasoning",
-        "tech": ["Python", "Multi-Agent", "LangChain", "ChromaDB", "Pydantic", "RAG"],
-        "repo": "rdnk2004/NyayaSetu-Multi-Agent",
-        "name": "NyayaSetu"
-    },
-    {
-        "icon": "📈",
-        "domain": "ML Forecasting & Econometrics",
-        "tech": ["Python", "XGBoost", "Prophet", "SHAP", "Pandas", "Statsmodels", "FastAPI"],
-        "repo": "rdnk2004/cpi-mpc",
-        "name": "cpi-mpc"
-    },
-    {
-        "icon": "🏦",
-        "domain": "Financial Risk & Explainable AI",
-        "tech": ["Python", "Panel Econometrics", "XGBoost", "SHAP", "Scikit-Learn", "FastAPI"],
-        "repo": "rdnk2004/NPA-RBI",
-        "name": "NPA-RBI"
-    },
-    {
-        "icon": "✍️",
-        "domain": "Creative Tooling & Story Systems",
-        "tech": ["React", "JavaScript", "Django REST", "Fountain Parser", "PDFKit"],
-        "repo": "rdnk2004/screenwriting-software",
-        "name": "screenwriting"
-    },
-    {
-        "icon": "🚀",
-        "domain": "AI Automation & Career OS",
-        "tech": ["Python", "TypeScript", "n8n", "Job APIs", "Telemetry", "ATS Synthesis"],
-        "repo": "rdnk2004/automated-career",
-        "name": "automated-career"
-    },
-    {
-        "icon": "⚙️",
-        "domain": "Backend, Auth & DevOps",
-        "tech": ["Python", "FastAPI", "PostgreSQL", "Docker", "JWT Auth", "SQLAlchemy"],
-        "repo": "rdnk2004/nexus-tasktrack",
-        "name": "nexus-tasktrack"
-    }
-]
+PROJECT_SKILLS = {
+    "rdnk2004/NyayaSetu-Multi-Agent": ["Python", "Multi-Agent", "LangChain", "ChromaDB", "Pydantic", "RAG"],
+    "rdnk2004/screenwriting-software": ["React", "JavaScript", "Django REST", "Fountain", "PDFKit", "Story Systems"],
+    "rdnk2004/cpi-mpc": ["Python", "XGBoost", "Prophet", "SHAP", "Pandas", "Statsmodels", "FastAPI"],
+    "rdnk2004/NPA-RBI": ["Python", "Econometrics", "XGBoost", "SHAP", "Scikit-Learn", "Streamlit"],
+    "rdnk2004/automated-career": ["Python", "TypeScript", "n8n", "Job APIs", "ATS Parser", "Telemetry"],
+    "rdnk2004/nexus-tasktrack": ["Python", "FastAPI", "PostgreSQL", "Docker", "JWT Auth", "SQLAlchemy"]
+}
 
 def esc(s):
     return html.escape(str(s), quote=True)
@@ -155,12 +111,12 @@ def wrap_text(s, max_chars, max_lines=2):
         lines[-1] = lines[-1][:max_chars-1].rstrip() + "…"
     return lines
 
-def render_vector_icon(icon_type, x, y, size=40, bg_col="#C0713A", fg_col="#0D0A06"):
+def render_vector_icon(icon_type, x, y, size=44, bg_col="#C0713A", fg_col="#0D0A06"):
     u = size / 24.0
     parts = []
     a = parts.append
     
-    a(f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="9" fill="{bg_col}" opacity="0.95"/>')
+    a(f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="10" fill="{bg_col}" opacity="0.95"/>')
     
     if icon_type == "justice":
         a(f'<path d="M {x+12*u} {y+4.5*u} L {x+12*u} {y+19.5*u} M {x+8.5*u} {y+19.5*u} L {x+15.5*u} {y+19.5*u} '
@@ -169,26 +125,26 @@ def render_vector_icon(icon_type, x, y, size=40, bg_col="#C0713A", fg_col="#0D0A
           f'M {x+2.5*u} {y+12.5*u} Q {x+6.5*u} {y+15.5*u} {x+10.5*u} {y+12.5*u} Z '
           f'M {x+16.5*u} {y+7.5*u} L {x+14.5*u} {y+12.5*u} M {x+18.5*u} {y+7.5*u} L {x+20.5*u} {y+12.5*u} '
           f'M {x+13.5*u} {y+12.5*u} Q {x+17.5*u} {y+15.5*u} {x+21.5*u} {y+12.5*u} Z" '
-          f'fill="none" stroke="{fg_col}" stroke-width="{1.5*u}" stroke-linecap="round" stroke-linejoin="round"/>')
-        a(f'<circle cx="{x+12*u}" cy="{y+4.5*u}" r="{1.3*u}" fill="{fg_col}"/>')
+          f'fill="none" stroke="{fg_col}" stroke-width="{1.6*u}" stroke-linecap="round" stroke-linejoin="round"/>')
+        a(f'<circle cx="{x+12*u}" cy="{y+4.5*u}" r="{1.4*u}" fill="{fg_col}"/>')
 
     elif icon_type == "clapper":
         a(f'<rect x="{x+3.5*u}" y="{y+10*u}" width="{17*u}" height="{10*u}" rx="{1.5*u}" fill="{fg_col}"/>')
         a(f'<path d="M {x+3.5*u} {y+5*u} L {x+20.5*u} {y+5*u} L {x+20.5*u} {y+9*u} L {x+3.5*u} {y+9*u} Z" fill="{fg_col}"/>')
-        a(f'<line x1="{x+7.5*u}" y1="{y+5*u}" x2="{x+5.5*u}" y2="{y+9*u}" stroke="{bg_col}" stroke-width="{1.4*u}"/>')
-        a(f'<line x1="{x+12.5*u}" y1="{y+5*u}" x2="{x+10.5*u}" y2="{y+9*u}" stroke="{bg_col}" stroke-width="{1.4*u}"/>')
-        a(f'<line x1="{x+17.5*u}" y1="{y+5*u}" x2="{x+15.5*u}" y2="{y+9*u}" stroke="{bg_col}" stroke-width="{1.4*u}"/>')
-        a(f'<line x1="{x+6.5*u}" y1="{y+13*u}" x2="{x+17.5*u}" y2="{y+13*u}" stroke="{bg_col}" stroke-width="{1.2*u}" stroke-linecap="round"/>')
-        a(f'<line x1="{x+6.5*u}" y1="{y+16.5*u}" x2="{x+13.5*u}" y2="{y+16.5*u}" stroke="{bg_col}" stroke-width="{1.2*u}" stroke-linecap="round"/>')
+        a(f'<line x1="{x+7.5*u}" y1="{y+5*u}" x2="{x+5.5*u}" y2="{y+9*u}" stroke="{bg_col}" stroke-width="{1.5*u}"/>')
+        a(f'<line x1="{x+12.5*u}" y1="{y+5*u}" x2="{x+10.5*u}" y2="{y+9*u}" stroke="{bg_col}" stroke-width="{1.5*u}"/>')
+        a(f'<line x1="{x+17.5*u}" y1="{y+5*u}" x2="{x+15.5*u}" y2="{y+9*u}" stroke="{bg_col}" stroke-width="{1.5*u}"/>')
+        a(f'<line x1="{x+6.5*u}" y1="{y+13*u}" x2="{x+17.5*u}" y2="{y+13*u}" stroke="{bg_col}" stroke-width="{1.3*u}" stroke-linecap="round"/>')
+        a(f'<line x1="{x+6.5*u}" y1="{y+16.5*u}" x2="{x+13.5*u}" y2="{y+16.5*u}" stroke="{bg_col}" stroke-width="{1.3*u}" stroke-linecap="round"/>')
 
     elif icon_type == "chart":
         a(f'<path d="M {x+4*u} {y+19*u} L {x+20*u} {y+19*u} M {x+4*u} {y+5*u} L {x+4*u} {y+19*u}" '
-          f'fill="none" stroke="{fg_col}" stroke-width="{1.8*u}" stroke-linecap="round"/>')
+          f'fill="none" stroke="{fg_col}" stroke-width="{2.0*u}" stroke-linecap="round"/>')
         a(f'<path d="M {x+5*u} {y+16*u} L {x+9*u} {y+12*u} L {x+13*u} {y+14*u} L {x+19*u} {y+7*u}" '
-          f'fill="none" stroke="{fg_col}" stroke-width="{1.8*u}" stroke-linecap="round" stroke-linejoin="round"/>')
+          f'fill="none" stroke="{fg_col}" stroke-width="{2.0*u}" stroke-linecap="round" stroke-linejoin="round"/>')
         a(f'<polygon points="{x+19*u},{y+7*u} {x+15.5*u},{y+7*u} {x+19*u},{y+10.5*u}" fill="{fg_col}"/>')
-        a(f'<circle cx="{x+9*u}" cy="{y+12*u}" r="{1.2*u}" fill="{fg_col}"/>')
-        a(f'<circle cx="{x+13*u}" cy="{y+14*u}" r="{1.2*u}" fill="{fg_col}"/>')
+        a(f'<circle cx="{x+9*u}" cy="{y+12*u}" r="{1.3*u}" fill="{fg_col}"/>')
+        a(f'<circle cx="{x+13*u}" cy="{y+14*u}" r="{1.3*u}" fill="{fg_col}"/>')
 
     elif icon_type == "bank":
         a(f'<polygon points="{x+12*u},{y+4*u} {x+3*u},{y+8.5*u} {x+21*u},{y+8.5*u}" fill="{fg_col}"/>')
@@ -203,15 +159,15 @@ def render_vector_icon(icon_type, x, y, size=40, bg_col="#C0713A", fg_col="#0D0A
     elif icon_type == "career":
         a(f'<rect x="{x+3.5*u}" y="{y+8*u}" width="{17*u}" height="{12*u}" rx="{2*u}" fill="{fg_col}"/>')
         a(f'<path d="M {x+8.5*u} {y+8*u} L {x+8.5*u} {y+5.5*u} Q {x+8.5*u} {y+4*u} {x+10*u} {y+4*u} L {x+14*u} {y+4*u} Q {x+15.5*u} {y+4*u} {x+15.5*u} {y+5.5*u} L {x+15.5*u} {y+8*u}" '
-          f'fill="none" stroke="{fg_col}" stroke-width="{1.6*u}"/>')
-        a(f'<line x1="{x+3.5*u}" y1="{y+13*u}" x2="{x+20.5*u}" y2="{y+13*u}" stroke="{bg_col}" stroke-width="{1.2*u}"/>')
+          f'fill="none" stroke="{fg_col}" stroke-width="{1.8*u}"/>')
+        a(f'<line x1="{x+3.5*u}" y1="{y+13*u}" x2="{x+20.5*u}" y2="{y+13*u}" stroke="{bg_col}" stroke-width="{1.3*u}"/>')
         a(f'<rect x="{x+10.5*u}" y="{y+11.5*u}" width="{3*u}" height="{3*u}" rx="{0.6*u}" fill="{bg_col}"/>')
 
     elif icon_type == "kanban":
         a(f'<rect x="{x+3.5*u}" y="{y+4*u}" width="{17*u}" height="{16*u}" rx="{2*u}" '
-          f'fill="none" stroke="{fg_col}" stroke-width="{1.8*u}"/>')
-        a(f'<line x1="{x+9.5*u}" y1="{y+4*u}" x2="{x+9.5*u}" y2="{y+20*u}" stroke="{fg_col}" stroke-width="{1.5*u}"/>')
-        a(f'<line x1="{x+15*u}" y1="{y+4*u}" x2="{x+15*u}" y2="{y+20*u}" stroke="{fg_col}" stroke-width="{1.5*u}"/>')
+          f'fill="none" stroke="{fg_col}" stroke-width="{2.0*u}"/>')
+        a(f'<line x1="{x+9.5*u}" y1="{y+4*u}" x2="{x+9.5*u}" y2="{y+20*u}" stroke="{fg_col}" stroke-width="{1.6*u}"/>')
+        a(f'<line x1="{x+15*u}" y1="{y+4*u}" x2="{x+15*u}" y2="{y+20*u}" stroke="{fg_col}" stroke-width="{1.6*u}"/>')
         a(f'<rect x="{x+5.2*u}" y="{y+7*u}" width="{2.8*u}" height="{4*u}" rx="{0.5*u}" fill="{fg_col}"/>')
         a(f'<rect x="{x+5.2*u}" y="{y+13*u}" width="{2.8*u}" height="{4*u}" rx="{0.5*u}" fill="{fg_col}"/>')
         a(f'<rect x="{x+11*u}" y="{y+7*u}" width="{2.8*u}" height="{6*u}" rx="{0.5*u}" fill="{fg_col}"/>')
@@ -235,7 +191,7 @@ def donut_segments(languages, cx, cy, r, begin, donut_colors, ring_bg, text_col,
         seg = frac * C
         col = donut_colors[i % len(donut_colors)]
         out.append(
-            f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{col}" stroke-width="7.5" '
+            f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{col}" stroke-width="8.5" '
             f'stroke-dasharray="{seg:.2f} {C - seg:.2f}" stroke-dashoffset="{-offset:.2f}" '
             f'transform="rotate(-90 {cx} {cy})" opacity="0">'
             f'<animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="{t:.2f}s" fill="freeze"/>'
@@ -264,20 +220,20 @@ def card(p, x, y, idx, t):
     a(f'<rect width="{CARD_W}" height="{CARD_H}" rx="12" fill="{t["PANEL"]}" stroke="{t["STROKE"]}">'
       f'<animate attributeName="stroke" values="{t["STROKE_LO"]};{t["STROKE_HI"]};{t["STROKE_LO"]}" '
       f'dur="4.5s" begin="{b+idx*0.7:.2f}s" repeatCount="indefinite"/></rect>')
-    a(f'<rect width="{CARD_W}" height="30" rx="12" fill="{t["PANEL_BAR"]}"/>')
-    a(f'<rect y="18" width="{CARD_W}" height="12" fill="{t["PANEL_BAR"]}"/>')
-    a(f'<line x1="0" y1="30" x2="{CARD_W}" y2="30" stroke="{t["BARLINE"]}"/>')
-    a(f'<text x="16" y="19" font-size="10.5" fill="{t["MUTED"]}"><tspan fill="{t["ACCENT_2"]}">&#8226;</tspan> {esc(repo)}</text>')
+    a(f'<rect width="{CARD_W}" height="32" rx="12" fill="{t["PANEL_BAR"]}"/>')
+    a(f'<rect y="20" width="{CARD_W}" height="12" fill="{t["PANEL_BAR"]}"/>')
+    a(f'<line x1="0" y1="32" x2="{CARD_W}" y2="32" stroke="{t["BARLINE"]}"/>')
+    a(f'<text x="16" y="20.5" font-size="11" font-weight="600" fill="{t["MUTED"]}"><tspan fill="{t["ACCENT_2"]}">&#8226;</tspan> {esc(repo)}</text>')
 
     # Top right category pill
     cat = esc(p.get("category", "Project"))
-    cat_w = len(cat) * 5.8 + 14
+    cat_w = len(cat) * 6.2 + 16
     cat_x = CARD_W - cat_w - 24
-    a(f'<rect x="{cat_x}" y="7" width="{cat_w}" height="16" rx="8" fill="{t["CAT_BG"]}" stroke="{t["CAT_STROKE"]}"/>')
-    a(f'<text x="{cat_x + cat_w/2:.0f}" y="18.5" text-anchor="middle" font-size="9" font-weight="600" fill="{t["ACCENT_2"]}">{cat}</text>')
+    a(f'<rect x="{cat_x}" y="7.5" width="{cat_w}" height="17" rx="8.5" fill="{t["CAT_BG"]}" stroke="{t["CAT_STROKE"]}"/>')
+    a(f'<text x="{cat_x + cat_w/2:.0f}" y="19.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="{t["ACCENT_2"]}">{cat}</text>')
     
     # Live pulse dot
-    a(f'<circle cx="{CARD_W-12}" cy="15" r="3.5" fill="{t["EMERALD"]}">'
+    a(f'<circle cx="{CARD_W-12}" cy="16" r="4" fill="{t["EMERALD"]}">'
       f'<animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/></circle>')
 
     # Bespoke Domain Vector Icon with float animation
@@ -286,146 +242,95 @@ def card(p, x, y, idx, t):
                   f'values="0 0; 0 -2.5; 0 0" dur="5s" begin="{b+idx*0.5:.2f}s" '
                   f'repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" '
                   f'keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>')
-    a(f'<g>{float_anim}{render_vector_icon(icon_type, 16, 44, 40, t["ICON_BG"], t["MONO_TX"])}</g>')
+    a(f'<g>{float_anim}{render_vector_icon(icon_type, 16, 46, 44, t["ICON_BG"], t["MONO_TX"])}</g>')
 
-    # Name + Blinking cursor
+    # Name + Blinking cursor (Large 17.5px font)
     name = esc(p.get("name", "unnamed"))
-    a(f'<text x="68" y="61" font-size="16.5" font-weight="700" fill="{t["TEXT"]}">{name}'
+    a(f'<text x="70" y="64" font-size="17.5" font-weight="700" fill="{t["TEXT"]}">{name}'
       f'<tspan fill="{t["ACCENT_2"]}">_<animate attributeName="opacity" values="1;0;1" dur="1.2s" '
       f'begin="{b+0.4:.2f}s" repeatCount="indefinite"/></tspan></text>')
 
-    # Description (wrapped cleanly to 40 characters)
-    for i, line in enumerate(wrap_text(p.get("description", ""), 40)):
-        a(f'<text x="68" y="{80 + i * 16}" font-size="11" fill="{t["MUTED"]}">{esc(line)}</text>')
+    # Description (High contrast 12px font wrapped cleanly to 34 chars)
+    for i, line in enumerate(wrap_text(p.get("description", ""), 34)):
+        a(f'<text x="70" y="{85 + i * 17}" font-size="12" fill="{t["MUTED"]}">{esc(line)}</text>')
 
-    # Tag pills
-    tx = 68
-    for tag in (p.get("tags") or [])[:3]:
-        tw = len(tag) * 6.5 + 14
-        a(f'<rect x="{tx}" y="118" width="{tw:.0f}" height="18" rx="9" fill="{t["PILL_BG"]}" stroke="{t["PILL_STROKE"]}"/>')
-        a(f'<text x="{tx + tw/2:.0f}" y="130.5" text-anchor="middle" font-size="9.5" font-weight="600" fill="{t["ACCENT_2"]}">{esc(tag)}</text>')
-        tx += tw + 6
+    # Complete Production Skills (Embedded directly on the card in 2 neat rows)
+    skills = PROJECT_SKILLS.get(repo, p.get("tags", []))
+    
+    # Row 1 of Skills (max 3 pills)
+    tx1 = 70
+    row1_skills = skills[:3]
+    for tag in row1_skills:
+        tw = len(tag) * 6.8 + 14
+        a(f'<rect x="{tx1}" y="124" width="{tw:.0f}" height="19" rx="9.5" fill="{t["PILL_BG"]}" stroke="{t["PILL_STROKE"]}"/>')
+        a(f'<text x="{tx1 + tw/2:.0f}" y="137" text-anchor="middle" font-size="9.5" font-weight="600" fill="{t["ACCENT_2"]}">{esc(tag)}</text>')
+        tx1 += tw + 6
+
+    # Row 2 of Skills (max 3 pills)
+    tx2 = 70
+    row2_skills = skills[3:6]
+    if row2_skills:
+        for tag in row2_skills:
+            tw = len(tag) * 6.8 + 14
+            a(f'<rect x="{tx2}" y="149" width="{tw:.0f}" height="19" rx="9.5" fill="{t["PILL_BG"]}" stroke="{t["PILL_STROKE"]}"/>')
+            a(f'<text x="{tx2 + tw/2:.0f}" y="162" text-anchor="middle" font-size="9.5" font-weight="600" fill="{t["ACCENT_2"]}">{esc(tag)}</text>')
+            tx2 += tw + 6
 
     # Bottom Row: Quick Action Indicator
-    a(f'<text x="68" y="156" font-size="10.5" fill="{t["MUTED"]}">'
-      f'<tspan fill="{t["ACCENT_2"]}">&#9656;</tspan> Production Stack'
-      f'<tspan fill="{t["ACCENT_1"]}" dx="14" font-weight="600">&#8599; View Repository</tspan></text>')
+    a(f'<text x="70" y="196" font-size="11" fill="{t["MUTED"]}">'
+      f'<tspan fill="{t["ACCENT_2"]}">&#9656;</tspan> Applied Production Stack'
+      f'<tspan fill="{t["ACCENT_1"]}" dx="14" font-weight="700">&#8599; View Repository</tspan></text>')
 
     # Right-Hand Telemetry: Zero-Overlap Donut + Legend Layout
     langs = p.get("languages") or {}
     if langs:
-        cx, cy, r = CARD_W - 40, 78, 20
+        cx, cy, r = CARD_W - 46, 86, 23
         segs, legend = donut_segments(langs, cx, cy, r, b + 0.3, t["DONUT_COLORS"], t["RING_BG"], t["TEXT"], t["MUTED"])
-        a(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{t["RING_BG"]}" stroke-width="7.5"/>')
+        a(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{t["RING_BG"]}" stroke-width="8.5"/>')
         a(segs)
         top = legend[0]
-        a(f'<text x="{cx}" y="{cy+3.5}" text-anchor="middle" font-size="10" font-weight="700" fill="{t["TEXT"]}">{top[1]*100:.0f}%</text>')
+        a(f'<text x="{cx}" y="{cy+4}" text-anchor="middle" font-size="11" font-weight="700" fill="{t["TEXT"]}">{top[1]*100:.0f}%</text>')
         
-        dot_x = cx - r - 82
-        text_x = dot_x + 8
+        dot_x = cx - r - 88
+        text_x = dot_x + 9
         n_items = len(legend[:3])
-        start_ly = cy - (n_items - 1) * 8.5
+        start_ly = cy - (n_items - 1) * 9.5
         for i_l, (lang, frac, col) in enumerate(legend[:3]):
-            curr_ly = start_ly + i_l * 17
-            a(f'<circle cx="{dot_x}" cy="{curr_ly}" r="3" fill="{col}"/>')
-            a(f'<text x="{text_x}" y="{curr_ly+3.5}" font-size="9" fill="{t["MUTED"]}">'
-              f'{esc(lang)} <tspan fill="{t["TEXT"]}" font-weight="600">{frac*100:.0f}%</tspan></text>')
+            curr_ly = start_ly + i_l * 19
+            a(f'<circle cx="{dot_x}" cy="{curr_ly}" r="3.5" fill="{col}"/>')
+            a(f'<text x="{text_x}" y="{curr_ly+4}" font-size="10" fill="{t["MUTED"]}">'
+              f'{esc(lang)} <tspan fill="{t["TEXT"]}" font-weight="700">{frac*100:.0f}%</tspan></text>')
 
     a('</g>')
     a('</a>')
     return "".join(e)
 
-def render_traceability_matrix(t, start_y):
-    e = []
-    a = e.append
-    
-    # Section Header
-    a(f'<text x="{MARGIN+2}" y="{start_y+16}" font-size="11" letter-spacing="2" fill="{t["ACCENT_2"]}">APPLIED.SKILLS.MATRIX</text>')
-    a(f'<text x="{MARGIN+210}" y="{start_y+16}" font-size="10" fill="{t["DIM"]}">./traceability.sh --matrix</text>')
-    a(f'<line x1="{MARGIN}" y1="{start_y+26}" x2="{W-MARGIN}" y2="{start_y+26}" stroke="url(#proj_acc_grad)" stroke-width="1.5" opacity="0.75"/>')
-
-    # Table Header Row
-    ty = start_y + 46
-    a(f'<rect x="{MARGIN}" y="{ty}" width="{W-2*MARGIN}" height="26" rx="6" fill="{t["PANEL_BAR"]}" stroke="{t["BARLINE"]}"/>')
-    a(f'<text x="{MARGIN+16}" y="{ty+17}" font-size="10" font-weight="700" letter-spacing="1" fill="{t["ACCENT_2"]}">DOMAIN &amp; CAPABILITIES</text>')
-    a(f'<text x="{MARGIN+330}" y="{ty+17}" font-size="10" font-weight="700" letter-spacing="1" fill="{t["ACCENT_2"]}">PRODUCTION TECHNOLOGIES &amp; TOOLING</text>')
-    a(f'<text x="{MARGIN+920}" y="{ty+17}" font-size="10" font-weight="700" letter-spacing="1" fill="{t["ACCENT_2"]}">APPLIED REPOSITORY</text>')
-
-    cur_y = ty + 32
-    row_h = 36
-    for idx, row in enumerate(MATRIX_DATA):
-        bg = t["ROW_BG"] if idx % 2 == 0 else t["ROW_ALT"]
-        repo_href = f"https://github.com/{row['repo']}"
-        
-        a(f'<a href="{repo_href}" target="_blank">')
-        a(f'<g transform="translate({MARGIN},{cur_y})">')
-        
-        # Row card
-        a(f'<rect width="{W-2*MARGIN}" height="{row_h}" rx="8" fill="{bg}" stroke="{t["STROKE_LO"]}">'
-          f'<animate attributeName="stroke" values="{t["STROKE_LO"]};{t["STROKE"]};{t["STROKE_LO"]}" '
-          f'dur="4s" begin="{idx*0.4:.1f}s" repeatCount="indefinite"/></rect>')
-        
-        # Domain Col
-        dom_text = f"{row['icon']} {row['domain']}"
-        a(f'<text x="14" y="22" font-size="11" font-weight="600" fill="{t["TEXT"]}">{esc(dom_text)}</text>')
-        
-        # Tech Badges Col
-        bx = 330
-        for tech in row["tech"][:6]:
-            bw = len(tech) * 6.2 + 12
-            a(f'<rect x="{bx}" y="9" width="{bw:.0f}" height="18" rx="5" fill="{t["PILL_BG"]}" stroke="{t["PILL_STROKE"]}"/>')
-            a(f'<text x="{bx + bw/2:.0f}" y="21.5" text-anchor="middle" font-size="9" font-weight="600" fill="{t["ACCENT_2"]}">{esc(tech)}</text>')
-            bx += bw + 6
-
-        # Repo Button Col
-        repo_btn_w = len(row['name']) * 6.8 + 24
-        rx = W - 2*MARGIN - repo_btn_w - 14
-        a(f'<rect x="{rx}" y="8.5" width="{repo_btn_w:.0f}" height="19" rx="6" fill="{t["CAT_BG"]}" stroke="{t["CAT_STROKE"]}"/>')
-        a(f'<text x="{rx + repo_btn_w/2:.0f}" y="21.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="{t["ACCENT_2"]}">'
-          f'&#8599; {esc(row["name"])}</text>')
-
-        a('</g>')
-        a('</a>')
-        cur_y += row_h + 6
-
-    return "".join(e)
-
-def build_projects_svg(projects, theme="dark"):
+def build_single_slate_svg(projects, theme="dark"):
     t = THEMES[theme]
-    card_rows = math.ceil(len(projects) / 2)
-    cards_h = 42 + card_rows * (CARD_H + GAP)
-    
-    # Traceability Matrix height
-    matrix_h = 46 + 32 + len(MATRIX_DATA) * 42 + 20
-    H = cards_h + matrix_h + 10
-    
-    gid = "proj_acc_grad"
+    rows = math.ceil(len(projects) / 2)
+    H = 56 + rows * (CARD_H + GAP) + MARGIN
+    gid = f"proj_acc_single_{theme}"
     s = []
     a = s.append
     
     a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
-      f'font-family="{FONT}" role="img" aria-label="Nikhil Krishna R D — Featured Projects &amp; Traceability Matrix">')
+      f'font-family="{FONT}" role="img" aria-label="Nikhil Krishna R D — Featured Projects &amp; Applied Skills">')
     a(f'<rect width="{W}" height="{H}" fill="{t["BG"]}"/>')
     
-    # Animated accent gradient
     a(f'<defs><linearGradient id="{gid}" x1="0" y1="0" x2="1" y2="0">'
       f'<stop offset="0" stop-color="{t["ACCENT_1"]}"><animate attributeName="stop-color" values="{t["ACCENT_1"]};{t["ACCENT_2"]};{t["ACCENT_3"]};{t["ACCENT_1"]}" dur="10s" repeatCount="indefinite"/></stop>'
       f'<stop offset="1" stop-color="{t["ACCENT_2"]}"><animate attributeName="stop-color" values="{t["ACCENT_2"]};{t["ACCENT_3"]};{t["ACCENT_1"]};{t["ACCENT_2"]}" dur="10s" repeatCount="indefinite"/></stop>'
       f'</linearGradient></defs>')
       
-    # Header 1: Projects
-    a(f'<text x="{MARGIN+2}" y="18" font-size="11" letter-spacing="2" fill="{t["ACCENT_2"]}">PROJECTS.SLATE</text>')
-    a(f'<text x="{MARGIN+145}" y="18" font-size="10" fill="{t["DIM"]}">./projects.sh --live</text>')
+    # Single Clean Header with zero collision
+    a(f'<text x="{MARGIN+2}" y="18" font-size="11.5" font-weight="700" letter-spacing="2" fill="{t["ACCENT_2"]}">PROJECTS.SLATE // APPLIED.SKILLS</text>')
+    a(f'<text x="{W-MARGIN-10}" y="18" text-anchor="end" font-size="10.5" fill="{t["DIM"]}">./projects.sh --live --traceable</text>')
     a(f'<line x1="{MARGIN}" y1="28" x2="{W-MARGIN}" y2="28" stroke="url(#{gid})" stroke-width="1.5" opacity="0.75"/>')
     
-    # 6 Project Cards
     for i, p in enumerate(projects):
         x = MARGIN + (i % 2) * (CARD_W + GAP + 4)
         y = 42 + (i // 2) * (CARD_H + GAP)
         a(card(p, x, y, i, t))
-        
-    # Traceability Matrix Section
-    a(render_traceability_matrix(t, cards_h + 10))
         
     a('</svg>')
     return "".join(s)
@@ -436,12 +341,11 @@ def main():
         projects = json.load(f)
         
     for theme, fname in [("dark", "projects-dark.svg"), ("light", "projects-light.svg")]:
-        svg = build_projects_svg(projects, theme)
+        svg = build_single_slate_svg(projects, theme)
         out_path = os.path.join(OUT_DIR, fname)
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write(svg)
-        size_kb = os.path.getsize(out_path) / 1024.0
-        print(f"[OK] {fname} written ({size_kb:.1f} KB) -> {out_path}")
+        print(f"[OK] {fname} ({os.path.getsize(out_path)/1024:.1f} KB)")
 
 if __name__ == "__main__":
     main()
