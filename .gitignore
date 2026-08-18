@@ -2,29 +2,29 @@
 #  .gitignore — rdnk2004 GitHub Profile
 # ═══════════════════════════════════════════════════════════════
 
-# Local generator scripts & utilities
+# Python Generators & Scripts
 generate_*.py
-generate_banner.py
-generate_projects_svg.py
-generate_divider_svg.py
+*.py
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
 
-# Local previews, tests & logs
+# Data & JSON Cache
+*.json
+projects.json
+merged.json
+
+# Local Previews, Tests & Logs
 assets/preview.html
 *.html
 *.log
 scratch/
 
-# Python Virtual Environments
+# Environments & OS Metadata
 .venv/
 venv/
 env/
 ENV/
-
-# OS / Editor metadata
 .DS_Store
 Thumbs.db
 .vscode/
