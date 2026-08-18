@@ -54,23 +54,27 @@
 
 <br/>
 
-<!-- ===== 4. 🧩 TECHNICAL ARSENAL & SKILLS MATRIX ===== -->
+<!-- ===== 4. 🛠️ TECHNICAL ARSENAL & PRODUCTION STACK ===== -->
 <div align="center">
 
-<!-- CATEGORY 1: CORE LANGUAGES & SCHEMAS -->
-<table width="100%" style="border-collapse: collapse; border: 1px solid #3A2312; background: #140F09; border-radius: 12px; margin-bottom: 16px;">
+<h2 align="center">🛠️ Technical Arsenal &amp; Applied Skill Matrix</h2>
+<p align="center"><em>Core languages, machine learning frameworks, data pipelines &amp; cloud DevOps toolchain.</em></p>
+<br/>
+
+<!-- STACK 01: CORE LANGUAGES & DATA SCHEMAS -->
+<table width="100%" style="border-collapse: collapse; border: 1px solid #3A2312; background: #140F09; border-radius: 12px; margin-bottom: 12px;">
   <tr>
-    <td style="padding: 12px 18px; background: #110B06; border-bottom: 1px solid #24170D; border-radius: 12px 12px 0 0;">
+    <td style="padding: 12px 20px; background: #110B06; border-bottom: 1px solid #24170D; border-radius: 12px 12px 0 0;">
       <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #F5E6D3; font-weight: 700; font-size: 12px; letter-spacing: 1.5px;">
-          <span style="color: #C0713A;">STACK.01 //</span> CORE LANGUAGES &amp; DATA SCHEMAS
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #F5E6D3; font-weight: 700; font-size: 13.5px; letter-spacing: 0.5px;">
+          <span style="color: #C0713A;">STACK.01 //</span> Core Languages &amp; Data Schemas
         </span>
-        <span style="background: rgba(192,113,58,0.25); border: 1px solid #C0713A; color: #D4A353; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius: 10px; font-family: ui-monospace, monospace;">FOUNDATION</span>
+        <span style="background: rgba(192,113,58,0.25); border: 1px solid #C0713A; color: #D4A353; font-size: 10.5px; font-weight: 700; padding: 3px 12px; border-radius: 10px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">FOUNDATION</span>
       </div>
     </td>
   </tr>
   <tr>
-    <td style="padding: 16px 18px;">
+    <td style="padding: 16px 20px;">
       <img src="https://img.shields.io/badge/Python-0D0A06?style=for-the-badge&logo=python&logoColor=D4A353&labelColor=0D0A06" alt="Python" />
       <img src="https://img.shields.io/badge/SQL-0D0A06?style=for-the-badge&logo=postgresql&logoColor=D4A353&labelColor=0D0A06" alt="SQL" />
       <img src="https://img.shields.io/badge/R-0D0A06?style=for-the-badge&logo=r&logoColor=D4A353&labelColor=0D0A06" alt="R" />
@@ -85,25 +89,20 @@
   </tr>
 </table>
 
-<!-- THEMED DIVIDER BETWEEN SKILL BLOCKS -->
-<img alt="Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
-
-<br/><br/>
-
-<!-- CATEGORY 2: AI, MACHINE LEARNING & AGENTS -->
-<table width="100%" style="border-collapse: collapse; border: 1px solid #3A2312; background: #140F09; border-radius: 12px; margin-bottom: 16px;">
+<!-- STACK 02: AI, MACHINE LEARNING & AGENTS -->
+<table width="100%" style="border-collapse: collapse; border: 1px solid #3A2312; background: #140F09; border-radius: 12px; margin-bottom: 12px;">
   <tr>
-    <td style="padding: 12px 18px; background: #110B06; border-bottom: 1px solid #24170D; border-radius: 12px 12px 0 0;">
+    <td style="padding: 12px 20px; background: #110B06; border-bottom: 1px solid #24170D; border-radius: 12px 12px 0 0;">
       <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #F5E6D3; font-weight: 700; font-size: 12px; letter-spacing: 1.5px;">
-          <span style="color: #C0713A;">STACK.02 //</span> AI, MACHINE LEARNING &amp; AGENTS
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #F5E6D3; font-weight: 700; font-size: 13.5px; letter-spacing: 0.5px;">
+          <span style="color: #C0713A;">STACK.02 //</span> AI, Machine Learning &amp; Agents
         </span>
-        <span style="background: rgba(192,113,58,0.25); border: 1px solid #C0713A; color: #D4A353; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius: 10px; font-family: ui-monospace, monospace;">INTELLIGENCE</span>
+        <span style="background: rgba(192,113,58,0.25); border: 1px solid #C0713A; color: #D4A353; font-size: 10.5px; font-weight: 700; padding: 3px 12px; border-radius: 10px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">INTELLIGENCE</span>
       </div>
     </td>
   </tr>
   <tr>
-    <td style="padding: 16px 18px;">
+    <td style="padding: 16px 20px;">
       <img src="https://img.shields.io/badge/PyTorch-0D0A06?style=for-the-badge&logo=pytorch&logoColor=D4A353&labelColor=0D0A06" alt="PyTorch" />
       <img src="https://img.shields.io/badge/TensorFlow-0D0A06?style=for-the-badge&logo=tensorflow&logoColor=D4A353&labelColor=0D0A06" alt="TensorFlow" />
       <img src="https://img.shields.io/badge/scikit--learn-0D0A06?style=for-the-badge&logo=scikit-learn&logoColor=D4A353&labelColor=0D0A06" alt="scikit-learn" />
@@ -120,25 +119,20 @@
   </tr>
 </table>
 
-<!-- THEMED DIVIDER BETWEEN SKILL BLOCKS -->
-<img alt="Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
-
-<br/><br/>
-
-<!-- CATEGORY 3: DATA PROCESSING & ANALYTICS -->
-<table width="100%" style="border-collapse: collapse; border: 1px solid #3A2312; background: #140F09; border-radius: 12px; margin-bottom: 16px;">
+<!-- STACK 03: DATA PROCESSING & ANALYTICS -->
+<table width="100%" style="border-collapse: collapse; border: 1px solid #3A2312; background: #140F09; border-radius: 12px; margin-bottom: 12px;">
   <tr>
-    <td style="padding: 12px 18px; background: #110B06; border-bottom: 1px solid #24170D; border-radius: 12px 12px 0 0;">
+    <td style="padding: 12px 20px; background: #110B06; border-bottom: 1px solid #24170D; border-radius: 12px 12px 0 0;">
       <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #F5E6D3; font-weight: 700; font-size: 12px; letter-spacing: 1.5px;">
-          <span style="color: #C0713A;">STACK.03 //</span> DATA PROCESSING &amp; ANALYTICS
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #F5E6D3; font-weight: 700; font-size: 13.5px; letter-spacing: 0.5px;">
+          <span style="color: #C0713A;">STACK.03 //</span> Data Processing &amp; Analytics
         </span>
-        <span style="background: rgba(192,113,58,0.25); border: 1px solid #C0713A; color: #D4A353; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius: 10px; font-family: ui-monospace, monospace;">PIPELINES</span>
+        <span style="background: rgba(192,113,58,0.25); border: 1px solid #C0713A; color: #D4A353; font-size: 10.5px; font-weight: 700; padding: 3px 12px; border-radius: 10px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">PIPELINES</span>
       </div>
     </td>
   </tr>
   <tr>
-    <td style="padding: 16px 18px;">
+    <td style="padding: 16px 20px;">
       <img src="https://img.shields.io/badge/Pandas-0D0A06?style=for-the-badge&logo=pandas&logoColor=D4A353&labelColor=0D0A06" alt="Pandas" />
       <img src="https://img.shields.io/badge/NumPy-0D0A06?style=for-the-badge&logo=numpy&logoColor=D4A353&labelColor=0D0A06" alt="NumPy" />
       <img src="https://img.shields.io/badge/SciPy-0D0A06?style=for-the-badge&logo=scipy&logoColor=D4A353&labelColor=0D0A06" alt="SciPy" />
@@ -150,25 +144,20 @@
   </tr>
 </table>
 
-<!-- THEMED DIVIDER BETWEEN SKILL BLOCKS -->
-<img alt="Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
-
-<br/><br/>
-
-<!-- CATEGORY 4: BACKEND, CLOUD & DEVOPS -->
-<table width="100%" style="border-collapse: collapse; border: 1px solid #3A2312; background: #140F09; border-radius: 12px; margin-bottom: 16px;">
+<!-- STACK 04: BACKEND, CLOUD & FULL STACK DEVOPS -->
+<table width="100%" style="border-collapse: collapse; border: 1px solid #3A2312; background: #140F09; border-radius: 12px;">
   <tr>
-    <td style="padding: 12px 18px; background: #110B06; border-bottom: 1px solid #24170D; border-radius: 12px 12px 0 0;">
+    <td style="padding: 12px 20px; background: #110B06; border-bottom: 1px solid #24170D; border-radius: 12px 12px 0 0;">
       <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #F5E6D3; font-weight: 700; font-size: 12px; letter-spacing: 1.5px;">
-          <span style="color: #C0713A;">STACK.04 //</span> BACKEND, CLOUD &amp; FULL STACK DEVOPS
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #F5E6D3; font-weight: 700; font-size: 13.5px; letter-spacing: 0.5px;">
+          <span style="color: #C0713A;">STACK.04 //</span> Backend, Cloud &amp; Full Stack DevOps
         </span>
-        <span style="background: rgba(192,113,58,0.25); border: 1px solid #C0713A; color: #D4A353; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius: 10px; font-family: ui-monospace, monospace;">DEPLOYMENT</span>
+        <span style="background: rgba(192,113,58,0.25); border: 1px solid #C0713A; color: #D4A353; font-size: 10.5px; font-weight: 700; padding: 3px 12px; border-radius: 10px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">DEPLOYMENT</span>
       </div>
     </td>
   </tr>
   <tr>
-    <td style="padding: 16px 18px;">
+    <td style="padding: 16px 20px;">
       <img src="https://img.shields.io/badge/FastAPI-0D0A06?style=for-the-badge&logo=fastapi&logoColor=D4A353&labelColor=0D0A06" alt="FastAPI" />
       <img src="https://img.shields.io/badge/Django-0D0A06?style=for-the-badge&logo=django&logoColor=D4A353&labelColor=0D0A06" alt="Django" />
       <img src="https://img.shields.io/badge/React-0D0A06?style=for-the-badge&logo=react&logoColor=D4A353&labelColor=0D0A06" alt="React" />
