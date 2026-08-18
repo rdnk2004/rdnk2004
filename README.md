@@ -17,9 +17,9 @@
 
 <br/>
 
-<!-- GitHub Streak Stats -->
+<!-- GitHub Streak Stats (From Last Working Commit) -->
 <picture>
-  <img width="100%" src="https://streak-stats.demolab.com/?user=rdnk2004&theme=dark&hide_border=true&background=0D0A06&stroke=C0713A&ring=D4A353&fire=C0713A&currStreakLabel=D4A353&sideLabels=9C8B78&currStreakNum=F5E6D3&sideNums=F5E6D3&dates=6B5D4F&titleColor=D4A353" alt="GitHub Streak" />
+  <img width="100%" src="https://streak-stats.demolab.com?user=rdnk2004&theme=dark&hide_border=true" alt="GitHub Streak" />
 </picture>
 
 </div>
@@ -40,10 +40,10 @@
 
 <div align="center">
 
-<table width="100%" style="border-collapse: collapse; border: 1px solid #3A2312; background: #140F09; border-radius: 10px; margin-bottom: 14px;">
+<table width="100%" style="border-collapse: collapse; border: 1px solid #3A2312; background: #140F09; border-radius: 10px;">
   <tr>
     <td style="padding: 16px 20px; border-bottom: 1px solid #24170D;">
-      <p style="margin: 0 0 10px 0; color: #D4A353; font-weight: 700; font-size: 13px; letter-spacing: 1px;">💻 CORE LANGUAGES &amp; SCHEMAS</p>
+      <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #D4A353; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; margin-bottom: 10px;">💻 CORE LANGUAGES &amp; SCHEMAS</div>
       <img src="https://img.shields.io/badge/Python-0D0A06?style=for-the-badge&logo=python&logoColor=D4A353&labelColor=0D0A06" alt="Python" />
       <img src="https://img.shields.io/badge/SQL-0D0A06?style=for-the-badge&logo=postgresql&logoColor=D4A353&labelColor=0D0A06" alt="SQL" />
       <img src="https://img.shields.io/badge/R-0D0A06?style=for-the-badge&logo=r&logoColor=D4A353&labelColor=0D0A06" alt="R" />
@@ -56,7 +56,7 @@
   </tr>
   <tr>
     <td style="padding: 16px 20px; border-bottom: 1px solid #24170D;">
-      <p style="margin: 0 0 10px 0; color: #D4A353; font-weight: 700; font-size: 13px; letter-spacing: 1px;">🧠 MACHINE LEARNING, AI &amp; AUTOMATION</p>
+      <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #D4A353; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; margin-bottom: 10px;">🧠 MACHINE LEARNING, AI &amp; AUTOMATION</div>
       <img src="https://img.shields.io/badge/PyTorch-0D0A06?style=for-the-badge&logo=pytorch&logoColor=D4A353&labelColor=0D0A06" alt="PyTorch" />
       <img src="https://img.shields.io/badge/TensorFlow-0D0A06?style=for-the-badge&logo=tensorflow&logoColor=D4A353&labelColor=0D0A06" alt="TensorFlow" />
       <img src="https://img.shields.io/badge/scikit--learn-0D0A06?style=for-the-badge&logo=scikit-learn&logoColor=D4A353&labelColor=0D0A06" alt="scikit-learn" />
@@ -71,7 +71,7 @@
   </tr>
   <tr>
     <td style="padding: 16px 20px; border-bottom: 1px solid #24170D;">
-      <p style="margin: 0 0 10px 0; color: #D4A353; font-weight: 700; font-size: 13px; letter-spacing: 1px;">📊 DATA PROCESSING &amp; ANALYTICS</p>
+      <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #D4A353; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; margin-bottom: 10px;">📊 DATA PROCESSING &amp; ANALYTICS</div>
       <img src="https://img.shields.io/badge/Pandas-0D0A06?style=for-the-badge&logo=pandas&logoColor=D4A353&labelColor=0D0A06" alt="Pandas" />
       <img src="https://img.shields.io/badge/NumPy-0D0A06?style=for-the-badge&logo=numpy&logoColor=D4A353&labelColor=0D0A06" alt="NumPy" />
       <img src="https://img.shields.io/badge/SciPy-0D0A06?style=for-the-badge&logo=scipy&logoColor=D4A353&labelColor=0D0A06" alt="SciPy" />
@@ -81,7 +81,7 @@
   </tr>
   <tr>
     <td style="padding: 16px 20px;">
-      <p style="margin: 0 0 10px 0; color: #D4A353; font-weight: 700; font-size: 13px; letter-spacing: 1px;">⚙️ BACKEND, CLOUD &amp; FULL STACK DEVOPS</p>
+      <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #D4A353; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; margin-bottom: 10px;">⚙️ BACKEND, CLOUD &amp; FULL STACK DEVOPS</div>
       <img src="https://img.shields.io/badge/FastAPI-0D0A06?style=for-the-badge&logo=fastapi&logoColor=D4A353&labelColor=0D0A06" alt="FastAPI" />
       <img src="https://img.shields.io/badge/Django-0D0A06?style=for-the-badge&logo=django&logoColor=D4A353&labelColor=0D0A06" alt="Django" />
       <img src="https://img.shields.io/badge/React-0D0A06?style=for-the-badge&logo=react&logoColor=D4A353&labelColor=0D0A06" alt="React" />
@@ -104,31 +104,14 @@
 
 <br/>
 
-<!-- ===== THEMED SOCIAL BADGES ===== -->
+<!-- ===== THEMED SOCIAL BADGES (NO UNDERLINE ARTIFACTS) ===== -->
 <div align="center">
-
-<a href="https://www.linkedin.com/in/nikhil-krishna-r-d-773b84259/" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-</a>
-&nbsp;&nbsp;
-<a href="https://rdnkportfolio.vercel.app/" target="_blank">
-  <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-</a>
-&nbsp;&nbsp;
-<a href="mailto:rdnikhilkrishna2004@gmail.com" target="_blank">
-  <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-</a>
-&nbsp;&nbsp;
-<a href="https://huggingface.co/rdnk-2004" target="_blank">
-  <img src="https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="HuggingFace" />
-</a>
-
+<a href="https://www.linkedin.com/in/nikhil-krishna-r-d-773b84259/" target="_blank" style="text-decoration:none;"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;&nbsp;<a href="https://rdnkportfolio.vercel.app/" target="_blank" style="text-decoration:none;"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>&nbsp;&nbsp;<a href="mailto:rdnikhilkrishna2004@gmail.com" target="_blank" style="text-decoration:none;"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>&nbsp;&nbsp;<a href="https://huggingface.co/rdnk-2004" target="_blank" style="text-decoration:none;"><img src="https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="HuggingFace" /></a>
 </div>
 
 <br/>
 
 <!-- ===== CINEMATIC SIGN-OFF ===== -->
 <p align="center">
-  ⭐ <em>"I build systems that feel calm on the surface, but run deep underneath."</em><br/>
   <sub><em>Cut. Print. Ship.</em> — <strong>Nikhil Krishna R D</strong></sub>
 </p>
