@@ -15,15 +15,15 @@
 <h2 align="center">🎬 Featured Projects &amp; Production Slates</h2>
 
 <div align="center">
-  <a href="https://github.com/rdnk2004/NyayaSetu-Multi-Agent" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-light.svg"><img alt="NyayaSetu" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-dark.svg" width="49.4%"></picture></a>&nbsp;<a href="https://github.com/rdnk2004/screenwriting-software" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-light.svg"><img alt="Screenwriting Suite" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-dark.svg" width="49.4%"></picture></a>
+  <a href="https://github.com/rdnk2004/NyayaSetu-Multi-Agent" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="NyayaSetu" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-dark.svg" width="49.4%"></a>&nbsp;<a href="https://github.com/rdnk2004/screenwriting-software" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Screenwriting Suite" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-dark.svg" width="49.4%"></a>
 </div>
 
 <div align="center" style="margin-top: 8px;">
-  <a href="https://github.com/rdnk2004/cpi-mpc" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-3-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-3-light.svg"><img alt="CPI-MPC Forecaster" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-3-dark.svg" width="49.4%"></picture></a>&nbsp;<a href="https://github.com/rdnk2004/NPA-RBI" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-4-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-4-light.svg"><img alt="NPA-RBI Risk Engine" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-4-dark.svg" width="49.4%"></picture></a>
+  <a href="https://github.com/rdnk2004/cpi-mpc" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="CPI-MPC Forecaster" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-3-dark.svg" width="49.4%"></a>&nbsp;<a href="https://github.com/rdnk2004/NPA-RBI" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="NPA-RBI Risk Engine" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-4-dark.svg" width="49.4%"></a>
 </div>
 
 <div align="center" style="margin-top: 8px;">
-  <a href="https://github.com/rdnk2004/automated-career" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-5-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-5-light.svg"><img alt="Career OS" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-5-dark.svg" width="49.4%"></picture></a>&nbsp;<a href="https://github.com/rdnk2004/nexus-tasktrack" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-6-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-6-light.svg"><img alt="Nexus TaskTrack" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-6-dark.svg" width="49.4%"></picture></a>
+  <a href="https://github.com/rdnk2004/automated-career" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Career OS" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-5-dark.svg" width="49.4%"></a>&nbsp;<a href="https://github.com/rdnk2004/nexus-tasktrack" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Nexus TaskTrack" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-6-dark.svg" width="49.4%"></a>
 </div>
 
 <p align="center">
@@ -34,14 +34,8 @@
 <h2 align="center">📊 Engineering Activity &amp; Telemetry</h2>
 
 <div align="center">
-
-<!-- Commit Activity Soundwave (Vintage Film Palette) -->
-<picture>
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=rdnk2004&bg_color=0D0A06&color=D4A353&line=C0713A&point=F5E6D3&area=true&area_color=3A2312&hide_border=true" alt="Commit Activity Soundwave" />
-</picture>
-<br><br/>
-<!-- GitHub Streak Stats (Compact Balanced Width) -->
-<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=rdnk2004&theme=dark" alt="GitHub Streak" /></a>
+  <a href="https://github.com/rdnk2004" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Live Streak &amp; Stats Matrix" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/streak-dark.svg" width="49.4%"></a>&nbsp;<a href="https://github.com/rdnk2004" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Commit Activity Flow" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/activity-dark.svg" width="49.4%"></a>
+</div>
 
 <p align="center">
   <img alt="Section Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
