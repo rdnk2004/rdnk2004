@@ -31,11 +31,12 @@
 <picture>
   <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=rdnk2004&bg_color=0D0A06&color=D4A353&line=C0713A&point=F5E6D3&area=true&area_color=3A2312&hide_border=true" alt="Commit Activity Soundwave" />
 </picture>
-
+<br><br/>
 <!-- GitHub Streak Stats (Compact Balanced Width) -->
 <picture>
   <img width="60%" src="https://streak-stats.demolab.com?user=rdnk2004&theme=dark&hide_border=true" alt="GitHub Streak" />
 </picture>
+
 <p align="center">
   <img alt="Section Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
 </p>
