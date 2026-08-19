@@ -38,9 +38,6 @@
 <picture>
   <img width="60%" src="https://streak-stats.demolab.com?user=rdnk2004&theme=dark&hide_border=true" alt="GitHub Streak" />
 </picture>
-
-</div>
-
 <p align="center">
   <img alt="Section Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
 </p>
