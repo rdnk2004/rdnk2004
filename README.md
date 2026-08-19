@@ -14,56 +14,17 @@
 <!-- ===== 2. FEATURED PROJECTS & PRODUCTION SLATES ===== -->
 <h2 align="center">🎬 Featured Projects &amp; Production Slates</h2>
 
-<p align="center">
-  <a href="https://github.com/rdnk2004/NyayaSetu-Multi-Agent" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-light.svg">
-      <img alt="NyayaSetu" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-dark.svg" width="49.4%">
-    </picture>
-  </a>
-  <a href="https://github.com/rdnk2004/screenwriting-software" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-light.svg">
-      <img alt="Screenwriting Suite" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-dark.svg" width="49.4%">
-    </picture>
-  </a>
-</p>
+<div align="center">
+  <a href="https://github.com/rdnk2004/NyayaSetu-Multi-Agent" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-light.svg"><img alt="NyayaSetu" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-dark.svg" width="49.4%"></picture></a>&nbsp;<a href="https://github.com/rdnk2004/screenwriting-software" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-light.svg"><img alt="Screenwriting Suite" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-dark.svg" width="49.4%"></picture></a>
+</div>
 
-<p align="center">
-  <a href="https://github.com/rdnk2004/cpi-mpc" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-3-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-3-light.svg">
-      <img alt="CPI-MPC Forecaster" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-3-dark.svg" width="49.4%">
-    </picture>
-  </a>
-  <a href="https://github.com/rdnk2004/NPA-RBI" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-4-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-4-light.svg">
-      <img alt="NPA-RBI Risk Engine" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-4-dark.svg" width="49.4%">
-    </picture>
-  </a>
-</p>
+<div align="center" style="margin-top: 8px;">
+  <a href="https://github.com/rdnk2004/cpi-mpc" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-3-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-3-light.svg"><img alt="CPI-MPC Forecaster" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-3-dark.svg" width="49.4%"></picture></a>&nbsp;<a href="https://github.com/rdnk2004/NPA-RBI" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-4-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-4-light.svg"><img alt="NPA-RBI Risk Engine" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-4-dark.svg" width="49.4%"></picture></a>
+</div>
 
-<p align="center">
-  <a href="https://github.com/rdnk2004/automated-career" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-5-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-5-light.svg">
-      <img alt="Career OS" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-5-dark.svg" width="49.4%">
-    </picture>
-  </a>
-  <a href="https://github.com/rdnk2004/nexus-tasktrack" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-6-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-6-light.svg">
-      <img alt="Nexus TaskTrack" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-6-dark.svg" width="49.4%">
-    </picture>
-  </a>
-</p>
+<div align="center" style="margin-top: 8px;">
+  <a href="https://github.com/rdnk2004/automated-career" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-5-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-5-light.svg"><img alt="Career OS" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-5-dark.svg" width="49.4%"></picture></a>&nbsp;<a href="https://github.com/rdnk2004/nexus-tasktrack" target="_blank" style="text-decoration:none; display:inline-block;"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-6-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-6-light.svg"><img alt="Nexus TaskTrack" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-6-dark.svg" width="49.4%"></picture></a>
+</div>
 
 <p align="center">
   <img alt="Section Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
