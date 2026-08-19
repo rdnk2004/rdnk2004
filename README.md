@@ -41,9 +41,7 @@
 </picture>
 <br><br/>
 <!-- GitHub Streak Stats (Compact Balanced Width) -->
-<picture>
-  <img width="60%" src="https://streak-stats.demolab.com?user=rdnk2004&theme=dark&hide_border=true" alt="GitHub Streak" />
-</picture>
+<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=rdnk2004&theme=dark" alt="GitHub Streak" /></a>
 
 <p align="center">
   <img alt="Section Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
