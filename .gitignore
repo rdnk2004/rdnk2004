@@ -2,23 +2,6 @@
 #  .gitignore — rdnk2004 GitHub Profile
 # ═══════════════════════════════════════════════════════════════
 
-# Python Source Scripts & Code
-*.py
-*.pyw
-generate_*.py
-.github/scripts/
-
-# JSON Data & Configs
-*.json
-*.jsonl
-
-# Scratch, Testing & Local Previews
-assets/preview.html
-scratch/
-test_*.py
-debug_*.py
-*.log
-
 # Python Cache & Bytecode
 __pycache__/
 *.py[cod]
@@ -35,6 +18,12 @@ ENV/
 env.bak/
 venv.bak/
 
+# Scratch, Testing & Local Temporary Logs
+scratch/
+test_*.py
+debug_*.py
+*.log
+
 # OS & Editor Artifacts
 .DS_Store
 Thumbs.db
@@ -43,3 +32,4 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
