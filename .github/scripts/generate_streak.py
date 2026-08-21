@@ -323,7 +323,7 @@ def generate_smooth_spline(points, base_y):
 
 def render_streak_card(data):
     t = THEME
-    W, H = 1180, 292
+    W, H = 1180, 296
     
     s = []
     a = s.append
@@ -373,35 +373,34 @@ def render_streak_card(data):
     a(f'''<path d="M 22 42 C 10 42 2 34 2 23 C 2 15 8 9 14 3 C 14.5 2.5 15.5 2.8 15.6 3.5 C 16.2 8.5 18.5 12 21 14 C 21.3 10.5 22.5 7 25 4 C 25.4 3.5 26.2 3.8 26.3 4.4 C 27.5 11 31 15 35 20 C 40 26 42 31 42 36 C 42 40 33 42 22 42 Z M 22 38 C 29 38 34 35 34 31 C 34 27 31 24 28 20 C 27.5 19.3 26.5 19.8 26.5 20.6 C 26.5 23 25 25 23 26 C 22.4 26.3 21.6 25.8 21.6 25.1 C 21.6 22 19 19 17 16 C 13.5 21 10 26 10 31 C 10 35 15 38 22 38 Z" fill="url(#flameGrad)"/>''')
     a(f'</g>')
     
-    a(f'<text x="102" y="28" font-size="13.5" font-weight="500" letter-spacing="0.6" fill="{t["TEXT_MUTED"]}">CURRENT ACTIVE STREAK</text>')
+    a(f'<text x="102" y="37" font-size="14" font-weight="500" letter-spacing="0.8" fill="{t["TEXT_MUTED"]}">CURRENT ACTIVE STREAK</text>')
     
-    a(f'<text x="102" y="65" font-size="38" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{curr}</text>')
+    a(f'<text x="102" y="76" font-size="44" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{curr}</text>')
     num_len = len(str(curr))
-    num_offset = 102 + num_len * 23
+    num_offset = 102 + num_len * 27
     
-    a(f'<rect x="{num_offset + 10}" y="44" width="62" height="24" rx="5" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
-    a(f'<text x="{num_offset + 41}" y="60.5" font-size="12" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="middle" letter-spacing="0.6">DAYS</text>')
+    a(f'<rect x="{num_offset + 12}" y="50" width="68" height="28" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
+    a(f'<text x="{num_offset + 46}" y="69" font-size="13" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="middle" letter-spacing="0.8">DAYS</text>')
     
-    a(f'<text x="102" y="85" font-size="14" font-weight="400" fill="{t["TEXT_DIM"]}">{curr_range}</text>')
-    
-    # Right telemetry indicators
+    # Right telemetry indicators (Prominent, non-duplicate, larger font)
     live_col = t["ACTIVE_GREEN"] if is_active else t["ACCENT_2"]
     live_bg = t["ACTIVE_BG"] if is_active else t["PILL_BG"]
     live_bdr = t["ACTIVE_BORDER"] if is_active else t["PILL_BORDER"]
-    chip_w = 140
-    chip_x = banner_w - chip_w - 16
-    a(f'<rect x="{chip_x}" y="14" width="{chip_w}" height="26" rx="6" fill="{live_bg}" stroke="{live_bdr}" stroke-width="1"/>')
-    a(f'<circle cx="{chip_x + 14}" cy="27" r="4" fill="{live_col}" class="pulse"/>')
-    a(f'<text x="{chip_x + 76}" y="31" font-size="11.5" font-weight="600" fill="{live_col}" text-anchor="middle" letter-spacing="0.4">{"STREAK ACTIVE" if is_active else "CADENCE PAUSED"}</text>')
+    chip_w = 156
+    chip_h = 28
+    chip_x = banner_w - chip_w - 18
+    a(f'<rect x="{chip_x}" y="13" width="{chip_w}" height="{chip_h}" rx="6" fill="{live_bg}" stroke="{live_bdr}" stroke-width="1"/>')
+    a(f'<circle cx="{chip_x + 16}" cy="27" r="4.5" fill="{live_col}" class="pulse"/>')
+    a(f'<text x="{chip_x + 80}" y="32" font-size="12.5" font-weight="600" fill="{live_col}" text-anchor="middle" letter-spacing="0.5">{"STREAK ACTIVE" if is_active else "CADENCE PAUSED"}</text>')
     
-    a(f'<text x="{banner_w - 16}" y="63" font-size="15" font-weight="500" fill="{t["ACCENT_2"]}" text-anchor="end">Longest Run: {data["longest_streak"]} Days</text>')
-    a(f'<text x="{banner_w - 16}" y="83" font-size="13.5" font-weight="400" fill="{t["TEXT_DIM"]}" text-anchor="end">{data["longest_range"]}</text>')
+    a(f'<text x="{banner_w - 18}" y="63" font-size="18" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="end">Longest Run: {data["longest_streak"]} Days</text>')
+    a(f'<text x="{banner_w - 18}" y="85" font-size="14.5" font-weight="450" fill="{t["TEXT_DIM"]}" text-anchor="end">{data["longest_range"]}</text>')
     
     a(f'</g>')
     
-    # ── 6-Metric Horizontal Telemetry Grid ──
+    # ── 6-Metric Horizontal Telemetry Grid (Utilizing Full Box Space) ──
     grid_y = 124
-    cell_h = 154
+    cell_h = 158
     gap_x = 12
     cell_w = (banner_w - 5 * gap_x) / 6  # 182.4px each
     
@@ -464,47 +463,47 @@ def render_streak_card(data):
         a(f'<rect width="{cell_w:.1f}" height="{cell_h}" rx="8" ry="8" fill="url(#stk_card)" stroke="{t["CARD_STROKE"]}" stroke-width="1"/>')
         a(f'<path d="M 0 6 Q 0 0 6 0 L 18 0 L 0 18 Z" fill="{sc["accent"]}" opacity="0.25"/>')
         
-        # Icon box (28x28)
-        a(f'<rect x="12" y="12" width="28" height="28" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="0.8"/>')
+        # Icon box (30x30)
+        a(f'<rect x="12" y="12" width="30" height="30" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="0.8"/>')
         
         if sc["icon"] == "trophy":
-            a(f'<path d="M 19 19 L 31 19 L 31 25 C 31 28 28 30 25 30 C 22 30 19 28 19 25 Z M 18 20 L 15 20 C 15 24 18 25 19 25 Z M 32 20 L 35 20 C 35 24 32 25 31 25 Z M 23 30 L 27 30 L 28 34 L 22 34 Z" fill="{sc["accent"]}"/>')
+            a(f'<path d="M 20 20 L 34 20 L 34 26 C 34 29.5 30.5 32 27 32 C 23.5 32 20 29.5 20 26 Z M 19 21 L 16 21 C 16 25.5 19 27 20 27 Z M 35 21 L 38 21 C 38 25.5 35 27 34 27 Z M 25 32 L 29 32 L 30 36 L 24 36 Z" fill="{sc["accent"]}"/>')
         elif sc["icon"] == "git":
-            a(f'<circle cx="26" cy="26" r="4.5" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
-            a(f'<line x1="17" y1="26" x2="21.5" y2="26" stroke="{sc["accent"]}" stroke-width="1.8"/>')
-            a(f'<line x1="30.5" y1="26" x2="35" y2="26" stroke="{sc["accent"]}" stroke-width="1.8"/>')
-            a(f'<line x1="26" y1="17" x2="26" y2="21.5" stroke="{sc["accent"]}" stroke-width="1.8"/>')
-            a(f'<line x1="26" y1="30.5" x2="26" y2="35" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<circle cx="27" cy="27" r="5" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<line x1="17" y1="27" x2="22" y2="27" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<line x1="32" y1="27" x2="37" y2="27" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<line x1="27" y1="17" x2="27" y2="22" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<line x1="27" y1="32" x2="27" y2="37" stroke="{sc["accent"]}" stroke-width="1.8"/>')
         elif sc["icon"] == "calendar":
-            a(f'<rect x="18" y="19" width="16" height="14" rx="2" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
-            a(f'<line x1="18" y1="24" x2="34" y2="24" stroke="{sc["accent"]}" stroke-width="1.2"/>')
-            a(f'<circle cx="22.5" cy="28.5" r="1.2" fill="{sc["accent"]}"/>')
-            a(f'<circle cx="29.5" cy="28.5" r="1.2" fill="{sc["accent"]}"/>')
-            a(f'<line x1="21.5" y1="17" x2="21.5" y2="20" stroke="{sc["accent"]}" stroke-width="1.6"/>')
-            a(f'<line x1="30.5" y1="17" x2="30.5" y2="20" stroke="{sc["accent"]}" stroke-width="1.6"/>')
+            a(f'<rect x="18" y="19" width="18" height="15" rx="2" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
+            a(f'<line x1="18" y1="24.5" x2="36" y2="24.5" stroke="{sc["accent"]}" stroke-width="1.2"/>')
+            a(f'<circle cx="23" cy="29.5" r="1.3" fill="{sc["accent"]}"/>')
+            a(f'<circle cx="31" cy="29.5" r="1.3" fill="{sc["accent"]}"/>')
+            a(f'<line x1="22" y1="17" x2="22" y2="20" stroke="{sc["accent"]}" stroke-width="1.6"/>')
+            a(f'<line x1="32" y1="17" x2="32" y2="20" stroke="{sc["accent"]}" stroke-width="1.6"/>')
         elif sc["icon"] == "box":
-            a(f'<rect x="18" y="20" width="16" height="13" rx="2" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
-            a(f'<line x1="18" y1="24" x2="34" y2="24" stroke="{sc["accent"]}" stroke-width="1.2"/>')
-            a(f'<rect x="23.5" y="26" width="5" height="4" fill="{sc["accent"]}"/>')
+            a(f'<rect x="18" y="20" width="18" height="14" rx="2" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
+            a(f'<line x1="18" y1="24.5" x2="36" y2="24.5" stroke="{sc["accent"]}" stroke-width="1.2"/>')
+            a(f'<rect x="24" y="27" width="6" height="4.5" fill="{sc["accent"]}"/>')
         elif sc["icon"] == "pr":
-            a(f'<circle cx="21" cy="21" r="3" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
-            a(f'<circle cx="21" cy="31" r="3" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
-            a(f'<circle cx="31" cy="24" r="3" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
-            a(f'<line x1="21" y1="24" x2="21" y2="28" stroke="{sc["accent"]}" stroke-width="1.6"/>')
-            a(f'<path d="M 31 27 C 31 30 25 31 21 31" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
+            a(f'<circle cx="22" cy="21" r="3.2" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
+            a(f'<circle cx="22" cy="32" r="3.2" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
+            a(f'<circle cx="32" cy="25" r="3.2" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
+            a(f'<line x1="22" y1="24.2" x2="22" y2="28.8" stroke="{sc["accent"]}" stroke-width="1.6"/>')
+            a(f'<path d="M 32 28.2 C 32 31.5 26 32 22 32" fill="none" stroke="{sc["accent"]}" stroke-width="1.6"/>')
         else:
-            a(f'<path d="M 18 31 A 9 9 0 0 1 34 31" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
-            a(f'<line x1="26" y1="31" x2="30" y2="24" stroke="{sc["accent"]}" stroke-width="1.8" stroke-linecap="round"/>')
-            a(f'<circle cx="26" cy="31" r="2" fill="{sc["accent"]}"/>')
+            a(f'<path d="M 19 33 A 9.5 9.5 0 0 1 35 33" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<line x1="27" y1="33" x2="31" y2="25" stroke="{sc["accent"]}" stroke-width="1.8" stroke-linecap="round"/>')
+            a(f'<circle cx="27" cy="33" r="2.2" fill="{sc["accent"]}"/>')
             
-        a(f'<text x="47" y="30" font-size="13" font-weight="500" fill="{t["TEXT_MUTED"]}">{sc["title"]}</text>')
+        a(f'<text x="49" y="32" font-size="14" font-weight="500" fill="{t["TEXT_MUTED"]}">{sc["title"]}</text>')
         
-        a(f'<text x="12" y="75" font-size="28" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{sc["val"]}</text>')
-        val_w = len(sc["val"]) * 16.5
-        a(f'<text x="{16 + val_w}" y="71" font-size="13" font-weight="500" fill="{sc["accent"]}">{sc["unit"]}</text>')
+        a(f'<text x="12" y="80" font-size="34" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{sc["val"]}</text>')
+        val_w = len(sc["val"]) * 19.5
+        a(f'<text x="{16 + val_w}" y="76" font-size="14" font-weight="500" fill="{sc["accent"]}">{sc["unit"]}</text>')
         
-        a(f'<line x1="12" y1="94" x2="{cell_w - 12:.1f}" y2="94" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
-        a(f'<text x="12" y="121" font-size="13" font-weight="400" fill="{t["TEXT_DIM"]}">{sc["sub"]}</text>')
+        a(f'<line x1="12" y1="99" x2="{cell_w - 12:.1f}" y2="99" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
+        a(f'<text x="12" y="128" font-size="13.5" font-weight="400" fill="{t["TEXT_DIM"]}">{sc["sub"]}</text>')
         
         a(f'</g>')
         

@@ -47,10 +47,11 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main || true
           git add assets/ merged.json
           if git diff --staged --quiet; then
             echo "No changes detected in profile assets. All telemetry is up to date."
           else
             git commit -m "chore(telemetry): auto-update live streak, projects & skill cards [skip ci]"
-            git push
+            git push origin main
           fi
