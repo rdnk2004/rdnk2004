@@ -33,9 +33,13 @@
 <!-- ===== 3. ENGINEERING ACTIVITY & TELEMETRY ===== -->
 <h2 align="center">📊 Engineering Activity &amp; Telemetry</h2>
 
-<div align="center">
-  <a href="https://github.com/rdnk2004" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Live Streak &amp; Stats Matrix" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/streak-dark.svg" width="49.4%"></a>&nbsp;<a href="https://github.com/rdnk2004" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Commit Activity Flow" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/activity-dark.svg" width="49.4%"></a>
-</div>
+<p align="center">
+  <a href="https://github.com/rdnk2004" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Live Streak &amp; Stats Matrix" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/streak-dark.svg" width="100%"></a>
+</p>
+
+<p align="center" style="margin-top: 14px;">
+  <a href="https://github.com/rdnk2004" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Commit Activity Flow" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/activity-dark.svg" width="100%"></a>
+</p>
 
 <p align="center">
   <img alt="Section Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
