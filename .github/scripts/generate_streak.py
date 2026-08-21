@@ -373,28 +373,28 @@ def render_streak_card(data):
     a(f'''<path d="M 22 42 C 10 42 2 34 2 23 C 2 15 8 9 14 3 C 14.5 2.5 15.5 2.8 15.6 3.5 C 16.2 8.5 18.5 12 21 14 C 21.3 10.5 22.5 7 25 4 C 25.4 3.5 26.2 3.8 26.3 4.4 C 27.5 11 31 15 35 20 C 40 26 42 31 42 36 C 42 40 33 42 22 42 Z M 22 38 C 29 38 34 35 34 31 C 34 27 31 24 28 20 C 27.5 19.3 26.5 19.8 26.5 20.6 C 26.5 23 25 25 23 26 C 22.4 26.3 21.6 25.8 21.6 25.1 C 21.6 22 19 19 17 16 C 13.5 21 10 26 10 31 C 10 35 15 38 22 38 Z" fill="url(#flameGrad)"/>''')
     a(f'</g>')
     
-    a(f'<text x="102" y="37" font-size="14" font-weight="500" letter-spacing="0.8" fill="{t["TEXT_MUTED"]}">CURRENT ACTIVE STREAK</text>')
+    a(f'<text x="102" y="29" font-size="14.5" font-weight="550" letter-spacing="0.8" fill="{t["TEXT_MUTED"]}">CURRENT ACTIVE STREAK</text>')
     
-    a(f'<text x="102" y="76" font-size="44" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{curr}</text>')
+    a(f'<text x="102" y="75" font-size="44" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{curr}</text>')
     num_len = len(str(curr))
     num_offset = 102 + num_len * 27
     
-    a(f'<rect x="{num_offset + 12}" y="50" width="68" height="28" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
-    a(f'<text x="{num_offset + 46}" y="69" font-size="13" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="middle" letter-spacing="0.8">DAYS</text>')
+    a(f'<rect x="{num_offset + 12}" y="50" width="70" height="28" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
+    a(f'<text x="{num_offset + 47}" y="69" font-size="13" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="middle" letter-spacing="0.8">DAYS</text>')
     
     # Right telemetry indicators (Prominent, non-duplicate, larger font)
     live_col = t["ACTIVE_GREEN"] if is_active else t["ACCENT_2"]
     live_bg = t["ACTIVE_BG"] if is_active else t["PILL_BG"]
     live_bdr = t["ACTIVE_BORDER"] if is_active else t["PILL_BORDER"]
-    chip_w = 156
+    chip_w = 160
     chip_h = 28
     chip_x = banner_w - chip_w - 18
     a(f'<rect x="{chip_x}" y="13" width="{chip_w}" height="{chip_h}" rx="6" fill="{live_bg}" stroke="{live_bdr}" stroke-width="1"/>')
     a(f'<circle cx="{chip_x + 16}" cy="27" r="4.5" fill="{live_col}" class="pulse"/>')
-    a(f'<text x="{chip_x + 80}" y="32" font-size="12.5" font-weight="600" fill="{live_col}" text-anchor="middle" letter-spacing="0.5">{"STREAK ACTIVE" if is_active else "CADENCE PAUSED"}</text>')
+    a(f'<text x="{chip_x + 82}" y="32" font-size="13" font-weight="600" fill="{live_col}" text-anchor="middle" letter-spacing="0.5">{"STREAK ACTIVE" if is_active else "CADENCE PAUSED"}</text>')
     
-    a(f'<text x="{banner_w - 18}" y="63" font-size="18" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="end">Longest Run: {data["longest_streak"]} Days</text>')
-    a(f'<text x="{banner_w - 18}" y="85" font-size="14.5" font-weight="450" fill="{t["TEXT_DIM"]}" text-anchor="end">{data["longest_range"]}</text>')
+    a(f'<text x="{banner_w - 18}" y="63" font-size="18.5" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="end">Longest Run: {data["longest_streak"]} Days</text>')
+    a(f'<text x="{banner_w - 18}" y="85" font-size="14.5" font-weight="500" fill="{t["TEXT_MUTED"]}" text-anchor="end">{data["longest_range"]}</text>')
     
     a(f'</g>')
     
@@ -496,14 +496,14 @@ def render_streak_card(data):
             a(f'<line x1="27" y1="33" x2="31" y2="25" stroke="{sc["accent"]}" stroke-width="1.8" stroke-linecap="round"/>')
             a(f'<circle cx="27" cy="33" r="2.2" fill="{sc["accent"]}"/>')
             
-        a(f'<text x="49" y="32" font-size="14" font-weight="500" fill="{t["TEXT_MUTED"]}">{sc["title"]}</text>')
+        a(f'<text x="50" y="32.5" font-size="14.5" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{sc["title"]}</text>')
         
-        a(f'<text x="12" y="80" font-size="34" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{sc["val"]}</text>')
-        val_w = len(sc["val"]) * 19.5
-        a(f'<text x="{16 + val_w}" y="76" font-size="14" font-weight="500" fill="{sc["accent"]}">{sc["unit"]}</text>')
+        a(f'<text x="12" y="82" font-size="36" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{sc["val"]}</text>')
+        val_w = len(sc["val"]) * 21
+        a(f'<text x="{16 + val_w}" y="77" font-size="14.5" font-weight="550" fill="{sc["accent"]}">{sc["unit"]}</text>')
         
-        a(f'<line x1="12" y1="99" x2="{cell_w - 12:.1f}" y2="99" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
-        a(f'<text x="12" y="128" font-size="13.5" font-weight="400" fill="{t["TEXT_DIM"]}">{sc["sub"]}</text>')
+        a(f'<line x1="12" y1="101" x2="{cell_w - 12:.1f}" y2="101" stroke="{t["BORDER"]}" stroke-width="1.0"/>')
+        a(f'<text x="12" y="132" font-size="14" font-weight="500" fill="{t["TEXT_MUTED"]}">{sc["sub"]}</text>')
         
         a(f'</g>')
         
@@ -512,7 +512,7 @@ def render_streak_card(data):
 
 def render_activity_card(data):
     t = THEME
-    W, H = 1180, 350
+    W, H = 1180, 376
     
     s = []
     a = s.append
@@ -564,7 +564,7 @@ def render_activity_card(data):
         <stop offset="100%" stop-color="#86EFAC"/>
       </linearGradient>
       <filter id="act_glow" x="-20%" y="-20%" width="140%" height="140%">
-        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feGaussianBlur stdDeviation="3.5" result="blur"/>
         <feComposite in="SourceGraphic" in2="blur" operator="over"/>
       </filter>
     </defs>''')
@@ -572,7 +572,7 @@ def render_activity_card(data):
     a(f'<rect width="{W}" height="{H}" rx="12" ry="12" fill="url(#act_bg)" stroke="{t["BORDER"]}" stroke-width="1.5"/>')
     
     panel_w = 569
-    panel_h = 322
+    panel_h = 348
     
     # ═══════════════════════════════════════════════════════════════════
     #  LEFT HALF: 12-MONTH MACRO COMMIT SOUNDWAVE
@@ -581,26 +581,26 @@ def render_activity_card(data):
     a(f'<rect width="{panel_w}" height="{panel_h}" rx="10" ry="10" fill="{t["CANVAS_BG"]}" stroke="{t["BORDER"]}" stroke-width="1.2"/>')
     
     # Header bar
-    a(f'<rect width="{panel_w}" height="42" rx="10" fill="{t["PANEL_BG"]}" stroke="{t["BORDER_LO"]}" stroke-width="0.8"/>')
-    a(f'<rect y="32" width="{panel_w}" height="10" fill="{t["PANEL_BG"]}"/>')
-    a(f'<line x1="0" y1="42" x2="{panel_w}" y2="42" stroke="{t["BORDER_LO"]}" stroke-width="0.8"/>')
+    a(f'<rect width="{panel_w}" height="46" rx="10" fill="{t["PANEL_BG"]}" stroke="{t["BORDER_LO"]}" stroke-width="0.8"/>')
+    a(f'<rect y="36" width="{panel_w}" height="10" fill="{t["PANEL_BG"]}"/>')
+    a(f'<line x1="0" y1="46" x2="{panel_w}" y2="46" stroke="{t["BORDER_LO"]}" stroke-width="0.8"/>')
     
-    a(f'<circle cx="18" cy="21" r="3.5" fill="{t["ACCENT_2"]}"/>')
-    a(f'<text x="28" y="25" font-size="13" font-weight="500" letter-spacing="0.5" fill="{t["TEXT_PRIMARY"]}">12-Month Commit Flow</text>')
+    a(f'<circle cx="18" cy="23" r="4" fill="{t["ACCENT_2"]}"/>')
+    a(f'<text x="29" y="28" font-size="14.5" font-weight="600" letter-spacing="0.5" fill="{t["TEXT_PRIMARY"]}">12-Month Commit Flow</text>')
     
-    a(f'<rect x="{panel_w - 200}" y="9" width="102" height="24" rx="5" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="0.8"/>')
-    a(f'<text x="{panel_w - 149}" y="25" font-size="11.5" font-weight="500" fill="{t["ACCENT_2"]}" text-anchor="middle">Peak: {peak_lbl}</text>')
+    a(f'<rect x="{panel_w - 216}" y="9" width="114" height="28" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="0.8"/>')
+    a(f'<text x="{panel_w - 159}" y="27.5" font-size="12.5" font-weight="550" fill="{t["ACCENT_2"]}" text-anchor="middle">Peak: {peak_lbl}</text>')
     
-    a(f'<rect x="{panel_w - 90}" y="9" width="76" height="24" rx="5" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="0.8"/>')
-    a(f'<text x="{panel_w - 52}" y="25" font-size="11.5" font-weight="500" fill="{t["TEXT_PRIMARY"]}" text-anchor="middle">{avg_per_mo:.1f} / Mo</text>')
+    a(f'<rect x="{panel_w - 94}" y="9" width="80" height="28" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="0.8"/>')
+    a(f'<text x="{panel_w - 54}" y="27.5" font-size="12.5" font-weight="550" fill="{t["TEXT_PRIMARY"]}" text-anchor="middle">{avg_per_mo:.1f} / Mo</text>')
     
     # Plot canvas
-    pad_l = 40
+    pad_l = 44
     pad_r = 20
-    pad_t = 58
-    pad_b = 36
+    pad_t = 66
+    pad_b = 40
     plot_w = panel_w - pad_l - pad_r
-    plot_h = panel_h - pad_t - pad_b - 30
+    plot_h = panel_h - pad_t - pad_b - 36
     base_y = pad_t + plot_h
     
     max_count = max([m["count"] for m in monthly] + [10])
@@ -617,7 +617,7 @@ def render_activity_card(data):
     for val in y_steps:
         y_pos = base_y - (val / y_max_nice) * plot_h
         a(f'<line x1="{pad_l}" y1="{y_pos:.1f}" x2="{pad_l + plot_w}" y2="{y_pos:.1f}" stroke="{t["GRID_LINE"]}" stroke-width="0.8" stroke-dasharray="3,3"/>')
-        a(f'<text x="{pad_l - 8}" y="{y_pos + 4:.1f}" font-size="11" font-weight="400" fill="{t["TEXT_DIM"]}" text-anchor="end">{int(val)}</text>')
+        a(f'<text x="{pad_l - 8}" y="{y_pos + 4.5:.1f}" font-size="12.5" font-weight="500" fill="{t["TEXT_MUTED"]}" text-anchor="end">{int(val)}</text>')
         
     pts_m = []
     n_pts_m = len(monthly)
@@ -631,34 +631,34 @@ def render_activity_card(data):
         
     line_m, area_m = generate_smooth_spline(pts_m, base_y)
     a(f'<path d="{area_m}" fill="url(#act_area_m)"/>')
-    a(f'<path d="{line_m}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="4.0" opacity="0.35" filter="url(#act_glow)"/>')
-    a(f'<path d="{line_m}" fill="none" stroke="url(#act_stroke_m)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>')
+    a(f'<path d="{line_m}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="4.5" opacity="0.4" filter="url(#act_glow)"/>')
+    a(f'<path d="{line_m}" fill="none" stroke="url(#act_stroke_m)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>')
     
     for i, (px, py) in enumerate(pts_m):
         m = monthly[i]
         is_peak = (m["count"] == peak_val and peak_val > 0)
         is_latest = (i == len(pts_m) - 1)
         
-        a(f'<text x="{px:.1f}" y="{base_y + 20}" font-size="11.5" font-weight="500" fill="{t["ACCENT_2"] if is_latest or is_peak else t["TEXT_DIM"]}" text-anchor="middle">{m["label"]}</text>')
+        a(f'<text x="{px:.1f}" y="{base_y + 24}" font-size="13.5" font-weight="550" fill="{t["ACCENT_2"] if is_latest or is_peak else t["TEXT_MUTED"]}" text-anchor="middle">{m["label"]}</text>')
         
-        node_r = 4.0 if (is_peak or is_latest) else 2.5
+        node_r = 4.5 if (is_peak or is_latest) else 2.8
         node_fill = t["ACCENT_3"] if is_peak else (t["ACTIVE_GREEN"] if is_latest else t["ACCENT_2"])
         
         if is_peak or is_latest:
-            a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r + 3.5}" fill="none" stroke="{node_fill}" stroke-width="1.0" opacity="0.6" class="pulse"/>')
+            a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r + 4}" fill="none" stroke="{node_fill}" stroke-width="1.2" opacity="0.6" class="pulse"/>')
             
-        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r}" fill="{node_fill}" stroke="{t["PANEL_BG"]}" stroke-width="1.5"/>')
+        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r}" fill="{node_fill}" stroke="{t["PANEL_BG"]}" stroke-width="1.8"/>')
         
         if is_peak:
-            a(f'<g transform="translate({px:.1f}, {py - 16:.1f})">')
-            a(f'<rect x="-22" y="-12" width="44" height="16" rx="4" fill="{t["PILL_BG"]}" stroke="{t["ACCENT_2"]}" stroke-width="0.8"/>')
-            a(f'<text x="0" y="-1" font-size="10.5" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="middle">{m["count"]}</text>')
+            a(f'<g transform="translate({px:.1f}, {py - 18:.1f})">')
+            a(f'<rect x="-24" y="-13" width="48" height="18" rx="5" fill="{t["PILL_BG"]}" stroke="{t["ACCENT_2"]}" stroke-width="0.9"/>')
+            a(f'<text x="0" y="-0.5" font-size="12" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="middle">{m["count"]}</text>')
             a(f'</g>')
             
     # Bottom footer inside left panel
-    a(f'<line x1="14" y1="{panel_h - 32}" x2="{panel_w - 14}" y2="{panel_h - 32}" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
-    a(f'<text x="18" y="{panel_h - 13}" font-size="12.5" font-weight="450" fill="{t["TEXT_MUTED"]}">Macro 12-Month Soundwave</text>')
-    a(f'<text x="{panel_w - 18}" y="{panel_h - 13}" font-size="13" font-weight="500" fill="{t["ACCENT_2"]}" text-anchor="end">{past_yr_total:,} Total Commits</text>')
+    a(f'<line x1="14" y1="{panel_h - 36}" x2="{panel_w - 14}" y2="{panel_h - 36}" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
+    a(f'<text x="18" y="{panel_h - 14}" font-size="13.5" font-weight="500" fill="{t["TEXT_MUTED"]}">Macro 12-Month Soundwave</text>')
+    a(f'<text x="{panel_w - 18}" y="{panel_h - 14}" font-size="14.5" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="end">{past_yr_total:,} Total Commits</text>')
     
     a(f'</g>')
     
@@ -669,19 +669,19 @@ def render_activity_card(data):
     a(f'<rect width="{panel_w}" height="{panel_h}" rx="10" ry="10" fill="{t["CANVAS_BG"]}" stroke="{t["BORDER"]}" stroke-width="1.2"/>')
     
     # Header bar
-    a(f'<rect width="{panel_w}" height="42" rx="10" fill="{t["PANEL_BG"]}" stroke="{t["BORDER_LO"]}" stroke-width="0.8"/>')
-    a(f'<rect y="32" width="{panel_w}" height="10" fill="{t["PANEL_BG"]}"/>')
-    a(f'<line x1="0" y1="42" x2="{panel_w}" y2="42" stroke="{t["BORDER_LO"]}" stroke-width="0.8"/>')
+    a(f'<rect width="{panel_w}" height="46" rx="10" fill="{t["PANEL_BG"]}" stroke="{t["BORDER_LO"]}" stroke-width="0.8"/>')
+    a(f'<rect y="36" width="{panel_w}" height="10" fill="{t["PANEL_BG"]}"/>')
+    a(f'<line x1="0" y1="46" x2="{panel_w}" y2="46" stroke="{t["BORDER_LO"]}" stroke-width="0.8"/>')
     
-    a(f'<circle cx="18" cy="21" r="3.5" fill="{t["ACTIVE_GREEN"]}"/>')
-    a(f'<text x="28" y="25" font-size="13" font-weight="500" letter-spacing="0.5" fill="{t["TEXT_PRIMARY"]}">Last 30 Days Cadence</text>')
+    a(f'<circle cx="18" cy="23" r="4" fill="{t["ACTIVE_GREEN"]}"/>')
+    a(f'<text x="29" y="28" font-size="14.5" font-weight="600" letter-spacing="0.5" fill="{t["TEXT_PRIMARY"]}">Last 30 Days Cadence</text>')
     
-    a(f'<rect x="{panel_w - 230}" y="9" width="112" height="24" rx="5" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="0.8"/>')
-    a(f'<text x="{panel_w - 174}" y="25" font-size="11.5" font-weight="500" fill="{t["ACCENT_2"]}" text-anchor="middle">Daily Avg: {last_30_avg:.1f}</text>')
+    a(f'<rect x="{panel_w - 246}" y="9" width="124" height="28" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="0.8"/>')
+    a(f'<text x="{panel_w - 184}" y="27.5" font-size="12.5" font-weight="550" fill="{t["ACCENT_2"]}" text-anchor="middle">Daily Avg: {last_30_avg:.1f}</text>')
     
-    a(f'<rect x="{panel_w - 110}" y="9" width="96" height="24" rx="5" fill="{t["ACTIVE_BG"]}" stroke="{t["ACTIVE_BORDER"]}" stroke-width="0.8"/>')
-    a(f'<circle cx="{panel_w - 98}" cy="21" r="3" fill="{t["ACTIVE_GREEN"]}" class="pulse"/>')
-    a(f'<text x="{panel_w - 56}" y="25" font-size="11.5" font-weight="500" fill="{t["ACTIVE_GREEN"]}" text-anchor="middle">{last_30_act}/30 Active</text>')
+    a(f'<rect x="{panel_w - 114}" y="9" width="100" height="28" rx="6" fill="{t["ACTIVE_BG"]}" stroke="{t["ACTIVE_BORDER"]}" stroke-width="0.8"/>')
+    a(f'<circle cx="{panel_w - 101}" cy="23" r="3.5" fill="{t["ACTIVE_GREEN"]}" class="pulse"/>')
+    a(f'<text x="{panel_w - 58}" y="27.5" font-size="12.5" font-weight="550" fill="{t["ACTIVE_GREEN"]}" text-anchor="middle">{last_30_act}/30 Active</text>')
     
     # Plot canvas
     max_d_cnt = max([d["count"] for d in last_30] + [5])
@@ -698,7 +698,7 @@ def render_activity_card(data):
     for val in y_steps_30:
         y_pos = base_y - (val / y_max_30) * plot_h
         a(f'<line x1="{pad_l}" y1="{y_pos:.1f}" x2="{pad_l + plot_w}" y2="{y_pos:.1f}" stroke="{t["GRID_LINE"]}" stroke-width="0.8" stroke-dasharray="3,3"/>')
-        a(f'<text x="{pad_l - 8}" y="{y_pos + 4:.1f}" font-size="11" font-weight="400" fill="{t["TEXT_DIM"]}" text-anchor="end">{int(val)}</text>')
+        a(f'<text x="{pad_l - 8}" y="{y_pos + 4.5:.1f}" font-size="12.5" font-weight="500" fill="{t["TEXT_MUTED"]}" text-anchor="end">{int(val)}</text>')
         
     pts_d = []
     n_pts_d = len(last_30)
@@ -713,8 +713,8 @@ def render_activity_card(data):
         
     line_d, area_d = generate_smooth_spline(pts_d, base_y)
     a(f'<path d="{area_d}" fill="url(#act_area_d)"/>')
-    a(f'<path d="{line_d}" fill="none" stroke="{t["ACTIVE_GREEN"]}" stroke-width="4.0" opacity="0.35" filter="url(#act_glow)"/>')
-    a(f'<path d="{line_d}" fill="none" stroke="url(#act_stroke_d)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>')
+    a(f'<path d="{line_d}" fill="none" stroke="{t["ACTIVE_GREEN"]}" stroke-width="4.5" opacity="0.4" filter="url(#act_glow)"/>')
+    a(f'<path d="{line_d}" fill="none" stroke="url(#act_stroke_d)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>')
     
     # 6 evenly spaced date ticks across 30 days
     tick_indices = [0, 6, 12, 18, 24, n_pts_d - 1] if n_pts_d >= 25 else list(range(0, n_pts_d, max(1, n_pts_d // 5)))
@@ -730,26 +730,26 @@ def render_activity_card(data):
                 tick_lbl = "Today" if is_latest else dt_obj.strftime("%b %d")
             except Exception:
                 tick_lbl = d["date"][-5:]
-            a(f'<text x="{px:.1f}" y="{base_y + 20}" font-size="11.5" font-weight="500" fill="{t["ACTIVE_GREEN"] if is_latest else t["TEXT_DIM"]}" text-anchor="middle">{tick_lbl}</text>')
+            a(f'<text x="{px:.1f}" y="{base_y + 24}" font-size="13.5" font-weight="550" fill="{t["ACTIVE_GREEN"] if is_latest else t["TEXT_MUTED"]}" text-anchor="middle">{tick_lbl}</text>')
             
-        node_r = 3.8 if (is_peak or is_latest) else (2.2 if d["count"] > 0 else 1.5)
+        node_r = 4.2 if (is_peak or is_latest) else (2.6 if d["count"] > 0 else 1.8)
         node_fill = t["ACCENT_3"] if is_peak else (t["ACTIVE_GREEN"] if d["count"] > 0 else t["TEXT_DIM"])
         
         if is_peak or is_latest:
-            a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r + 3}" fill="none" stroke="{node_fill}" stroke-width="1.0" opacity="0.6" class="pulse"/>')
+            a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r + 3.5}" fill="none" stroke="{node_fill}" stroke-width="1.2" opacity="0.6" class="pulse"/>')
             
-        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r}" fill="{node_fill}" stroke="{t["PANEL_BG"]}" stroke-width="1.2"/>')
+        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r}" fill="{node_fill}" stroke="{t["PANEL_BG"]}" stroke-width="1.5"/>')
         
         if is_peak:
-            a(f'<g transform="translate({px:.1f}, {py - 16:.1f})">')
-            a(f'<rect x="-20" y="-12" width="40" height="16" rx="4" fill="{t["PILL_BG"]}" stroke="{t["ACTIVE_GREEN"]}" stroke-width="0.8"/>')
-            a(f'<text x="0" y="-1" font-size="10.5" font-weight="600" fill="{t["ACTIVE_GREEN"]}" text-anchor="middle">{d["count"]}</text>')
+            a(f'<g transform="translate({px:.1f}, {py - 18:.1f})">')
+            a(f'<rect x="-22" y="-13" width="44" height="18" rx="5" fill="{t["PILL_BG"]}" stroke="{t["ACTIVE_GREEN"]}" stroke-width="0.9"/>')
+            a(f'<text x="0" y="-0.5" font-size="12" font-weight="600" fill="{t["ACTIVE_GREEN"]}" text-anchor="middle">{d["count"]}</text>')
             a(f'</g>')
             
     # Bottom footer inside right panel
-    a(f'<line x1="14" y1="{panel_h - 32}" x2="{panel_w - 14}" y2="{panel_h - 32}" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
-    a(f'<text x="18" y="{panel_h - 13}" font-size="12.5" font-weight="450" fill="{t["TEXT_MUTED"]}">Recent 30-Day Activity Flow</text>')
-    a(f'<text x="{panel_w - 18}" y="{panel_h - 13}" font-size="13" font-weight="500" fill="{t["ACTIVE_GREEN"]}" text-anchor="end">{last_30_tot:,} Commits</text>')
+    a(f'<line x1="14" y1="{panel_h - 36}" x2="{panel_w - 14}" y2="{panel_h - 36}" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
+    a(f'<text x="18" y="{panel_h - 14}" font-size="13.5" font-weight="500" fill="{t["TEXT_MUTED"]}">Recent 30-Day Activity Flow</text>')
+    a(f'<text x="{panel_w - 18}" y="{panel_h - 14}" font-size="14.5" font-weight="600" fill="{t["ACTIVE_GREEN"]}" text-anchor="end">{last_30_tot:,} Commits</text>')
     
     a(f'</g>')
     
