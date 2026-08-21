@@ -473,7 +473,7 @@ def render_streak_card(data):
             "sub": f"{data['issues']} Issues Opened",
             "icon": "pr",
             "accent": t["ACCENT_1"],
-            "url": f"https://github.com/{username}?tab=overview&from=2026-01-01"
+            "url": f"https://github.com/{username}?tab=overview&amp;from=2026-01-01"
         },
         {
             "title": "Daily Cadence",
