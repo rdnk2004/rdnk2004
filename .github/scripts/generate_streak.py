@@ -306,7 +306,7 @@ def generate_smooth_spline(points, base_y):
 
 def render_streak_card(data):
     t = THEME
-    W, H = 1180, 264
+    W, H = 1180, 284
     
     s = []
     a = s.append
@@ -342,49 +342,49 @@ def render_streak_card(data):
     
     a(f'<rect width="{W}" height="{H}" rx="12" ry="12" fill="url(#stk_bg)" stroke="{t["BORDER"]}" stroke-width="1.5"/>')
     
-    # Top Hero Streak Banner
+    # ── Top Hero Streak Banner ──
     banner_y = 14
     banner_w = W - 28
-    banner_h = 86
+    banner_h = 94
     a(f'<g transform="translate(14, {banner_y})">')
     a(f'<rect width="{banner_w}" height="{banner_h}" rx="8" ry="8" fill="url(#stk_card)" stroke="{t["BORDER_HI"]}" stroke-width="1.2"/>')
     a(f'<path d="M 0 8 Q 0 0 8 0 L 28 0 L 0 28 Z" fill="{t["ACCENT_2"]}" opacity="0.25"/>')
     
     # Flame icon box
-    a(f'<rect x="14" y="11" width="64" height="64" rx="8" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
-    a(f'<g transform="translate(24, 20)">')
+    a(f'<rect x="16" y="13" width="68" height="68" rx="8" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
+    a(f'<g transform="translate(26, 22)">')
     a(f'''<path d="M 22 42 C 10 42 2 34 2 23 C 2 15 8 9 14 3 C 14.5 2.5 15.5 2.8 15.6 3.5 C 16.2 8.5 18.5 12 21 14 C 21.3 10.5 22.5 7 25 4 C 25.4 3.5 26.2 3.8 26.3 4.4 C 27.5 11 31 15 35 20 C 40 26 42 31 42 36 C 42 40 33 42 22 42 Z M 22 38 C 29 38 34 35 34 31 C 34 27 31 24 28 20 C 27.5 19.3 26.5 19.8 26.5 20.6 C 26.5 23 25 25 23 26 C 22.4 26.3 21.6 25.8 21.6 25.1 C 21.6 22 19 19 17 16 C 13.5 21 10 26 10 31 C 10 35 15 38 22 38 Z" fill="url(#flameGrad)"/>''')
     a(f'</g>')
     
-    a(f'<text x="92" y="26" font-size="11" font-weight="600" letter-spacing="0.5" fill="{t["TEXT_MUTED"]}">CURRENT ACTIVE STREAK</text>')
+    a(f'<text x="100" y="27" font-size="12.5" font-weight="700" letter-spacing="0.6" fill="{t["TEXT_MUTED"]}">CURRENT ACTIVE STREAK</text>')
     
-    a(f'<text x="92" y="58" font-size="29" font-weight="700" fill="{t["TEXT_PRIMARY"]}">{curr}</text>')
+    a(f'<text x="100" y="64" font-size="34" font-weight="800" fill="{t["TEXT_PRIMARY"]}">{curr}</text>')
     num_len = len(str(curr))
-    num_offset = 92 + num_len * 18
+    num_offset = 100 + num_len * 21
     
-    a(f'<rect x="{num_offset + 8}" y="40" width="52" height="20" rx="4" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
-    a(f'<text x="{num_offset + 34}" y="53.5" font-size="9.5" font-weight="700" fill="{t["ACCENT_2"]}" text-anchor="middle" letter-spacing="0.5">DAYS</text>')
+    a(f'<rect x="{num_offset + 10}" y="43" width="60" height="24" rx="5" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1.2"/>')
+    a(f'<text x="{num_offset + 40}" y="59.5" font-size="11.5" font-weight="800" fill="{t["ACCENT_2"]}" text-anchor="middle" letter-spacing="0.6">DAYS</text>')
     
-    a(f'<text x="92" y="74" font-size="11.5" font-weight="450" fill="{t["TEXT_DIM"]}">{curr_range}</text>')
+    a(f'<text x="100" y="83" font-size="13" font-weight="500" fill="{t["TEXT_DIM"]}">{curr_range}</text>')
     
     # Right telemetry indicators
     live_col = t["ACTIVE_GREEN"] if is_active else t["ACCENT_2"]
     live_bg = t["ACTIVE_BG"] if is_active else t["PILL_BG"]
     live_bdr = t["ACTIVE_BORDER"] if is_active else t["PILL_BORDER"]
-    chip_w = 120
-    chip_x = banner_w - chip_w - 14
-    a(f'<rect x="{chip_x}" y="14" width="{chip_w}" height="24" rx="6" fill="{live_bg}" stroke="{live_bdr}" stroke-width="1"/>')
-    a(f'<circle cx="{chip_x + 13}" cy="26" r="3.5" fill="{live_col}" class="pulse"/>')
-    a(f'<text x="{chip_x + 65}" y="29.5" font-size="9.5" font-weight="700" fill="{live_col}" text-anchor="middle" letter-spacing="0.3">{"STREAK ACTIVE" if is_active else "CADENCE PAUSED"}</text>')
+    chip_w = 136
+    chip_x = banner_w - chip_w - 16
+    a(f'<rect x="{chip_x}" y="14" width="{chip_w}" height="26" rx="6" fill="{live_bg}" stroke="{live_bdr}" stroke-width="1.2"/>')
+    a(f'<circle cx="{chip_x + 14}" cy="27" r="4" fill="{live_col}" class="pulse"/>')
+    a(f'<text x="{chip_x + 74}" y="31" font-size="10.5" font-weight="800" fill="{live_col}" text-anchor="middle" letter-spacing="0.4">{"STREAK ACTIVE" if is_active else "CADENCE PAUSED"}</text>')
     
-    a(f'<text x="{banner_w - 14}" y="56" font-size="12" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="end">Longest Run: {data["longest_streak"]} Days</text>')
-    a(f'<text x="{banner_w - 14}" y="73" font-size="11" font-weight="450" fill="{t["TEXT_DIM"]}" text-anchor="end">{data["longest_range"]}</text>')
+    a(f'<text x="{banner_w - 16}" y="62" font-size="14" font-weight="700" fill="{t["ACCENT_2"]}" text-anchor="end">Longest Run: {data["longest_streak"]} Days</text>')
+    a(f'<text x="{banner_w - 16}" y="81" font-size="12.5" font-weight="500" fill="{t["TEXT_DIM"]}" text-anchor="end">{data["longest_range"]}</text>')
     
     a(f'</g>')
     
-    # 6-Metric Horizontal Telemetry Grid
-    grid_y = 112
-    cell_h = 138
+    # ── 6-Metric Horizontal Telemetry Grid ──
+    grid_y = 120
+    cell_h = 148
     gap_x = 12
     cell_w = (banner_w - 5 * gap_x) / 6  # 182.4px each
     
@@ -445,49 +445,49 @@ def render_streak_card(data):
         
         a(f'<g transform="translate({cx:.1f}, {cy})">')
         a(f'<rect width="{cell_w:.1f}" height="{cell_h}" rx="8" ry="8" fill="url(#stk_card)" stroke="{t["CARD_STROKE"]}" stroke-width="1"/>')
-        a(f'<path d="M 0 6 Q 0 0 6 0 L 18 0 L 0 18 Z" fill="{sc["accent"]}" opacity="0.2"/>')
+        a(f'<path d="M 0 6 Q 0 0 6 0 L 18 0 L 0 18 Z" fill="{sc["accent"]}" opacity="0.25"/>')
         
-        # Icon box
-        a(f'<rect x="10" y="10" width="24" height="24" rx="5" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="0.8"/>')
+        # Icon box (28x28)
+        a(f'<rect x="12" y="12" width="28" height="28" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="0.8"/>')
         
         if sc["icon"] == "trophy":
-            a(f'<path d="M 17 16 L 27 16 L 27 21 C 27 23.5 24.5 25 22 25 C 19.5 25 17 23.5 17 21 Z M 16 17 L 14 17 C 14 20 16 21 17 21 Z M 28 17 L 30 17 C 30 20 28 21 27 21 Z M 20.5 25 L 23.5 25 L 24 28 L 20 28 Z" fill="{sc["accent"]}"/>')
+            a(f'<path d="M 19 19 L 31 19 L 31 25 C 31 28 28 30 25 30 C 22 30 19 28 19 25 Z M 18 20 L 15 20 C 15 24 18 25 19 25 Z M 32 20 L 35 20 C 35 24 32 25 31 25 Z M 23 30 L 27 30 L 28 34 L 22 34 Z" fill="{sc["accent"]}"/>')
         elif sc["icon"] == "git":
-            a(f'<circle cx="22" cy="22" r="3.5" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
-            a(f'<line x1="15" y1="22" x2="18.5" y2="22" stroke="{sc["accent"]}" stroke-width="1.8"/>')
-            a(f'<line x1="25.5" y1="22" x2="29" y2="22" stroke="{sc["accent"]}" stroke-width="1.8"/>')
-            a(f'<line x1="22" y1="15" x2="22" y2="18.5" stroke="{sc["accent"]}" stroke-width="1.8"/>')
-            a(f'<line x1="22" y1="25.5" x2="22" y2="29" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<circle cx="26" cy="26" r="4.5" fill="none" stroke="{sc["accent"]}" stroke-width="2"/>')
+            a(f'<line x1="17" y1="26" x2="21.5" y2="26" stroke="{sc["accent"]}" stroke-width="2"/>')
+            a(f'<line x1="30.5" y1="26" x2="35" y2="26" stroke="{sc["accent"]}" stroke-width="2"/>')
+            a(f'<line x1="26" y1="17" x2="26" y2="21.5" stroke="{sc["accent"]}" stroke-width="2"/>')
+            a(f'<line x1="26" y1="30.5" x2="26" y2="35" stroke="{sc["accent"]}" stroke-width="2"/>')
         elif sc["icon"] == "calendar":
-            a(f'<rect x="15" y="16" width="14" height="12" rx="2" fill="none" stroke="{sc["accent"]}" stroke-width="1.5"/>')
-            a(f'<line x1="15" y1="20" x2="29" y2="20" stroke="{sc["accent"]}" stroke-width="1.2"/>')
-            a(f'<circle cx="19" cy="24" r="1" fill="{sc["accent"]}"/>')
-            a(f'<circle cx="25" cy="24" r="1" fill="{sc["accent"]}"/>')
-            a(f'<line x1="18" y1="14" x2="18" y2="17" stroke="{sc["accent"]}" stroke-width="1.5"/>')
-            a(f'<line x1="26" y1="14" x2="26" y2="17" stroke="{sc["accent"]}" stroke-width="1.5"/>')
+            a(f'<rect x="18" y="19" width="16" height="14" rx="2" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<line x1="18" y1="24" x2="34" y2="24" stroke="{sc["accent"]}" stroke-width="1.4"/>')
+            a(f'<circle cx="22.5" cy="28.5" r="1.2" fill="{sc["accent"]}"/>')
+            a(f'<circle cx="29.5" cy="28.5" r="1.2" fill="{sc["accent"]}"/>')
+            a(f'<line x1="21.5" y1="17" x2="21.5" y2="20" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<line x1="30.5" y1="17" x2="30.5" y2="20" stroke="{sc["accent"]}" stroke-width="1.8"/>')
         elif sc["icon"] == "box":
-            a(f'<rect x="15" y="17" width="14" height="11" rx="1.5" fill="none" stroke="{sc["accent"]}" stroke-width="1.5"/>')
-            a(f'<line x1="15" y1="20.5" x2="29" y2="20.5" stroke="{sc["accent"]}" stroke-width="1.2"/>')
-            a(f'<rect x="20" y="22" width="4" height="3" fill="{sc["accent"]}"/>')
+            a(f'<rect x="18" y="20" width="16" height="13" rx="2" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<line x1="18" y1="24" x2="34" y2="24" stroke="{sc["accent"]}" stroke-width="1.4"/>')
+            a(f'<rect x="23.5" y="26" width="5" height="4" fill="{sc["accent"]}"/>')
         elif sc["icon"] == "pr":
-            a(f'<circle cx="18" cy="18" r="2.5" fill="none" stroke="{sc["accent"]}" stroke-width="1.5"/>')
-            a(f'<circle cx="18" cy="27" r="2.5" fill="none" stroke="{sc["accent"]}" stroke-width="1.5"/>')
-            a(f'<circle cx="26" cy="21" r="2.5" fill="none" stroke="{sc["accent"]}" stroke-width="1.5"/>')
-            a(f'<line x1="18" y1="20.5" x2="18" y2="24.5" stroke="{sc["accent"]}" stroke-width="1.5"/>')
-            a(f'<path d="M 26 23.5 C 26 26 21 27 18 27" fill="none" stroke="{sc["accent"]}" stroke-width="1.5"/>')
+            a(f'<circle cx="21" cy="21" r="3" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<circle cx="21" cy="31" r="3" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<circle cx="31" cy="24" r="3" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<line x1="21" y1="24" x2="21" y2="28" stroke="{sc["accent"]}" stroke-width="1.8"/>')
+            a(f'<path d="M 31 27 C 31 30 25 31 21 31" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
         else:
-            a(f'<path d="M 15 26 A 8 8 0 0 1 29 26" fill="none" stroke="{sc["accent"]}" stroke-width="1.8"/>')
-            a(f'<line x1="22" y1="26" x2="25" y2="20" stroke="{sc["accent"]}" stroke-width="1.8" stroke-linecap="round"/>')
-            a(f'<circle cx="22" cy="26" r="1.5" fill="{sc["accent"]}"/>')
+            a(f'<path d="M 18 31 A 9 9 0 0 1 34 31" fill="none" stroke="{sc["accent"]}" stroke-width="2"/>')
+            a(f'<line x1="26" y1="31" x2="30" y2="24" stroke="{sc["accent"]}" stroke-width="2" stroke-linecap="round"/>')
+            a(f'<circle cx="26" cy="31" r="2" fill="{sc["accent"]}"/>')
             
-        a(f'<text x="40" y="25" font-size="10.5" font-weight="600" fill="{t["TEXT_MUTED"]}">{sc["title"]}</text>')
+        a(f'<text x="47" y="30" font-size="12" font-weight="700" fill="{t["TEXT_MUTED"]}">{sc["title"]}</text>')
         
-        a(f'<text x="12" y="66" font-size="22" font-weight="700" fill="{t["TEXT_PRIMARY"]}">{sc["val"]}</text>')
-        val_w = len(sc["val"]) * 12.5
-        a(f'<text x="{16 + val_w}" y="63" font-size="10" font-weight="600" fill="{sc["accent"]}">{sc["unit"]}</text>')
+        a(f'<text x="12" y="73" font-size="26" font-weight="800" fill="{t["TEXT_PRIMARY"]}">{sc["val"]}</text>')
+        val_w = len(sc["val"]) * 15
+        a(f'<text x="{16 + val_w}" y="70" font-size="12.5" font-weight="700" fill="{sc["accent"]}">{sc["unit"]}</text>')
         
-        a(f'<line x1="12" y1="84" x2="{cell_w - 12:.1f}" y2="84" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
-        a(f'<text x="12" y="106" font-size="10.5" font-weight="450" fill="{t["TEXT_DIM"]}">{sc["sub"]}</text>')
+        a(f'<line x1="12" y1="92" x2="{cell_w - 12:.1f}" y2="92" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
+        a(f'<text x="12" y="118" font-size="12" font-weight="500" fill="{t["TEXT_DIM"]}">{sc["sub"]}</text>')
         
         a(f'</g>')
         
@@ -496,7 +496,7 @@ def render_streak_card(data):
 
 def render_activity_card(data):
     t = THEME
-    W, H = 1180, 340
+    W, H = 1180, 360
     
     s = []
     a = s.append
@@ -539,39 +539,40 @@ def render_activity_card(data):
     
     a(f'<rect width="{W}" height="{H}" rx="12" ry="12" fill="url(#act_bg)" stroke="{t["BORDER"]}" stroke-width="1.5"/>')
     
-    # Top 3 Telemetry Metrics
+    # ── Top 3 Telemetry Metrics ──
     pill_y = 14
     pill_w = (W - 28 - 20) / 3  # 374px each
+    pill_h = 46
     
     a(f'<g transform="translate(14, {pill_y})">')
-    a(f'<rect width="{pill_w:.1f}" height="40" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
-    a(f'<text x="14" y="16" font-size="9.5" font-weight="600" letter-spacing="0.4" fill="{t["TEXT_MUTED"]}">PEAK VELOCITY</text>')
-    a(f'<text x="14" y="31" font-size="12.5" font-weight="700" fill="{t["ACCENT_2"]}">{peak_lbl} ({peak_val} Contribs)</text>')
+    a(f'<rect width="{pill_w:.1f}" height="{pill_h}" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
+    a(f'<text x="16" y="17" font-size="11" font-weight="700" letter-spacing="0.5" fill="{t["TEXT_MUTED"]}">PEAK VELOCITY</text>')
+    a(f'<text x="16" y="36" font-size="14.5" font-weight="800" fill="{t["ACCENT_2"]}">{peak_lbl} ({peak_val} Contribs)</text>')
     a(f'</g>')
     
     a(f'<g transform="translate({14 + pill_w + 10:.1f}, {pill_y})">')
-    a(f'<rect width="{pill_w:.1f}" height="40" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
-    a(f'<text x="14" y="16" font-size="9.5" font-weight="600" letter-spacing="0.4" fill="{t["TEXT_MUTED"]}">MONTHLY AVERAGE</text>')
-    a(f'<text x="14" y="31" font-size="12.5" font-weight="700" fill="{t["TEXT_PRIMARY"]}">{avg_per_mo:.1f} Contribs / Month</text>')
+    a(f'<rect width="{pill_w:.1f}" height="{pill_h}" rx="6" fill="{t["PILL_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
+    a(f'<text x="16" y="17" font-size="11" font-weight="700" letter-spacing="0.5" fill="{t["TEXT_MUTED"]}">MONTHLY AVERAGE</text>')
+    a(f'<text x="16" y="36" font-size="14.5" font-weight="800" fill="{t["TEXT_PRIMARY"]}">{avg_per_mo:.1f} Contribs / Month</text>')
     a(f'</g>')
     
     a(f'<g transform="translate({14 + (pill_w + 10)*2:.1f}, {pill_y})">')
-    a(f'<rect width="{pill_w:.1f}" height="40" rx="6" fill="{t["ACTIVE_BG"]}" stroke="{t["ACTIVE_BORDER"]}" stroke-width="1"/>')
-    a(f'<text x="14" y="16" font-size="9.5" font-weight="600" letter-spacing="0.4" fill="{t["ACTIVE_GREEN"]}">VELOCITY TREND</text>')
-    a(f'<text x="14" y="31" font-size="12.5" font-weight="700" fill="{t["ACTIVE_GREEN"]}">↗ Accelerating Cadence</text>')
+    a(f'<rect width="{pill_w:.1f}" height="{pill_h}" rx="6" fill="{t["ACTIVE_BG"]}" stroke="{t["ACTIVE_BORDER"]}" stroke-width="1"/>')
+    a(f'<text x="16" y="17" font-size="11" font-weight="700" letter-spacing="0.5" fill="{t["ACTIVE_GREEN"]}">VELOCITY TREND</text>')
+    a(f'<text x="16" y="36" font-size="14.5" font-weight="800" fill="{t["ACTIVE_GREEN"]}">↗ Accelerating Cadence</text>')
     a(f'</g>')
     
-    # Main Spline Soundwave Canvas
-    gx, gy = 14, 64
-    gw, gh = W - 28, 234
+    # ── Main Spline Soundwave Canvas ──
+    gx, gy = 14, 70
+    gw, gh = W - 28, 238
     
     a(f'<g transform="translate({gx}, {gy})">')
     a(f'<rect width="{gw}" height="{gh}" rx="8" ry="8" fill="{t["CANVAS_BG"]}" stroke="{t["BORDER"]}" stroke-width="1"/>')
     
-    pad_l = 44
-    pad_r = 30
+    pad_l = 52
+    pad_r = 32
     pad_t = 28
-    pad_b = 32
+    pad_b = 36
     
     plot_w = gw - pad_l - pad_r
     plot_h = gh - pad_t - pad_b
@@ -591,7 +592,7 @@ def render_activity_card(data):
     for val in y_steps:
         y_pos = base_y - (val / y_max_nice) * plot_h
         a(f'<line x1="{pad_l}" y1="{y_pos:.1f}" x2="{pad_l + plot_w}" y2="{y_pos:.1f}" stroke="{t["GRID_LINE"]}" stroke-width="0.8" stroke-dasharray="3,3"/>')
-        a(f'<text x="{pad_l - 8}" y="{y_pos + 3.5:.1f}" font-size="9.5" font-weight="500" fill="{t["TEXT_DIM"]}" text-anchor="end">{int(val)}</text>')
+        a(f'<text x="{pad_l - 10}" y="{y_pos + 4.5:.1f}" font-size="11.5" font-weight="600" fill="{t["TEXT_DIM"]}" text-anchor="end">{int(val)}</text>')
         
     points = []
     n_pts = len(monthly)
@@ -607,37 +608,37 @@ def render_activity_card(data):
     line_path, area_path = generate_smooth_spline(points, base_y)
     
     a(f'<path d="{area_path}" fill="url(#act_area)"/>')
-    a(f'<path d="{line_path}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="4.5" opacity="0.35" filter="url(#act_glow)"/>')
-    a(f'<path d="{line_path}" fill="none" stroke="url(#act_stroke)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>')
+    a(f'<path d="{line_path}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="5.0" opacity="0.35" filter="url(#act_glow)"/>')
+    a(f'<path d="{line_path}" fill="none" stroke="url(#act_stroke)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>')
     
     for i, (px, py) in enumerate(points):
         m = monthly[i]
         is_peak = (m["count"] == peak_val and peak_val > 0)
         is_latest = (i == len(points) - 1)
         
-        a(f'<text x="{px:.1f}" y="{base_y + 20}" font-size="10" font-weight="600" fill="{t["ACCENT_2"] if is_latest or is_peak else t["TEXT_DIM"]}" text-anchor="middle">{m["label"]}</text>')
+        a(f'<text x="{px:.1f}" y="{base_y + 22}" font-size="12" font-weight="700" fill="{t["ACCENT_2"] if is_latest or is_peak else t["TEXT_DIM"]}" text-anchor="middle">{m["label"]}</text>')
         
-        node_r = 4.5 if (is_peak or is_latest) else 3.0
+        node_r = 5.0 if (is_peak or is_latest) else 3.5
         node_fill = t["ACCENT_3"] if is_peak else (t["ACTIVE_GREEN"] if is_latest else t["ACCENT_2"])
         
         if is_peak or is_latest:
-            a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r + 3.5}" fill="none" stroke="{node_fill}" stroke-width="1.0" opacity="0.6" class="pulse"/>')
+            a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r + 4}" fill="none" stroke="{node_fill}" stroke-width="1.2" opacity="0.6" class="pulse"/>')
             
-        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r}" fill="{node_fill}" stroke="{t["PANEL_BG"]}" stroke-width="1.5"/>')
+        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r}" fill="{node_fill}" stroke="{t["PANEL_BG"]}" stroke-width="1.8"/>')
         
         if is_peak:
-            a(f'<g transform="translate({px:.1f}, {py - 18:.1f})">')
-            a(f'<rect x="-26" y="-13" width="52" height="17" rx="4" fill="{t["PILL_BG"]}" stroke="{t["ACCENT_2"]}" stroke-width="0.8"/>')
-            a(f'<text x="0" y="-1" font-size="10" font-weight="700" fill="{t["ACCENT_2"]}" text-anchor="middle">{m["count"]}</text>')
+            a(f'<g transform="translate({px:.1f}, {py - 20:.1f})">')
+            a(f'<rect x="-28" y="-14" width="56" height="19" rx="4" fill="{t["PILL_BG"]}" stroke="{t["ACCENT_2"]}" stroke-width="1"/>')
+            a(f'<text x="0" y="-1" font-size="11.5" font-weight="800" fill="{t["ACCENT_2"]}" text-anchor="middle">{m["count"]}</text>')
             a(f'</g>')
             
     a(f'</g>')
     
-    # Bottom Legend & Summary
-    a(f'<g transform="translate(14, 308)">')
-    a(f'<circle cx="8" cy="14" r="3.5" fill="{t["ACCENT_2"]}"/>')
-    a(f'<text x="20" y="17.5" font-size="11.5" font-weight="500" fill="{t["TEXT_MUTED"]}">12-Month Continuous Spline Soundwave</text>')
-    a(f'<text x="{W - 28}" y="17.5" font-size="11.5" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="end">{past_yr_total:,} Total Commits in Past Year</text>')
+    # ── Bottom Legend & Summary ──
+    a(f'<g transform="translate(14, 320)">')
+    a(f'<circle cx="8" cy="18" r="4" fill="{t["ACCENT_2"]}"/>')
+    a(f'<text x="22" y="22" font-size="13" font-weight="600" fill="{t["TEXT_MUTED"]}">12-Month Continuous Spline Soundwave</text>')
+    a(f'<text x="{W - 28}" y="22" font-size="13.5" font-weight="700" fill="{t["ACCENT_2"]}" text-anchor="end">{past_yr_total:,} Total Commits in Past Year</text>')
     a(f'</g>')
     
     a(f'</svg>')
