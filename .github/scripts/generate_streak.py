@@ -490,7 +490,6 @@ def render_streak_card(data):
         cx = 14 + idx * (cell_w + gap_x)
         cy = grid_y
         
-        a(f'<a href="{sc["url"]}" target="_blank" rel="noopener noreferrer">')
         a(f'<g transform="translate({cx:.1f}, {cy})" class="metric-cell">')
         a(f'<rect width="{cell_w:.1f}" height="{cell_h}" rx="8" ry="8" fill="url(#stk_card)" stroke="{t["CARD_STROKE"]}" stroke-width="1" class="cell-bg"/>')
         a(f'<path d="M 0 6 Q 0 0 6 0 L 18 0 L 0 18 Z" fill="{sc["accent"]}" opacity="0.25"/>')
@@ -538,7 +537,6 @@ def render_streak_card(data):
         a(f'<text x="12" y="132" font-size="14" font-weight="500" fill="{t["TEXT_MUTED"]}">{sc["sub"]}</text>')
         
         a(f'</g>')
-        a(f'</a>')
         
     a(f'</svg>')
     return "".join(s)

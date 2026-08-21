@@ -34,15 +34,15 @@
 <h2 align="center">📊 Engineering Activity &amp; Telemetry</h2>
 
 <p align="center">
-  <a href="https://github.com/rdnk2004" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Live Streak &amp; Stats Matrix" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/streak-dark.svg" width="100%"></a>
+  <a href="https://github.com/rdnk2004" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Live Streak &amp; Stats Matrix" src="./assets/streak-dark.svg" width="100%"></a>
 </p>
 
 <p align="center" style="margin-top: 14px;">
-  <a href="https://github.com/rdnk2004" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Commit Activity Flow" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/activity-dark.svg" width="100%"></a>
+  <a href="https://github.com/rdnk2004" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Commit Activity Flow" src="./assets/activity-dark.svg" width="100%"></a>
 </p>
 
 <p align="center">
-  <img alt="Section Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
+  <img alt="Section Divider" src="./assets/divider.svg" width="100%">
 </p>
 
 <!-- ===== 4. 🛠️ TECHNICAL ARSENAL & SKILLS MATRIX ===== -->
