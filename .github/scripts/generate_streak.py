@@ -331,6 +331,7 @@ def render_streak_card(data):
     curr = data["current_streak"]
     curr_range = data["current_range"]
     is_active = data["is_active"]
+    username = data["username"]
     
     a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT_SANS}" role="img" aria-label="GitHub Streak and Stats Matrix">')
     
@@ -338,8 +339,32 @@ def render_streak_card(data):
       <style>
         .pulse {{ animation: stkPulse 2.8s infinite ease-in-out; }}
         @keyframes stkPulse {{
-          0%, 100% {{ opacity: 1; }}
-          50% {{ opacity: 0.35; }}
+          0%, 100% {{ opacity: 1; transform: scale(1); }}
+          50% {{ opacity: 0.4; transform: scale(0.92); }}
+        }}
+        .hero-banner {{
+          transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+        }}
+        .hero-banner:hover {{
+          filter: drop-shadow(0 6px 20px rgba(212, 163, 83, 0.25));
+        }}
+        .metric-cell {{
+          transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+          cursor: pointer;
+        }}
+        .metric-cell:hover {{
+          transform: translateY(-4px);
+          filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 10px rgba(212, 163, 83, 0.35));
+        }}
+        .metric-cell:hover .cell-bg {{
+          stroke: rgba(212, 163, 83, 0.85);
+          fill: rgba(38, 25, 14, 0.95);
+        }}
+        .metric-cell:hover .cell-title {{
+          fill: #FAF5EE;
+        }}
+        .metric-cell:hover .cell-val {{
+          fill: #D4A353;
         }}
       </style>
       <linearGradient id="stk_bg" x1="0" y1="0" x2="0" y2="1">
@@ -363,7 +388,7 @@ def render_streak_card(data):
     banner_y = 14
     banner_w = W - 28
     banner_h = 96
-    a(f'<g transform="translate(14, {banner_y})">')
+    a(f'<g transform="translate(14, {banner_y})" class="hero-banner">')
     a(f'<rect width="{banner_w}" height="{banner_h}" rx="8" ry="8" fill="url(#stk_card)" stroke="{t["BORDER_HI"]}" stroke-width="1.2"/>')
     a(f'<path d="M 0 8 Q 0 0 8 0 L 28 0 L 0 28 Z" fill="{t["ACCENT_2"]}" opacity="0.25"/>')
     
@@ -398,7 +423,7 @@ def render_streak_card(data):
     
     a(f'</g>')
     
-    # ── 6-Metric Horizontal Telemetry Grid (Utilizing Full Box Space) ──
+    # ── 6-Metric Horizontal Telemetry Grid (Interactive Hover & Links) ──
     grid_y = 124
     cell_h = 158
     gap_x = 12
@@ -411,7 +436,8 @@ def render_streak_card(data):
             "unit": "Days",
             "sub": "Personal Record",
             "icon": "trophy",
-            "accent": t["ACCENT_1"]
+            "accent": t["ACCENT_1"],
+            "url": f"https://github.com/{username}?tab=overview"
         },
         {
             "title": "Total Contribs",
@@ -419,7 +445,8 @@ def render_streak_card(data):
             "unit": "Total",
             "sub": f"{data['total_year']:,} in {datetime.now().year}",
             "icon": "git",
-            "accent": t["ACCENT_2"]
+            "accent": t["ACCENT_2"],
+            "url": f"https://github.com/{username}?tab=overview"
         },
         {
             "title": "Active Days",
@@ -427,7 +454,8 @@ def render_streak_card(data):
             "unit": "Days",
             "sub": f"{data['cadence_pct']:.1f}% Annual Ratio",
             "icon": "calendar",
-            "accent": t["ACCENT_3"]
+            "accent": t["ACCENT_3"],
+            "url": f"https://github.com/{username}?tab=overview"
         },
         {
             "title": "Public Repos",
@@ -435,7 +463,8 @@ def render_streak_card(data):
             "unit": "Repos",
             "sub": f"{data['followers']} Followers",
             "icon": "box",
-            "accent": t["ACCENT_2"]
+            "accent": t["ACCENT_2"],
+            "url": f"https://github.com/{username}?tab=repositories"
         },
         {
             "title": "Pull Requests",
@@ -443,7 +472,8 @@ def render_streak_card(data):
             "unit": "Merged",
             "sub": f"{data['issues']} Issues Opened",
             "icon": "pr",
-            "accent": t["ACCENT_1"]
+            "accent": t["ACCENT_1"],
+            "url": f"https://github.com/{username}?tab=overview&from=2026-01-01"
         },
         {
             "title": "Daily Cadence",
@@ -451,7 +481,8 @@ def render_streak_card(data):
             "unit": "Avg",
             "sub": "Contribs / Active Day",
             "icon": "speed",
-            "accent": t["ACCENT_2"]
+            "accent": t["ACCENT_2"],
+            "url": f"https://github.com/{username}?tab=overview"
         },
     ]
     
@@ -459,8 +490,9 @@ def render_streak_card(data):
         cx = 14 + idx * (cell_w + gap_x)
         cy = grid_y
         
-        a(f'<g transform="translate({cx:.1f}, {cy})">')
-        a(f'<rect width="{cell_w:.1f}" height="{cell_h}" rx="8" ry="8" fill="url(#stk_card)" stroke="{t["CARD_STROKE"]}" stroke-width="1"/>')
+        a(f'<a href="{sc["url"]}" target="_blank" rel="noopener noreferrer">')
+        a(f'<g transform="translate({cx:.1f}, {cy})" class="metric-cell">')
+        a(f'<rect width="{cell_w:.1f}" height="{cell_h}" rx="8" ry="8" fill="url(#stk_card)" stroke="{t["CARD_STROKE"]}" stroke-width="1" class="cell-bg"/>')
         a(f'<path d="M 0 6 Q 0 0 6 0 L 18 0 L 0 18 Z" fill="{sc["accent"]}" opacity="0.25"/>')
         
         # Icon box (30x30)
@@ -496,9 +528,9 @@ def render_streak_card(data):
             a(f'<line x1="27" y1="33" x2="31" y2="25" stroke="{sc["accent"]}" stroke-width="1.8" stroke-linecap="round"/>')
             a(f'<circle cx="27" cy="33" r="2.2" fill="{sc["accent"]}"/>')
             
-        a(f'<text x="50" y="32.5" font-size="14.5" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{sc["title"]}</text>')
+        a(f'<text x="50" y="32.5" font-size="14.5" font-weight="600" fill="{t["TEXT_PRIMARY"]}" class="cell-title">{sc["title"]}</text>')
         
-        a(f'<text x="12" y="82" font-size="36" font-weight="600" fill="{t["TEXT_PRIMARY"]}">{sc["val"]}</text>')
+        a(f'<text x="12" y="82" font-size="36" font-weight="600" fill="{t["TEXT_PRIMARY"]}" class="cell-val">{sc["val"]}</text>')
         val_w = len(sc["val"]) * 21
         a(f'<text x="{16 + val_w}" y="77" font-size="14.5" font-weight="550" fill="{sc["accent"]}">{sc["unit"]}</text>')
         
@@ -506,6 +538,7 @@ def render_streak_card(data):
         a(f'<text x="12" y="132" font-size="14" font-weight="500" fill="{t["TEXT_MUTED"]}">{sc["sub"]}</text>')
         
         a(f'</g>')
+        a(f'</a>')
         
     a(f'</svg>')
     return "".join(s)
@@ -537,6 +570,43 @@ def render_activity_card(data):
         @keyframes actPulse {{
           0%, 100% {{ opacity: 1; }}
           50% {{ opacity: 0.4; }}
+        }}
+        .act-panel {{
+          transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+        }}
+        .act-panel:hover {{
+          filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.5));
+        }}
+        .node-interactive {{
+          cursor: pointer;
+        }}
+        .node-interactive .tooltip-pop {{
+          opacity: 0;
+          transform: translateY(6px);
+          transition: opacity 0.18s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+          pointer-events: none;
+        }}
+        .node-interactive:hover .tooltip-pop {{
+          opacity: 1;
+          transform: translateY(0px);
+        }}
+        .node-interactive .node-glow-ring {{
+          opacity: 0;
+          transform: scale(0.8);
+          transition: all 0.2s ease;
+          transform-origin: center;
+        }}
+        .node-interactive:hover .node-glow-ring {{
+          opacity: 1;
+          transform: scale(1.6);
+        }}
+        .node-interactive:hover .node-core {{
+          transform: scale(1.35);
+          filter: drop-shadow(0 0 6px rgba(212, 163, 83, 0.9));
+        }}
+        .node-interactive:hover .tick-label {{
+          fill: #FAF5EE;
+          font-weight: 700;
         }}
       </style>
       <linearGradient id="act_bg" x1="0" y1="0" x2="0" y2="1">
@@ -577,7 +647,7 @@ def render_activity_card(data):
     # ═══════════════════════════════════════════════════════════════════
     #  LEFT HALF: 12-MONTH MACRO COMMIT SOUNDWAVE
     # ═══════════════════════════════════════════════════════════════════
-    a(f'<g transform="translate(14, 14)">')
+    a(f'<g transform="translate(14, 14)" class="act-panel">')
     a(f'<rect width="{panel_w}" height="{panel_h}" rx="10" ry="10" fill="{t["CANVAS_BG"]}" stroke="{t["BORDER"]}" stroke-width="1.2"/>')
     
     # Header bar
@@ -639,21 +709,30 @@ def render_activity_card(data):
         is_peak = (m["count"] == peak_val and peak_val > 0)
         is_latest = (i == len(pts_m) - 1)
         
-        a(f'<text x="{px:.1f}" y="{base_y + 24}" font-size="13.5" font-weight="550" fill="{t["ACCENT_2"] if is_latest or is_peak else t["TEXT_MUTED"]}" text-anchor="middle">{m["label"]}</text>')
-        
         node_r = 4.5 if (is_peak or is_latest) else 2.8
         node_fill = t["ACCENT_3"] if is_peak else (t["ACTIVE_GREEN"] if is_latest else t["ACCENT_2"])
+        
+        a(f'<g class="node-interactive">')
+        # Invisible hit target
+        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="16" fill="transparent"/>')
+        
+        # Month X label
+        a(f'<text x="{px:.1f}" y="{base_y + 24}" font-size="13.5" font-weight="550" fill="{t["ACCENT_2"] if is_latest or is_peak else t["TEXT_MUTED"]}" text-anchor="middle" class="tick-label">{m["label"]}</text>')
         
         if is_peak or is_latest:
             a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r + 4}" fill="none" stroke="{node_fill}" stroke-width="1.2" opacity="0.6" class="pulse"/>')
             
-        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r}" fill="{node_fill}" stroke="{t["PANEL_BG"]}" stroke-width="1.8"/>')
+        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r}" fill="{node_fill}" stroke="{t["PANEL_BG"]}" stroke-width="1.8" class="node-core"/>')
         
-        if is_peak:
-            a(f'<g transform="translate({px:.1f}, {py - 18:.1f})">')
-            a(f'<rect x="-24" y="-13" width="48" height="18" rx="5" fill="{t["PILL_BG"]}" stroke="{t["ACCENT_2"]}" stroke-width="0.9"/>')
-            a(f'<text x="0" y="-0.5" font-size="12" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="middle">{m["count"]}</text>')
-            a(f'</g>')
+        # Interactive Tooltip on hover
+        tt_y = py - 12 if py > 100 else py + 34
+        a(f'<g class="tooltip-pop" transform="translate({px:.1f}, {tt_y:.1f})">')
+        a(f'<rect x="-44" y="-28" width="88" height="26" rx="6" fill="#18120B" stroke="{node_fill}" stroke-width="1.2"/>')
+        a(f'<text x="0" y="-15" font-size="10.5" font-weight="600" fill="#E2D5C5" text-anchor="middle">{m["label"]} {m.get("year", "")}</text>')
+        a(f'<text x="0" y="-3" font-size="11.5" font-weight="700" fill="{node_fill}" text-anchor="middle">{m["count"]} commits</text>')
+        a(f'</g>')
+        
+        a(f'</g>')
             
     # Bottom footer inside left panel
     a(f'<line x1="14" y1="{panel_h - 36}" x2="{panel_w - 14}" y2="{panel_h - 36}" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
@@ -665,7 +744,7 @@ def render_activity_card(data):
     # ═══════════════════════════════════════════════════════════════════
     #  RIGHT HALF: LAST 30 DAYS DAILY CADENCE & VELOCITY
     # ═══════════════════════════════════════════════════════════════════
-    a(f'<g transform="translate(597, 14)">')
+    a(f'<g transform="translate(597, 14)" class="act-panel">')
     a(f'<rect width="{panel_w}" height="{panel_h}" rx="10" ry="10" fill="{t["CANVAS_BG"]}" stroke="{t["BORDER"]}" stroke-width="1.2"/>')
     
     # Header bar
@@ -704,6 +783,8 @@ def render_activity_card(data):
     n_pts_d = len(last_30)
     step_d = plot_w / max(1, n_pts_d - 1)
     
+    tick_indices = [0, 6, 12, 18, 24, n_pts_d - 1] if n_pts_d >= 25 else list(range(0, n_pts_d, max(1, n_pts_d // 5)))
+    
     for i, d in enumerate(last_30):
         px = pad_l + i * step_d
         cnt = d["count"]
@@ -716,35 +797,49 @@ def render_activity_card(data):
     a(f'<path d="{line_d}" fill="none" stroke="{t["ACTIVE_GREEN"]}" stroke-width="4.5" opacity="0.4" filter="url(#act_glow)"/>')
     a(f'<path d="{line_d}" fill="none" stroke="url(#act_stroke_d)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>')
     
-    # 6 evenly spaced date ticks across 30 days
-    tick_indices = [0, 6, 12, 18, 24, n_pts_d - 1] if n_pts_d >= 25 else list(range(0, n_pts_d, max(1, n_pts_d // 5)))
-    
     for i, (px, py) in enumerate(pts_d):
         d = last_30[i]
         is_peak = (d["count"] == peak_30_val and peak_30_val > 0)
         is_latest = (i == n_pts_d - 1)
         
+        tick_lbl = ""
         if i in tick_indices:
             try:
                 dt_obj = datetime.strptime(d["date"], "%Y-%m-%d")
                 tick_lbl = "Today" if is_latest else dt_obj.strftime("%b %d")
             except Exception:
                 tick_lbl = d["date"][-5:]
-            a(f'<text x="{px:.1f}" y="{base_y + 24}" font-size="13.5" font-weight="550" fill="{t["ACTIVE_GREEN"] if is_latest else t["TEXT_MUTED"]}" text-anchor="middle">{tick_lbl}</text>')
-            
+                
         node_r = 4.2 if (is_peak or is_latest) else (2.6 if d["count"] > 0 else 1.8)
         node_fill = t["ACCENT_3"] if is_peak else (t["ACTIVE_GREEN"] if d["count"] > 0 else t["TEXT_DIM"])
         
+        a(f'<g class="node-interactive">')
+        # Invisible hit target
+        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="14" fill="transparent"/>')
+        
+        if tick_lbl:
+            a(f'<text x="{px:.1f}" y="{base_y + 24}" font-size="13.5" font-weight="550" fill="{t["ACTIVE_GREEN"] if is_latest else t["TEXT_MUTED"]}" text-anchor="middle" class="tick-label">{tick_lbl}</text>')
+            
         if is_peak or is_latest:
             a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r + 3.5}" fill="none" stroke="{node_fill}" stroke-width="1.2" opacity="0.6" class="pulse"/>')
             
-        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r}" fill="{node_fill}" stroke="{t["PANEL_BG"]}" stroke-width="1.5"/>')
+        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r}" fill="{node_fill}" stroke="{t["PANEL_BG"]}" stroke-width="1.5" class="node-core"/>')
         
-        if is_peak:
-            a(f'<g transform="translate({px:.1f}, {py - 18:.1f})">')
-            a(f'<rect x="-22" y="-13" width="44" height="18" rx="5" fill="{t["PILL_BG"]}" stroke="{t["ACTIVE_GREEN"]}" stroke-width="0.9"/>')
-            a(f'<text x="0" y="-0.5" font-size="12" font-weight="600" fill="{t["ACTIVE_GREEN"]}" text-anchor="middle">{d["count"]}</text>')
-            a(f'</g>')
+        # Interactive Tooltip on hover
+        tt_y = py - 12 if py > 100 else py + 34
+        d_date_str = d.get("date", "")
+        try:
+            d_date_fmt = datetime.strptime(d_date_str, "%Y-%m-%d").strftime("%b %d, %Y")
+        except Exception:
+            d_date_fmt = d_date_str
+            
+        a(f'<g class="tooltip-pop" transform="translate({px:.1f}, {tt_y:.1f})">')
+        a(f'<rect x="-44" y="-28" width="88" height="26" rx="6" fill="#18120B" stroke="{node_fill}" stroke-width="1.2"/>')
+        a(f'<text x="0" y="-15" font-size="10.5" font-weight="600" fill="#E2D5C5" text-anchor="middle">{d_date_fmt}</text>')
+        a(f'<text x="0" y="-3" font-size="11.5" font-weight="700" fill="{node_fill}" text-anchor="middle">{d["count"]} commits</text>')
+        a(f'</g>')
+        
+        a(f'</g>')
             
     # Bottom footer inside right panel
     a(f'<line x1="14" y1="{panel_h - 36}" x2="{panel_w - 14}" y2="{panel_h - 36}" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
