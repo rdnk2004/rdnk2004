@@ -337,10 +337,10 @@ def render_streak_card(data):
     
     a(f'''<defs>
       <style>
-        .pulse {{ animation: stkPulse 2.8s infinite ease-in-out; }}
+        .pulse {{ animation: stkPulse 2s infinite ease-in-out; }}
         @keyframes stkPulse {{
-          0%, 100% {{ opacity: 1; transform: scale(1); }}
-          50% {{ opacity: 0.4; transform: scale(0.92); }}
+          0%, 100% {{ opacity: 1; }}
+          50% {{ opacity: 0.25; }}
         }}
         .hero-banner {{
           transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
