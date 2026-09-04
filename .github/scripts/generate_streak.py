@@ -699,8 +699,7 @@ def render_activity_card(data):
     # Monthly Average Reference Benchmark Line
     avg_y = base_y - (avg_per_mo / y_max_nice) * plot_h
     if pad_t <= avg_y <= base_y:
-        a(f'<line x1="{pad_l}" y1="{avg_y:.1f}" x2="{pad_l + plot_w}" y2="{avg_y:.1f}" stroke="rgba(212,163,83,0.38)" stroke-width="1.2" stroke-dasharray="4,4"/>')
-        a(f'<text x="{pad_l + 6}" y="{avg_y - 4:.1f}" font-size="9.5" font-weight="650" letter-spacing="0.4" fill="{t["ACCENT_2"]}" opacity="0.9">AVG {avg_per_mo:.1f} / MO</text>')
+        a(f'<line x1="{pad_l}" y1="{avg_y:.1f}" x2="{pad_l + plot_w}" y2="{avg_y:.1f}" stroke="rgba(212,163,83,0.28)" stroke-width="1.0" stroke-dasharray="4,4"/>')
         
     pts_m = []
     n_pts_m = len(monthly)
@@ -855,8 +854,7 @@ def render_activity_card(data):
     # Daily Average Reference Benchmark Line
     avg_y_30 = base_y - (last_30_avg / y_max_30) * plot_h
     if pad_t <= avg_y_30 <= base_y:
-        a(f'<line x1="{pad_l}" y1="{avg_y_30:.1f}" x2="{pad_l + plot_w}" y2="{avg_y_30:.1f}" stroke="rgba(74,222,128,0.38)" stroke-width="1.2" stroke-dasharray="4,4"/>')
-        a(f'<text x="{pad_l + 6}" y="{avg_y_30 - 4:.1f}" font-size="9.5" font-weight="650" letter-spacing="0.4" fill="{t["ACTIVE_GREEN"]}" opacity="0.9">AVG {last_30_avg:.1f} / DAY</text>')
+        a(f'<line x1="{pad_l}" y1="{avg_y_30:.1f}" x2="{pad_l + plot_w}" y2="{avg_y_30:.1f}" stroke="rgba(74,222,128,0.28)" stroke-width="1.0" stroke-dasharray="4,4"/>')
         
     pts_d = []
     n_pts_d = len(last_30)
