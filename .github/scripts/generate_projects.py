@@ -362,32 +362,19 @@ def card_body(p, idx, t, is_standalone=False, theme="dark"):
     a(f'<text x="84" y="41" font-size="20" font-weight="700" fill="{t["TEXT"]}">{name}</text>')
     a(f'<text x="84" y="58" font-size="11" font-weight="600" letter-spacing="0.8" fill="{t["ACCENT_2"]}">{cat}</text>')
 
-    # 3. Cinematic Slate Numbering & Dynamic Last Updated Telemetry (Top-Right)
+    # 3. Dynamic Last Updated Telemetry Status Badge (Top-Right)
     status_label = format_last_updated(p.get("pushed_at"))
-    status_w = max(104, int(len(status_label) * 6.4 + 28))
+    status_w = max(112, int(len(status_label) * 6.5 + 28))
     status_h = 26
     status_x = CARD_W - status_w - 24
     status_y = 23
-
-    slate_w = 78
-    slate_h = 26
-    slate_x = status_x - 8 - slate_w
-    slate_y = 23
-    slate_label = f"SLATE #{idx+1:02d}"
-
-    # Unified Cinematic Slate Number Pill
-    a(f'<rect x="{slate_x}" y="{slate_y}" width="{slate_w}" height="{slate_h}" rx="7" '
-      f'fill="{t["CHIP_BG"]}" stroke="{t["CHIP_BORDER"]}" stroke-width="0.9"/>')
-    a(f'<text x="{slate_x + slate_w/2:.0f}" y="{slate_y + 17}" text-anchor="middle" '
-      f'font-family="{FONT_MONO}" font-size="10.5" font-weight="700" letter-spacing="0.8" '
-      f'fill="{t["ACCENT_2"]}">{slate_label}</text>')
 
     # Dynamic Telemetry Status Badge (Live Last-Updated commit info)
     a(f'<rect x="{status_x}" y="{status_y}" width="{status_w}" height="{status_h}" rx="13" '
       f'fill="{t["STATUS_BG"]}" stroke="{t["STATUS_BORDER"]}" stroke-width="0.9"/>')
     a(f'<circle cx="{status_x + 13}" cy="{status_y + 13}" r="3.5" fill="{t["EMERALD"]}">'
       f'<animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>')
-    a(f'<text x="{status_x + 23}" y="{status_y + 16.5}" font-size="10" font-weight="700" letter-spacing="0.5" '
+    a(f'<text x="{status_x + 23}" y="{status_y + 16.5}" font-size="10.5" font-weight="700" letter-spacing="0.5" '
       f'fill="{t["EMERALD"]}">{status_label}</text>')
 
     # 4. Description (2 lines of crisp, readable text)

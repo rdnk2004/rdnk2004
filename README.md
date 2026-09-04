@@ -11,8 +11,8 @@
   <img alt="Section Divider" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/divider.svg" width="100%">
 </p>
 
-<!-- ===== 2. FEATURED PROJECTS & PRODUCTION SLATES ===== -->
-<h2 align="center">🎬 Featured Projects &amp; Production Slates</h2>
+<!-- ===== 2. FEATURED PROJECTS & PRODUCTION REPOSITORIES ===== -->
+<h2 align="center">🎬 Featured Projects &amp; Production Repositories</h2>
 
 <div align="center">
   <a href="https://github.com/rdnk2004/NyayaSetu-Multi-Agent" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="NyayaSetu" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-1-dark.svg" width="49.4%"></a>&nbsp;<a href="https://github.com/rdnk2004/screenwriting-software" target="_blank" style="text-decoration:none; display:inline-block;"><img alt="Screenwriting Suite" src="https://raw.githubusercontent.com/rdnk2004/rdnk2004/main/assets/project-2-dark.svg" width="49.4%"></a>
