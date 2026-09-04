@@ -29,6 +29,15 @@ def main():
     with open(src_path, "r", encoding="utf-8") as f:
         projects = json.load(f)
         
+    existing = {}
+    if os.path.exists(out_path):
+        try:
+            with open(out_path, "r", encoding="utf-8") as f:
+                for item in json.load(f):
+                    existing[item.get("repo")] = item
+        except Exception:
+            pass
+
     for p in projects:
         repo = p.get("repo", "").strip()
         repo = repo.replace("https://github.com/", "").replace("http://github.com/", "").rstrip("/")
@@ -41,9 +50,10 @@ def main():
             print(f"[OK] Fetched live data for {repo} ({len(p['languages'])} languages)")
         except Exception as e:
             print(f"[!] Warning: could not fetch live data for {repo}: {e}", file=sys.stderr)
-            p.setdefault("stars", 0)
-            p.setdefault("languages", {})
-            p.setdefault("pushed_at", None)
+            cached = existing.get(repo, {})
+            p["stars"] = cached.get("stars", p.get("stars", 0))
+            p["languages"] = cached.get("languages", p.get("languages", {}))
+            p["pushed_at"] = cached.get("pushed_at", p.get("pushed_at"))
             
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(projects, f, indent=2)

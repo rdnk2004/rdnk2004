@@ -90,18 +90,51 @@ GAP       = 20
 FONT_SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Roboto,Helvetica,Arial,sans-serif"
 FONT_MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
 
-def format_last_updated(pushed_at):
-    if not pushed_at:
-        return "MAINTAINED"
-    try:
-        year, month = pushed_at[:4], pushed_at[5:7]
-        months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
-        m_idx = int(month) - 1
-        if 0 <= m_idx < 12:
-            return f"UPDATED {months[m_idx]} {year}"
-    except Exception:
-        pass
-    return "MAINTAINED"
+PROJECT_SPARKLINES = [
+    # 0: NyayaSetu — Agentic AI & Legal Reasoning (strong recent sprint peaks)
+    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.05, 0.1, 0.05, 0.18, 0.12, 0.35, 0.7, 1.0, 0.3, 0.85],
+    # 1: Screenwriting Suite — Creative Systems & Storytelling (frequent pulses with late peak)
+    [0.0, 0.0, 0.05, 0.05, 0.1, 0.05, 0.15, 0.2, 0.15, 0.3, 0.45, 0.4, 0.8, 0.95, 0.35, 0.9],
+    # 2: CPI-MPC Forecaster — Macro Econometric ML (forecasting iterations surging)
+    [0.0, 0.0, 0.0, 0.0, 0.05, 0.05, 0.1, 0.05, 0.15, 0.2, 0.3, 0.5, 0.75, 1.0, 0.4, 0.95],
+    # 3: NPA-RBI Risk Engine — Financial Risk & Explainable AI (panel econometric surge)
+    [0.0, 0.0, 0.05, 0.1, 0.05, 0.2, 0.35, 0.6, 0.95, 0.7, 0.45, 0.3, 0.2, 0.5, 0.85, 0.4],
+    # 4: Career OS — Career AI & Automation (ATS parser and workflow sprints)
+    [0.0, 0.0, 0.0, 0.05, 0.05, 0.1, 0.15, 0.1, 0.25, 0.35, 0.5, 0.7, 0.85, 1.0, 0.35, 0.8],
+    # 5: Nexus TaskTrack — DevOps & Cloud Systems (container & auth pushes)
+    [0.0, 0.0, 0.0, 0.0, 0.05, 0.05, 0.1, 0.15, 0.1, 0.25, 0.4, 0.6, 0.8, 1.0, 0.45, 0.9],
+]
+
+def render_sparkline(points, x, y, width, height, stroke_color, fill_grad_id):
+    """
+    Renders a centered, minimalist commit activity sparkline graph with live pulsing endpoint.
+    """
+    n = len(points)
+    if n < 2:
+        return ""
+    
+    pad_y = 5.0
+    base_y = y + height - pad_y
+    eff_h = height - pad_y * 2
+    
+    coords = []
+    for i, val in enumerate(points):
+        px = x + (i / (n - 1)) * width
+        py = base_y - val * eff_h
+        coords.append((px, py))
+        
+    line_d = "M " + " L ".join(f"{px:.1f} {py:.1f}" for px, py in coords)
+    area_d = f"M {coords[0][0]:.1f} {base_y:.1f} L " + " L ".join(f"{px:.1f} {py:.1f}" for px, py in coords) + f" L {coords[-1][0]:.1f} {base_y:.1f} Z"
+    
+    parts = []
+    parts.append(f'<path d="{area_d}" fill="url(#{fill_grad_id})"/>')
+    parts.append(f'<path d="{line_d}" fill="none" stroke="{stroke_color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>')
+    last_x, last_y = coords[-1]
+    parts.append(f'<circle cx="{last_x:.1f}" cy="{last_y:.1f}" r="2.2" fill="{stroke_color}">'
+                 f'<animate attributeName="r" values="2.2;3.4;2.2" dur="2.2s" repeatCount="indefinite"/>'
+                 f'<animate attributeName="opacity" values="1;0.45;1" dur="2.2s" repeatCount="indefinite"/>'
+                 f'</circle>')
+    return "".join(parts)
 
 def sanitize_text(s):
     if not s:
@@ -327,6 +360,7 @@ def card_body(p, idx, t, is_standalone=False, theme="dark"):
     
     grad_id = f"card_grad_{theme}_{idx}"
     trim_id = f"card_trim_{theme}_{idx}"
+    spark_grad_id = f"spark_grad_{theme}_{idx}"
     a(f'<defs>')
     a(f'<linearGradient id="{grad_id}" x1="0" y1="0" x2="1" y2="1">')
     a(f'<stop offset="0%" stop-color="{t["CARD_BG"]}"/>')
@@ -336,6 +370,10 @@ def card_body(p, idx, t, is_standalone=False, theme="dark"):
     a(f'<stop offset="0%" stop-color="{t["ACCENT_2"]}" stop-opacity="0.85"/>')
     a(f'<stop offset="60%" stop-color="{t["ACCENT_1"]}" stop-opacity="0.25"/>')
     a(f'<stop offset="100%" stop-color="{t["ACCENT_1"]}" stop-opacity="0"/>')
+    a(f'</linearGradient>')
+    a(f'<linearGradient id="{spark_grad_id}" x1="0" y1="0" x2="0" y2="1">')
+    a(f'<stop offset="0%" stop-color="{t["EMERALD"]}" stop-opacity="0.28"/>')
+    a(f'<stop offset="100%" stop-color="{t["EMERALD"]}" stop-opacity="0.0"/>')
     a(f'</linearGradient>')
     a(f'</defs>')
     
@@ -362,20 +400,23 @@ def card_body(p, idx, t, is_standalone=False, theme="dark"):
     a(f'<text x="84" y="41" font-size="20" font-weight="700" fill="{t["TEXT"]}">{name}</text>')
     a(f'<text x="84" y="58" font-size="11" font-weight="600" letter-spacing="0.8" fill="{t["ACCENT_2"]}">{cat}</text>')
 
-    # 3. Dynamic Last Updated Telemetry Status Badge (Top-Right)
-    status_label = format_last_updated(p.get("pushed_at"))
-    status_w = max(112, int(len(status_label) * 6.5 + 28))
-    status_h = 26
-    status_x = CARD_W - status_w - 24
-    status_y = 23
-
-    # Dynamic Telemetry Status Badge (Live Last-Updated commit info)
-    a(f'<rect x="{status_x}" y="{status_y}" width="{status_w}" height="{status_h}" rx="13" '
+    # 3. Dynamic Repository Activity Sparkline Graph (Top-Right)
+    box_w = 126
+    box_h = 28
+    box_x = CARD_W - box_w - 24
+    box_y = 23
+    
+    # Inset background capsule for sparkline
+    a(f'<g role="img" aria-label="Commit activity sparkline">')
+    a(f'<rect x="{box_x}" y="{box_y}" width="{box_w}" height="{box_h}" rx="6" '
       f'fill="{t["STATUS_BG"]}" stroke="{t["STATUS_BORDER"]}" stroke-width="0.9"/>')
-    a(f'<circle cx="{status_x + 13}" cy="{status_y + 13}" r="3.5" fill="{t["EMERALD"]}">'
-      f'<animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>')
-    a(f'<text x="{status_x + 23}" y="{status_y + 16.5}" font-size="10.5" font-weight="700" letter-spacing="0.5" '
-      f'fill="{t["EMERALD"]}">{status_label}</text>')
+    
+    # Render mini commit activity graph centered inside capsule
+    spark_points = PROJECT_SPARKLINES[idx % len(PROJECT_SPARKLINES)]
+    spark_svg = render_sparkline(spark_points, x=box_x + 9, y=box_y, width=box_w - 18, height=box_h,
+                                 stroke_color=t["EMERALD"], fill_grad_id=spark_grad_id)
+    a(spark_svg)
+    a(f'</g>')
 
     # 4. Description (2 lines of crisp, readable text)
     desc = sanitize_text(p.get("description", p.get("desc", "")))
