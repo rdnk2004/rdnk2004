@@ -606,6 +606,12 @@ def render_activity_card(data):
           fill: #FAF5EE;
           font-weight: 700;
         }}
+        .static-callout, .static-callout-d {{
+          pointer-events: none;
+        }}
+        .callout-badge {{
+          filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.65));
+        }}
       </style>
       <linearGradient id="act_bg" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="{t['BG']}"/>
@@ -665,11 +671,14 @@ def render_activity_card(data):
     # Plot canvas
     pad_l = 44
     pad_r = 20
-    pad_t = 66
+    pad_t = 68
     pad_b = 40
     plot_w = panel_w - pad_l - pad_r
     plot_h = panel_h - pad_t - pad_b - 36
     base_y = pad_t + plot_h
+    
+    # Y-Axis Unit Header
+    a(f'<text x="{pad_l}" y="{pad_t - 9}" font-size="10" font-weight="700" letter-spacing="0.8" fill="{t["TEXT_DIM"]}">▲ COMMITS / MONTH</text>')
     
     max_count = max([m["count"] for m in monthly] + [10])
     if max_count <= 50:
@@ -685,7 +694,13 @@ def render_activity_card(data):
     for val in y_steps:
         y_pos = base_y - (val / y_max_nice) * plot_h
         a(f'<line x1="{pad_l}" y1="{y_pos:.1f}" x2="{pad_l + plot_w}" y2="{y_pos:.1f}" stroke="{t["GRID_LINE"]}" stroke-width="0.8" stroke-dasharray="3,3"/>')
-        a(f'<text x="{pad_l - 8}" y="{y_pos + 4.5:.1f}" font-size="12.5" font-weight="500" fill="{t["TEXT_MUTED"]}" text-anchor="end">{int(val)}</text>')
+        a(f'<text x="{pad_l - 8}" y="{y_pos + 4.5:.1f}" font-size="12" font-weight="500" fill="{t["TEXT_MUTED"]}" text-anchor="end">{int(val)}</text>')
+        
+    # Monthly Average Reference Benchmark Line
+    avg_y = base_y - (avg_per_mo / y_max_nice) * plot_h
+    if pad_t <= avg_y <= base_y:
+        a(f'<line x1="{pad_l}" y1="{avg_y:.1f}" x2="{pad_l + plot_w}" y2="{avg_y:.1f}" stroke="rgba(212,163,83,0.38)" stroke-width="1.2" stroke-dasharray="4,4"/>')
+        a(f'<text x="{pad_l + 6}" y="{avg_y - 4:.1f}" font-size="9.5" font-weight="650" letter-spacing="0.4" fill="{t["ACCENT_2"]}" opacity="0.9">AVG {avg_per_mo:.1f} / MO</text>')
         
     pts_m = []
     n_pts_m = len(monthly)
@@ -702,9 +717,15 @@ def render_activity_card(data):
     a(f'<path d="{line_m}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="4.5" opacity="0.4" filter="url(#act_glow)"/>')
     a(f'<path d="{line_m}" fill="none" stroke="url(#act_stroke_m)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>')
     
+    peak_idx = -1
+    for i, m in enumerate(monthly):
+        if m["count"] == peak_val and peak_val > 0:
+            peak_idx = i
+            break
+
     for i, (px, py) in enumerate(pts_m):
         m = monthly[i]
-        is_peak = (m["count"] == peak_val and peak_val > 0)
+        is_peak = (i == peak_idx)
         is_latest = (i == len(pts_m) - 1)
         
         node_r = 4.5 if (is_peak or is_latest) else 2.8
@@ -715,7 +736,18 @@ def render_activity_card(data):
         a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="16" fill="transparent"/>')
         
         # Month X label
-        a(f'<text x="{px:.1f}" y="{base_y + 24}" font-size="13.5" font-weight="550" fill="{t["ACCENT_2"] if is_latest or is_peak else t["TEXT_MUTED"]}" text-anchor="middle" class="tick-label">{m["label"]}</text>')
+        a(f'<text x="{px:.1f}" y="{base_y + 19}" font-size="13" font-weight="550" fill="{t["ACCENT_2"] if is_latest or is_peak else t["TEXT_MUTED"]}" text-anchor="middle" class="tick-label">{m["label"]}</text>')
+        
+        # Year Indicator
+        yr_val = m.get("year", "")
+        prev_yr = monthly[i-1].get("year", "") if i > 0 else ""
+        yr_changed = (yr_val and yr_val != prev_yr)
+        if i == 0 or yr_changed:
+            yr_str = "'" + yr_val[-2:] if yr_val else ""
+            yr_col = t["ACCENT_2"] if (yr_changed and i > 0) else t["TEXT_DIM"]
+            a(f'<text x="{px:.1f}" y="{base_y + 32}" font-size="10" font-weight="650" fill="{yr_col}" text-anchor="middle">{yr_str}</text>')
+        else:
+            a(f'<circle cx="{px:.1f}" cy="{base_y + 29}" r="1.2" fill="{t["TEXT_DIM"]}" opacity="0.35"/>')
         
         if is_peak or is_latest:
             a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r + 4}" fill="none" stroke="{node_fill}" stroke-width="1.2" opacity="0.6" class="pulse"/>')
@@ -731,11 +763,51 @@ def render_activity_card(data):
         a(f'</g>')
         
         a(f'</g>')
+
+    # Permanent Peak Milestone Callout Badge (Visible on static GitHub Markdown)
+    if peak_idx != -1:
+        pk_x, pk_y = pts_m[peak_idx]
+        bw, bh = 94, 22
+        bx = max(pad_l, min(pad_l + plot_w - bw, pk_x - bw / 2))
+        if pk_y < pad_t + bh + 14:
+            by = pk_y + 12
+            stem_y1, stem_y2 = pk_y + 6, by
+        else:
+            by = pk_y - bh - 8
+            stem_y1, stem_y2 = pk_y - 6, by + bh
+        a(f'<g class="static-callout callout-badge">')
+        a(f'<line x1="{pk_x:.1f}" y1="{stem_y1:.1f}" x2="{pk_x:.1f}" y2="{stem_y2:.1f}" stroke="{t["ACCENT_3"]}" stroke-width="1.2" stroke-dasharray="2,2"/>')
+        a(f'<rect x="{bx:.1f}" y="{by:.1f}" width="{bw}" height="{bh}" rx="5" fill="#18120B" stroke="{t["ACCENT_3"]}" stroke-width="1.2"/>')
+        a(f'<text x="{bx + bw/2:.1f}" y="{by + 15:.1f}" font-size="11" font-weight="700" fill="{t["ACCENT_3"]}" text-anchor="middle">★ PEAK: {peak_val}</text>')
+        a(f'</g>')
+
+    # Permanent Latest Month Callout Badge (if not peak)
+    latest_idx = len(pts_m) - 1
+    if latest_idx != peak_idx and monthly[latest_idx]["count"] > 0:
+        lx, ly = pts_m[latest_idx]
+        l_cnt = monthly[latest_idx]["count"]
+        lw, lh = 58, 18
+        lbx = max(pad_l, min(pad_l + plot_w - lw, lx - lw + 4))
+        lby = ly - lh - 8 if ly >= pad_t + lh + 14 else ly + 10
+        lstem_y1 = ly + 5 if lby > ly else ly - 5
+        lstem_y2 = lby if lby > ly else lby + lh
+        a(f'<g class="static-callout callout-badge">')
+        a(f'<line x1="{lx:.1f}" y1="{lstem_y1:.1f}" x2="{lx:.1f}" y2="{lstem_y2:.1f}" stroke="{t["ACTIVE_GREEN"]}" stroke-width="1" stroke-dasharray="2,2"/>')
+        a(f'<rect x="{lbx:.1f}" y="{lby:.1f}" width="{lw}" height="{lh}" rx="4" fill="#121810" stroke="{t["ACTIVE_GREEN"]}" stroke-width="1"/>')
+        a(f'<text x="{lbx + lw/2:.1f}" y="{lby + 13:.1f}" font-size="10" font-weight="700" fill="{t["ACTIVE_GREEN"]}" text-anchor="middle">{l_cnt} NOW</text>')
+        a(f'</g>')
             
     # Bottom footer inside left panel
     a(f'<line x1="14" y1="{panel_h - 36}" x2="{panel_w - 14}" y2="{panel_h - 36}" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
-    a(f'<text x="18" y="{panel_h - 14}" font-size="13.5" font-weight="500" fill="{t["TEXT_MUTED"]}">Macro 12-Month Soundwave</text>')
-    a(f'<text x="{panel_w - 18}" y="{panel_h - 14}" font-size="14.5" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="end">{past_yr_total:,} Total Commits</text>')
+    a(f'<text x="18" y="{panel_h - 14}" font-size="13" font-weight="500" fill="{t["TEXT_MUTED"]}">Macro 12-Month Soundwave</text>')
+    
+    # Left Legend
+    a(f'<circle cx="216" cy="{panel_h - 18}" r="3.5" fill="{t["ACCENT_3"]}"/>')
+    a(f'<text x="224" y="{panel_h - 14}" font-size="11" font-weight="500" fill="{t["TEXT_DIM"]}">Peak Month</text>')
+    a(f'<line x1="298" y1="{panel_h - 18}" x2="312" y2="{panel_h - 18}" stroke="{t["ACCENT_2"]}" stroke-width="1.2" stroke-dasharray="3,2"/>')
+    a(f'<text x="318" y="{panel_h - 14}" font-size="11" font-weight="500" fill="{t["TEXT_DIM"]}">Avg Baseline</text>')
+    
+    a(f'<text x="{panel_w - 18}" y="{panel_h - 14}" font-size="14" font-weight="600" fill="{t["ACCENT_2"]}" text-anchor="end">{past_yr_total:,} Total Commits</text>')
     
     a(f'</g>')
     
@@ -761,6 +833,9 @@ def render_activity_card(data):
     a(f'<text x="{panel_w - 58}" y="27.5" font-size="12.5" font-weight="550" fill="{t["ACTIVE_GREEN"]}" text-anchor="middle">{last_30_act}/30 Active</text>')
     
     # Plot canvas
+    # Y-Axis Unit Header
+    a(f'<text x="{pad_l}" y="{pad_t - 9}" font-size="10" font-weight="700" letter-spacing="0.8" fill="{t["TEXT_DIM"]}">▲ COMMITS / DAY</text>')
+    
     max_d_cnt = max([d["count"] for d in last_30] + [5])
     if max_d_cnt <= 10:
         y_max_30 = 10
@@ -775,7 +850,13 @@ def render_activity_card(data):
     for val in y_steps_30:
         y_pos = base_y - (val / y_max_30) * plot_h
         a(f'<line x1="{pad_l}" y1="{y_pos:.1f}" x2="{pad_l + plot_w}" y2="{y_pos:.1f}" stroke="{t["GRID_LINE"]}" stroke-width="0.8" stroke-dasharray="3,3"/>')
-        a(f'<text x="{pad_l - 8}" y="{y_pos + 4.5:.1f}" font-size="12.5" font-weight="500" fill="{t["TEXT_MUTED"]}" text-anchor="end">{int(val)}</text>')
+        a(f'<text x="{pad_l - 8}" y="{y_pos + 4.5:.1f}" font-size="12" font-weight="500" fill="{t["TEXT_MUTED"]}" text-anchor="end">{int(val)}</text>')
+        
+    # Daily Average Reference Benchmark Line
+    avg_y_30 = base_y - (last_30_avg / y_max_30) * plot_h
+    if pad_t <= avg_y_30 <= base_y:
+        a(f'<line x1="{pad_l}" y1="{avg_y_30:.1f}" x2="{pad_l + plot_w}" y2="{avg_y_30:.1f}" stroke="rgba(74,222,128,0.38)" stroke-width="1.2" stroke-dasharray="4,4"/>')
+        a(f'<text x="{pad_l + 6}" y="{avg_y_30 - 4:.1f}" font-size="9.5" font-weight="650" letter-spacing="0.4" fill="{t["ACTIVE_GREEN"]}" opacity="0.9">AVG {last_30_avg:.1f} / DAY</text>')
         
     pts_d = []
     n_pts_d = len(last_30)
@@ -795,9 +876,15 @@ def render_activity_card(data):
     a(f'<path d="{line_d}" fill="none" stroke="{t["ACTIVE_GREEN"]}" stroke-width="4.5" opacity="0.4" filter="url(#act_glow)"/>')
     a(f'<path d="{line_d}" fill="none" stroke="url(#act_stroke_d)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>')
     
+    peak_30_idx = -1
+    for i, d in enumerate(last_30):
+        if d["count"] == peak_30_val and peak_30_val > 0:
+            peak_30_idx = i
+            break
+
     for i, (px, py) in enumerate(pts_d):
         d = last_30[i]
-        is_peak = (d["count"] == peak_30_val and peak_30_val > 0)
+        is_peak = (i == peak_30_idx)
         is_latest = (i == n_pts_d - 1)
         
         tick_lbl = ""
@@ -816,7 +903,18 @@ def render_activity_card(data):
         a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="14" fill="transparent"/>')
         
         if tick_lbl:
-            a(f'<text x="{px:.1f}" y="{base_y + 24}" font-size="13.5" font-weight="550" fill="{t["ACTIVE_GREEN"] if is_latest else t["TEXT_MUTED"]}" text-anchor="middle" class="tick-label">{tick_lbl}</text>')
+            a(f'<text x="{px:.1f}" y="{base_y + 19}" font-size="13" font-weight="550" fill="{t["ACTIVE_GREEN"] if is_latest else t["TEXT_MUTED"]}" text-anchor="middle" class="tick-label">{tick_lbl}</text>')
+            if is_latest:
+                sub_tick = f"{d['count']} today"
+                sub_col = t["ACTIVE_GREEN"] if d["count"] > 0 else t["TEXT_DIM"]
+            else:
+                try:
+                    dt_obj = datetime.strptime(d["date"], "%Y-%m-%d")
+                    sub_tick = dt_obj.strftime("%a")
+                except Exception:
+                    sub_tick = ""
+                sub_col = t["TEXT_DIM"]
+            a(f'<text x="{px:.1f}" y="{base_y + 32}" font-size="10" font-weight="600" fill="{sub_col}" text-anchor="middle">{sub_tick}</text>')
             
         if is_peak or is_latest:
             a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{node_r + 3.5}" fill="none" stroke="{node_fill}" stroke-width="1.2" opacity="0.6" class="pulse"/>')
@@ -838,11 +936,35 @@ def render_activity_card(data):
         a(f'</g>')
         
         a(f'</g>')
+
+    # Permanent Peak Day Callout Badge (Visible on static GitHub Markdown)
+    if peak_30_idx != -1 and peak_30_val > 0:
+        pk30_x, pk30_y = pts_d[peak_30_idx]
+        bw, bh = 94, 22
+        bx = max(pad_l, min(pad_l + plot_w - bw, pk30_x - bw / 2))
+        if pk30_y < pad_t + bh + 14:
+            by = pk30_y + 12
+            stem_y1, stem_y2 = pk30_y + 5, by
+        else:
+            by = pk30_y - bh - 8
+            stem_y1, stem_y2 = pk30_y - 5, by + bh
+        a(f'<g class="static-callout-d callout-badge">')
+        a(f'<line x1="{pk30_x:.1f}" y1="{stem_y1:.1f}" x2="{pk30_x:.1f}" y2="{stem_y2:.1f}" stroke="{t["ACCENT_2"]}" stroke-width="1.2" stroke-dasharray="2,2"/>')
+        a(f'<rect x="{bx:.1f}" y="{by:.1f}" width="{bw}" height="{bh}" rx="5" fill="#18120B" stroke="{t["ACCENT_2"]}" stroke-width="1.2"/>')
+        a(f'<text x="{bx + bw/2:.1f}" y="{by + 15:.1f}" font-size="11" font-weight="700" fill="{t["ACCENT_2"]}" text-anchor="middle">★ PEAK: {peak_30_val} / D</text>')
+        a(f'</g>')
             
     # Bottom footer inside right panel
     a(f'<line x1="14" y1="{panel_h - 36}" x2="{panel_w - 14}" y2="{panel_h - 36}" stroke="{t["CARD_STROKE"]}" stroke-width="0.8"/>')
-    a(f'<text x="18" y="{panel_h - 14}" font-size="13.5" font-weight="500" fill="{t["TEXT_MUTED"]}">Recent 30-Day Activity Flow</text>')
-    a(f'<text x="{panel_w - 18}" y="{panel_h - 14}" font-size="14.5" font-weight="600" fill="{t["ACTIVE_GREEN"]}" text-anchor="end">{last_30_tot:,} Commits</text>')
+    a(f'<text x="18" y="{panel_h - 14}" font-size="13" font-weight="500" fill="{t["TEXT_MUTED"]}">30-Day Rolling Velocity</text>')
+    
+    # Right Legend
+    a(f'<circle cx="204" cy="{panel_h - 18}" r="3.5" fill="{t["ACCENT_2"]}"/>')
+    a(f'<text x="212" y="{panel_h - 14}" font-size="11" font-weight="500" fill="{t["TEXT_DIM"]}">Peak Day</text>')
+    a(f'<line x1="274" y1="{panel_h - 18}" x2="288" y2="{panel_h - 18}" stroke="{t["ACTIVE_GREEN"]}" stroke-width="1.2" stroke-dasharray="3,2"/>')
+    a(f'<text x="294" y="{panel_h - 14}" font-size="11" font-weight="500" fill="{t["TEXT_DIM"]}">Daily Baseline</text>')
+    
+    a(f'<text x="{panel_w - 18}" y="{panel_h - 14}" font-size="14" font-weight="600" fill="{t["ACTIVE_GREEN"]}" text-anchor="end">{last_30_tot:,} Commits</text>')
     
     a(f'</g>')
     
