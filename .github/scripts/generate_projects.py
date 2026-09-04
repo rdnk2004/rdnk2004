@@ -90,6 +90,259 @@ GAP       = 20
 FONT_SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Roboto,Helvetica,Arial,sans-serif"
 FONT_MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
 
+# Domain-Tailored Signature Color Palettes for each of the 6 production slates
+DOMAIN_PALETTES = {
+    "dark": [
+        # SLATE #01: NyayaSetu — Agentic AI & Legal Reasoning (Imperial Amber Gold)
+        {
+            "PRIMARY": "#D4A353",
+            "SECONDARY": "#F5E6D3",
+            "BORDER_HI": "rgba(212,163,83,0.75)",
+            "BORDER_LO": "rgba(212,163,83,0.22)",
+            "ICON_BG": "rgba(212,163,83,0.12)",
+            "ICON_BORDER": "rgba(212,163,83,0.38)",
+            "ICON_FG": "#E5A93C",
+            "CAT_TEXT": "#D4A353",
+            "CHIP_BG": "rgba(212,163,83,0.09)",
+            "CHIP_BORDER": "rgba(212,163,83,0.26)",
+            "CHIP_TEXT": "#F5E6D3",
+            "BTN_BG": "rgba(212,163,83,0.12)",
+            "BTN_BORDER": "rgba(212,163,83,0.40)",
+            "BTN_TEXT": "#D4A353",
+            "SLATE_BG": "rgba(212,163,83,0.10)",
+            "SLATE_BORDER": "rgba(212,163,83,0.35)",
+            "LANG_COLORS": ["#D4A353", "#C0713A", "#5B8C5A"],
+        },
+        # SLATE #02: Screenwriting Suite — Creative Systems & Storytelling (Cinematic Film Sienna)
+        {
+            "PRIMARY": "#F97316",
+            "SECONDARY": "#FED7AA",
+            "BORDER_HI": "rgba(249,115,22,0.75)",
+            "BORDER_LO": "rgba(249,115,22,0.22)",
+            "ICON_BG": "rgba(249,115,22,0.12)",
+            "ICON_BORDER": "rgba(249,115,22,0.38)",
+            "ICON_FG": "#FB923C",
+            "CAT_TEXT": "#FB923C",
+            "CHIP_BG": "rgba(249,115,22,0.09)",
+            "CHIP_BORDER": "rgba(249,115,22,0.26)",
+            "CHIP_TEXT": "#FED7AA",
+            "BTN_BG": "rgba(249,115,22,0.12)",
+            "BTN_BORDER": "rgba(249,115,22,0.40)",
+            "BTN_TEXT": "#FB923C",
+            "SLATE_BG": "rgba(249,115,22,0.10)",
+            "SLATE_BORDER": "rgba(249,115,22,0.35)",
+            "LANG_COLORS": ["#F97316", "#FBBF24", "#38BDF8"],
+        },
+        # SLATE #03: CPI-MPC Forecaster — Macro Econometric ML (Electric Cyan / Sky Blue)
+        {
+            "PRIMARY": "#38BDF8",
+            "SECONDARY": "#E0F2FE",
+            "BORDER_HI": "rgba(56,189,248,0.75)",
+            "BORDER_LO": "rgba(56,189,248,0.22)",
+            "ICON_BG": "rgba(56,189,248,0.12)",
+            "ICON_BORDER": "rgba(56,189,248,0.38)",
+            "ICON_FG": "#38BDF8",
+            "CAT_TEXT": "#38BDF8",
+            "CHIP_BG": "rgba(56,189,248,0.09)",
+            "CHIP_BORDER": "rgba(56,189,248,0.26)",
+            "CHIP_TEXT": "#E0F2FE",
+            "BTN_BG": "rgba(56,189,248,0.12)",
+            "BTN_BORDER": "rgba(56,189,248,0.40)",
+            "BTN_TEXT": "#38BDF8",
+            "SLATE_BG": "rgba(56,189,248,0.10)",
+            "SLATE_BORDER": "rgba(56,189,248,0.35)",
+            "LANG_COLORS": ["#38BDF8", "#818CF8", "#34D399"],
+        },
+        # SLATE #04: NPA-RBI Risk Engine — Financial Risk & Explainable AI (Financial Emerald)
+        {
+            "PRIMARY": "#10B981",
+            "SECONDARY": "#D1FAE5",
+            "BORDER_HI": "rgba(16,185,129,0.75)",
+            "BORDER_LO": "rgba(16,185,129,0.22)",
+            "ICON_BG": "rgba(16,185,129,0.12)",
+            "ICON_BORDER": "rgba(16,185,129,0.38)",
+            "ICON_FG": "#34D399",
+            "CAT_TEXT": "#34D399",
+            "CHIP_BG": "rgba(16,185,129,0.09)",
+            "CHIP_BORDER": "rgba(16,185,129,0.26)",
+            "CHIP_TEXT": "#D1FAE5",
+            "BTN_BG": "rgba(16,185,129,0.12)",
+            "BTN_BORDER": "rgba(16,185,129,0.40)",
+            "BTN_TEXT": "#34D399",
+            "SLATE_BG": "rgba(16,185,129,0.10)",
+            "SLATE_BORDER": "rgba(16,185,129,0.35)",
+            "LANG_COLORS": ["#10B981", "#38BDF8", "#F59E0B"],
+        },
+        # SLATE #05: Career OS — Career AI & Automation (Quantum Violet / Iris)
+        {
+            "PRIMARY": "#A78BFA",
+            "SECONDARY": "#EDE9FE",
+            "BORDER_HI": "rgba(167,139,250,0.75)",
+            "BORDER_LO": "rgba(167,139,250,0.22)",
+            "ICON_BG": "rgba(167,139,250,0.12)",
+            "ICON_BORDER": "rgba(167,139,250,0.38)",
+            "ICON_FG": "#A78BFA",
+            "CAT_TEXT": "#C4B5FD",
+            "CHIP_BG": "rgba(167,139,250,0.09)",
+            "CHIP_BORDER": "rgba(167,139,250,0.26)",
+            "CHIP_TEXT": "#EDE9FE",
+            "BTN_BG": "rgba(167,139,250,0.12)",
+            "BTN_BORDER": "rgba(167,139,250,0.40)",
+            "BTN_TEXT": "#A78BFA",
+            "SLATE_BG": "rgba(167,139,250,0.10)",
+            "SLATE_BORDER": "rgba(167,139,250,0.35)",
+            "LANG_COLORS": ["#A78BFA", "#38BDF8", "#F472B6"],
+        },
+        # SLATE #06: Nexus TaskTrack — DevOps & Cloud Systems (Cyber Teal / Marine)
+        {
+            "PRIMARY": "#2DD4BF",
+            "SECONDARY": "#CCFBF1",
+            "BORDER_HI": "rgba(45,212,191,0.75)",
+            "BORDER_LO": "rgba(45,212,191,0.22)",
+            "ICON_BG": "rgba(45,212,191,0.12)",
+            "ICON_BORDER": "rgba(45,212,191,0.38)",
+            "ICON_FG": "#2DD4BF",
+            "CAT_TEXT": "#5EEAD4",
+            "CHIP_BG": "rgba(45,212,191,0.09)",
+            "CHIP_BORDER": "rgba(45,212,191,0.26)",
+            "CHIP_TEXT": "#CCFBF1",
+            "BTN_BG": "rgba(45,212,191,0.12)",
+            "BTN_BORDER": "rgba(45,212,191,0.40)",
+            "BTN_TEXT": "#2DD4BF",
+            "SLATE_BG": "rgba(45,212,191,0.10)",
+            "SLATE_BORDER": "rgba(45,212,191,0.35)",
+            "LANG_COLORS": ["#2DD4BF", "#38BDF8", "#F59E0B"],
+        },
+    ],
+    "light": [
+        # SLATE #01 (Light): Deep Amber Gold
+        {
+            "PRIMARY": "#B45309",
+            "SECONDARY": "#451A03",
+            "BORDER_HI": "rgba(180,83,9,0.65)",
+            "BORDER_LO": "rgba(180,83,9,0.20)",
+            "ICON_BG": "rgba(180,83,9,0.08)",
+            "ICON_BORDER": "rgba(180,83,9,0.30)",
+            "ICON_FG": "#B45309",
+            "CAT_TEXT": "#B45309",
+            "CHIP_BG": "rgba(180,83,9,0.08)",
+            "CHIP_BORDER": "rgba(180,83,9,0.25)",
+            "CHIP_TEXT": "#451A03",
+            "BTN_BG": "rgba(180,83,9,0.08)",
+            "BTN_BORDER": "rgba(180,83,9,0.32)",
+            "BTN_TEXT": "#B45309",
+            "SLATE_BG": "rgba(180,83,9,0.08)",
+            "SLATE_BORDER": "rgba(180,83,9,0.28)",
+            "LANG_COLORS": ["#B45309", "#9A3412", "#15803D"],
+        },
+        # SLATE #02 (Light): Deep Sienna Coral
+        {
+            "PRIMARY": "#C2410C",
+            "SECONDARY": "#431407",
+            "BORDER_HI": "rgba(194,65,12,0.65)",
+            "BORDER_LO": "rgba(194,65,12,0.20)",
+            "ICON_BG": "rgba(194,65,12,0.08)",
+            "ICON_BORDER": "rgba(194,65,12,0.30)",
+            "ICON_FG": "#C2410C",
+            "CAT_TEXT": "#C2410C",
+            "CHIP_BG": "rgba(194,65,12,0.08)",
+            "CHIP_BORDER": "rgba(194,65,12,0.25)",
+            "CHIP_TEXT": "#431407",
+            "BTN_BG": "rgba(194,65,12,0.08)",
+            "BTN_BORDER": "rgba(194,65,12,0.32)",
+            "BTN_TEXT": "#C2410C",
+            "SLATE_BG": "rgba(194,65,12,0.08)",
+            "SLATE_BORDER": "rgba(194,65,12,0.28)",
+            "LANG_COLORS": ["#C2410C", "#B45309", "#0284C7"],
+        },
+        # SLATE #03 (Light): Sky Blue / Cobalt
+        {
+            "PRIMARY": "#0284C7",
+            "SECONDARY": "#082F49",
+            "BORDER_HI": "rgba(2,132,199,0.65)",
+            "BORDER_LO": "rgba(2,132,199,0.20)",
+            "ICON_BG": "rgba(2,132,199,0.08)",
+            "ICON_BORDER": "rgba(2,132,199,0.30)",
+            "ICON_FG": "#0284C7",
+            "CAT_TEXT": "#0284C7",
+            "CHIP_BG": "rgba(2,132,199,0.08)",
+            "CHIP_BORDER": "rgba(2,132,199,0.25)",
+            "CHIP_TEXT": "#082F49",
+            "BTN_BG": "rgba(2,132,199,0.08)",
+            "BTN_BORDER": "rgba(2,132,199,0.32)",
+            "BTN_TEXT": "#0284C7",
+            "SLATE_BG": "rgba(2,132,199,0.08)",
+            "SLATE_BORDER": "rgba(2,132,199,0.28)",
+            "LANG_COLORS": ["#0284C7", "#4F46E5", "#059669"],
+        },
+        # SLATE #04 (Light): Forest Emerald
+        {
+            "PRIMARY": "#059669",
+            "SECONDARY": "#022C22",
+            "BORDER_HI": "rgba(5,150,105,0.65)",
+            "BORDER_LO": "rgba(5,150,105,0.20)",
+            "ICON_BG": "rgba(5,150,105,0.08)",
+            "ICON_BORDER": "rgba(5,150,105,0.30)",
+            "ICON_FG": "#059669",
+            "CAT_TEXT": "#059669",
+            "CHIP_BG": "rgba(5,150,105,0.08)",
+            "CHIP_BORDER": "rgba(5,150,105,0.25)",
+            "CHIP_TEXT": "#022C22",
+            "BTN_BG": "rgba(5,150,105,0.08)",
+            "BTN_BORDER": "rgba(5,150,105,0.32)",
+            "BTN_TEXT": "#059669",
+            "SLATE_BG": "rgba(5,150,105,0.08)",
+            "SLATE_BORDER": "rgba(5,150,105,0.28)",
+            "LANG_COLORS": ["#059669", "#0284C7", "#D97706"],
+        },
+        # SLATE #05 (Light): Royal Purple / Iris
+        {
+            "PRIMARY": "#7C3AED",
+            "SECONDARY": "#2E1065",
+            "BORDER_HI": "rgba(124,58,237,0.65)",
+            "BORDER_LO": "rgba(124,58,237,0.20)",
+            "ICON_BG": "rgba(124,58,237,0.08)",
+            "ICON_BORDER": "rgba(124,58,237,0.30)",
+            "ICON_FG": "#7C3AED",
+            "CAT_TEXT": "#7C3AED",
+            "CHIP_BG": "rgba(124,58,237,0.08)",
+            "CHIP_BORDER": "rgba(124,58,237,0.25)",
+            "CHIP_TEXT": "#2E1065",
+            "BTN_BG": "rgba(124,58,237,0.08)",
+            "BTN_BORDER": "rgba(124,58,237,0.32)",
+            "BTN_TEXT": "#7C3AED",
+            "SLATE_BG": "rgba(124,58,237,0.08)",
+            "SLATE_BORDER": "rgba(124,58,237,0.28)",
+            "LANG_COLORS": ["#7C3AED", "#0284C7", "#DB2777"],
+        },
+        # SLATE #06 (Light): Deep Pine Teal
+        {
+            "PRIMARY": "#0D9488",
+            "SECONDARY": "#042F2E",
+            "BORDER_HI": "rgba(13,148,136,0.65)",
+            "BORDER_LO": "rgba(13,148,136,0.20)",
+            "ICON_BG": "rgba(13,148,136,0.08)",
+            "ICON_BORDER": "rgba(13,148,136,0.30)",
+            "ICON_FG": "#0D9488",
+            "CAT_TEXT": "#0D9488",
+            "CHIP_BG": "rgba(13,148,136,0.08)",
+            "CHIP_BORDER": "rgba(13,148,136,0.25)",
+            "CHIP_TEXT": "#042F2E",
+            "BTN_BG": "rgba(13,148,136,0.08)",
+            "BTN_BORDER": "rgba(13,148,136,0.32)",
+            "BTN_TEXT": "#0D9488",
+            "SLATE_BG": "rgba(13,148,136,0.08)",
+            "SLATE_BORDER": "rgba(13,148,136,0.28)",
+            "LANG_COLORS": ["#0D9488", "#0284C7", "#D97706"],
+        },
+    ]
+}
+
+def sanitize_text(s):
+    if not s:
+        return ""
+    return str(s).replace("\ufffd", "—")
+
 DEFAULT_PROJECTS = [
     {
         "name": "NyayaSetu",
@@ -299,19 +552,28 @@ def build_telemetry_bar(languages, x, y, width, height, colors, track_bg, text_m
         
     return "".join(parts)
 
-def card_body(p, idx, t, is_standalone=False):
+def card_body(p, idx, t, is_standalone=False, theme="dark"):
     b = 0.12 + idx * 0.08
     e = []
     a = e.append
     
+    palettes = DOMAIN_PALETTES.get(theme, DOMAIN_PALETTES["dark"])
+    pal = palettes[idx % len(palettes)]
+    
     repo = p.get("repo", "").strip().replace("https://github.com/", "").rstrip("/")
     href = f"https://github.com/{esc(repo)}"
     
-    grad_id = f"card_grad_{idx}"
+    grad_id = f"card_grad_{theme}_{idx}"
+    trim_id = f"card_trim_{theme}_{idx}"
     a(f'<defs>')
     a(f'<linearGradient id="{grad_id}" x1="0" y1="0" x2="1" y2="1">')
     a(f'<stop offset="0%" stop-color="{t["CARD_BG"]}"/>')
     a(f'<stop offset="100%" stop-color="{t["CARD_BG_END"]}"/>')
+    a(f'</linearGradient>')
+    a(f'<linearGradient id="{trim_id}" x1="0" y1="0" x2="1" y2="0">')
+    a(f'<stop offset="0%" stop-color="{pal["PRIMARY"]}" stop-opacity="0.95"/>')
+    a(f'<stop offset="60%" stop-color="{pal["PRIMARY"]}" stop-opacity="0.30"/>')
+    a(f'<stop offset="100%" stop-color="{pal["PRIMARY"]}" stop-opacity="0"/>')
     a(f'</linearGradient>')
     a(f'</defs>')
     
@@ -319,66 +581,88 @@ def card_body(p, idx, t, is_standalone=False):
     a(f'<g opacity="0">')
     a(f'<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{b:.2f}s" fill="freeze"/>')
 
-    # Card Surface with subtle animated border
-    a(f'<rect width="{CARD_W}" height="{CARD_H}" rx="16" fill="url(#{grad_id})" stroke="{t["BORDER"]}" stroke-width="1.2">'
-      f'<animate attributeName="stroke" values="{t["BORDER_LO"]};{t["BORDER_HI"]};{t["BORDER_LO"]}" '
+    # Card Surface with subtle animated border keyed to domain accent
+    a(f'<rect width="{CARD_W}" height="{CARD_H}" rx="16" fill="url(#{grad_id})" stroke="{pal["BORDER_LO"]}" stroke-width="1.2">'
+      f'<animate attributeName="stroke" values="{pal["BORDER_LO"]};{pal["BORDER_HI"]};{pal["BORDER_LO"]}" '
       f'dur="4s" begin="{b+idx*0.6:.2f}s" repeatCount="indefinite"/></rect>')
 
-    # 1. Header Section: Bespoke Icon (48x48)
+    # Top illuminated accent rim
+    a(f'<path d="M 28 1.2 L 200 1.2" stroke="url(#{trim_id})" stroke-width="2.2" stroke-linecap="round"/>')
+
+    # 1. Header Section: Bespoke Icon (48x48) with domain tinted background & border
     icon_type = p.get("icon", "justice")
-    a(f'<rect x="24" y="20" width="48" height="48" rx="12" fill="{t["ICON_BG"]}" stroke="{t["ICON_BORDER"]}" stroke-width="1.0"/>')
-    a(render_vector_glyph(icon_type, 36, 32, size=24, color=t["ICON_FG"]))
+    a(f'<rect x="24" y="20" width="48" height="48" rx="12" fill="{pal["ICON_BG"]}" stroke="{pal["ICON_BORDER"]}" stroke-width="1.0"/>')
+    a(render_vector_glyph(icon_type, 36, 32, size=24, color=pal["ICON_FG"]))
 
     # 2. Title & Domain Category Tag
-    name = esc(p.get("name", repo.split("/")[-1]))
-    cat = esc(p.get("category", "Production System").upper())
+    name = esc(sanitize_text(p.get("name", repo.split("/")[-1])))
+    cat = esc(sanitize_text(p.get("category", "Production System")).upper())
     a(f'<text x="84" y="41" font-size="20" font-weight="700" fill="{t["TEXT"]}">{name}</text>')
-    a(f'<text x="84" y="58" font-size="11" font-weight="600" letter-spacing="0.8" fill="{t["ACCENT_2"]}">{cat}</text>')
+    a(f'<text x="84" y="58" font-size="11" font-weight="600" letter-spacing="0.8" fill="{pal["CAT_TEXT"]}">{cat}</text>')
 
-    # 3. Status Badge (Top-Right)
-    status_w = 108
+    # 3. Cinematic Slate Numbering & Status Badge (Top-Right)
+    status_w = 104
+    status_h = 26
     status_x = CARD_W - status_w - 24
-    a(f'<rect x="{status_x}" y="22" width="{status_w}" height="28" rx="14" fill="{t["STATUS_BG"]}" stroke="{t["STATUS_BORDER"]}" stroke-width="0.9"/>')
-    a(f'<circle cx="{status_x + 14}" cy="36" r="4" fill="{t["EMERALD"]}">'
+    status_y = 23
+
+    slate_w = 84
+    slate_h = 26
+    slate_x = status_x - 10 - slate_w
+    slate_y = 23
+    slate_label = f"SLATE #{idx+1:02d}"
+
+    # Cinematic Slate Number Pill
+    a(f'<rect x="{slate_x}" y="{slate_y}" width="{slate_w}" height="{slate_h}" rx="7" '
+      f'fill="{pal["SLATE_BG"]}" stroke="{pal["SLATE_BORDER"]}" stroke-width="1.0"/>')
+    a(f'<text x="{slate_x + slate_w/2:.0f}" y="{slate_y + 17}" text-anchor="middle" '
+      f'font-family="{FONT_MONO}" font-size="10.5" font-weight="800" letter-spacing="0.8" '
+      f'fill="{pal["PRIMARY"]}">{slate_label}</text>')
+
+    # Maintained Live Status Badge
+    a(f'<rect x="{status_x}" y="{status_y}" width="{status_w}" height="{status_h}" rx="13" '
+      f'fill="{t["STATUS_BG"]}" stroke="{t["STATUS_BORDER"]}" stroke-width="0.9"/>')
+    a(f'<circle cx="{status_x + 13}" cy="{status_y + 13}" r="3.5" fill="{t["EMERALD"]}">'
       f'<animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>')
-    a(f'<text x="{status_x + 25}" y="40" font-size="11" font-weight="700" fill="{t["EMERALD"]}">MAINTAINED</text>')
+    a(f'<text x="{status_x + 23}" y="{status_y + 16.5}" font-size="10.5" font-weight="700" letter-spacing="0.5" '
+      f'fill="{t["EMERALD"]}">MAINTAINED</text>')
 
     # 4. Description (2 lines of crisp, readable text)
-    desc = p.get("description", p.get("desc", ""))
+    desc = sanitize_text(p.get("description", p.get("desc", "")))
     desc_lines = wrap_text(desc, max_chars=54, max_lines=2)
     for i, line in enumerate(desc_lines):
         a(f'<text x="24" y="{94 + i * 22}" font-size="13.5" font-weight="450" fill="{t["MUTED"]}">{esc(line)}</text>')
 
-    # 5. Technology Stack Badges (Modern minimalist chips)
+    # 5. Technology Stack Badges (Domain harmonized chips)
     skills = p.get("tags") or p.get("skills", ["Python", "AI", "Cloud"])
     chip_x = 24
     chip_y = 142
     for tag in skills[:5]:
-        tag_str = esc(tag)
+        tag_str = esc(sanitize_text(tag))
         chip_w = len(tag) * 7.8 + 20
-        a(f'<rect x="{chip_x}" y="{chip_y}" width="{chip_w:.0f}" height="26" rx="7" fill="{t["CHIP_BG"]}" stroke="{t["CHIP_BORDER"]}" stroke-width="0.9"/>')
-        a(f'<text x="{chip_x + chip_w/2:.0f}" y="{chip_y + 17}" text-anchor="middle" font-size="11.5" font-weight="600" fill="{t["CHIP_TEXT"]}">{tag_str}</text>')
+        a(f'<rect x="{chip_x}" y="{chip_y}" width="{chip_w:.0f}" height="26" rx="7" fill="{pal["CHIP_BG"]}" stroke="{pal["CHIP_BORDER"]}" stroke-width="0.9"/>')
+        a(f'<text x="{chip_x + chip_w/2:.0f}" y="{chip_y + 17}" text-anchor="middle" font-size="11.5" font-weight="600" fill="{pal["CHIP_TEXT"]}">{tag_str}</text>')
         chip_x += chip_w + 8
 
     # 6. Bottom Divider
     a(f'<line x1="24" y1="184" x2="{CARD_W - 24}" y2="184" stroke="{t["BARLINE"]}" stroke-width="1"/>')
 
-    # 7. Language Telemetry Bar & Legend
+    # 7. Language Telemetry Bar & Legend (Domain-anchored primary language)
     langs = p.get("languages") or {"Python": 100}
     tel_svg = build_telemetry_bar(langs, x=24, y=200, width=360, height=7,
-                                  colors=t["LANG_COLORS"], track_bg=t["BAR_TRACK"],
+                                  colors=pal["LANG_COLORS"], track_bg=t["BAR_TRACK"],
                                   text_muted=t["MUTED"], text_primary=t["TEXT"])
     a(tel_svg)
 
-    # 8. View Repository Action Button (Bottom-Right)
+    # 8. View Repository Action Button (Bottom-Right, domain accented)
     btn_w = 144
     btn_h = 36
     btn_x = CARD_W - btn_w - 24
     btn_y = 200
     a(f'<rect x="{btn_x}" y="{btn_y}" width="{btn_w}" height="{btn_h}" rx="8" '
-      f'fill="{t["BTN_BG"]}" stroke="{t["BTN_BORDER"]}" stroke-width="1.0"/>')
+      f'fill="{pal["BTN_BG"]}" stroke="{pal["BTN_BORDER"]}" stroke-width="1.0"/>')
     a(f'<text x="{btn_x + btn_w/2:.0f}" y="{btn_y + 22.5}" text-anchor="middle" '
-      f'font-size="12.5" font-weight="700" fill="{t["BTN_TEXT"]}">Explore Repo ↗</text>')
+      f'font-size="12.5" font-weight="700" fill="{pal["BTN_TEXT"]}">Explore Repo ↗</text>')
 
     a('</g>')
     a('</a>')
@@ -392,7 +676,7 @@ def build_single_card_svg(p, theme="dark", idx=0):
     a(f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
       f'width="100%" height="auto" viewBox="0 0 {CARD_W} {CARD_H}" '
       f'font-family="{FONT_SANS}" role="img" aria-label="{esc(p.get("name", "Project"))}">')
-    a(card_body(p, idx, t, is_standalone=True))
+    a(card_body(p, idx, t, is_standalone=True, theme=theme))
     a('</svg>')
     return "".join(s)
 
@@ -425,7 +709,7 @@ def build_composite_slate_svg(projects, theme="dark"):
         x = col * (CARD_W + GAP)
         y = 48 + row * (CARD_H + GAP)
         a(f'<g transform="translate({x},{y})">')
-        a(card_body(p, i, t, is_standalone=False))
+        a(card_body(p, i, t, is_standalone=False, theme=theme))
         a('</g>')
         
     a('</svg>')
