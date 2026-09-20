@@ -24,11 +24,12 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS_DIR = os.path.join(ROOT_DIR, '.github', 'scripts')
 
 PIPELINE_SCRIPTS = [
-    ("fetch_data.py", "1/5: Ingesting Live GitHub Project Telemetry"),
-    ("generate_projects.py", "2/5: Generating Project Cards & Master Slates"),
-    ("generate_skills.py", "3/5: Generating Technical Arsenal & Skill Matrix"),
-    ("generate_streak.py", "4/5: Generating Live Streak & Activity Matrix"),
-    ("generate_divider.py", "5/5: Generating Section Divider Line"),
+    ("generate_banner.py", "1/6: Generating Hero Visual Map Banner (dark.svg & light.svg)"),
+    ("fetch_data.py", "2/6: Ingesting Live GitHub Project Telemetry"),
+    ("generate_projects.py", "3/6: Generating Project Cards & Master Slates"),
+    ("generate_skills.py", "4/6: Generating Technical Arsenal & Skill Matrix"),
+    ("generate_streak.py", "5/6: Generating Live Streak & Activity Matrix"),
+    ("generate_divider.py", "6/6: Generating Section Divider Line"),
 ]
 
 def main():

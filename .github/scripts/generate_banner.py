@@ -61,7 +61,7 @@ TITLE_H       = 46
 MAP_X, MAP_Y  = 36, 84
 MAP_W, MAP_H  = 400, 492
 
-GRID_W        = 280                    # Portrait dot grid width (~280x300)
+GRID_W        = 200                    # Optimal crispness & ultra-light payload
 N_SHIMMER     = 60                     # Shimmer intro groups
 N_TRAVELLER   = 850                    # Swarm traveller dots for logo morphing
 
@@ -74,50 +74,50 @@ LOOP_DUR      = 18.0                   # Morphing loop duration in seconds
 
 THEMES = {
     "dark": dict(
-        BG="#0D0A06",            # Burnt celluloid black
-        PANEL_BG="#140F09",      # Deep warm dark chocolate
-        PANEL_BAR="#100B06",     # Header bar
-        PORT_DOT="#D4A353",      # Warm glowing gold/amber for lit subject
-        TRAV_DOT="#F5E6D3",      # Cream white for morphing logo dots
-        ACCENT_1="#C0713A",      # Burnt Sienna
-        ACCENT_2="#D4A353",      # Warm Amber
-        ACCENT_3="#F5E6D3",      # Warm Cream
-        TITLE_TXT="#9C8B78",     # Muted parchment
-        SECTION_TXT="#D4A353",   # Amber label
-        PILL_BG="#3A2312",       # Deep amber-brown handle pill
-        PILL_TXT="#F5E6D3",      # Cream handle text
-        LABEL_COL="#D4A353",     # Amber row labels
-        DOT_LEADER="rgba(212,163,83,0.30)", # Amber dotted leader
-        VAL_COL="#F5E6D3",       # Cream white values
-        SUB_TXT="#9C8B78",       # Muted subtitle
-        LIVE_COL="#5B8C5A",      # Muted vintage emerald
-        BORDER_STROKE="#C0713A", # Warm amber-sienna border
-        BORDER_GLOW="rgba(212,163,83,0.45)",
+        BG="#09090B",            # Deep obsidian black
+        PANEL_BG="#121215",      # Crisp dark neutral slate
+        PANEL_BAR="#09090B",     # Header bar
+        PORT_DOT="#E4E4E7",      # Polished silver for lit subject
+        TRAV_DOT="#FAFAFA",      # Pure crisp white for morphing logo dots
+        ACCENT_1="#71717A",      # Cool zinc steel
+        ACCENT_2="#A1A1AA",      # Silver accent
+        ACCENT_3="#E4E4E7",      # Crisp silver white
+        TITLE_TXT="#A1A1AA",     # Muted zinc
+        SECTION_TXT="#E4E4E7",   # Silver section header
+        PILL_BG="#18181B",       # Charcoal pill
+        PILL_TXT="#FAFAFA",      # Crisp white pill text
+        LABEL_COL="#A1A1AA",     # Zinc row labels
+        DOT_LEADER="rgba(228,228,231,0.22)", # Silver dotted leader
+        VAL_COL="#FAFAFA",       # Pure white values
+        SUB_TXT="#71717A",       # Muted subtitle
+        LIVE_COL="#10B981",      # Emerald live dot
+        BORDER_STROKE="#27272A", # Clean zinc border
+        BORDER_GLOW="rgba(228,228,231,0.20)",
         BARLINE="rgba(255,255,255,0.08)",
-        WIN_C="#B85C38", WIN_M="#D4A353", WIN_X="#5B8C5A",
+        WIN_C="#71717A", WIN_M="#A1A1AA", WIN_X="#10B981",
     ),
     "light": dict(
-        BG="#FAF6F0",            # Vintage warm parchment
-        PANEL_BG="#FFFFFF",      # Crisp parchment white
-        PANEL_BAR="#F3ECE2",     # Header bar
-        PORT_DOT="#5A3A1E",      # Deep sepia dark bronze for shadows
-        TRAV_DOT="#3A2210",      # Rich dark sepia for logo dots
-        ACCENT_1="#8B5A2B",      # Deep warm sienna
-        ACCENT_2="#A67B3D",      # Antique gold
-        ACCENT_3="#C89D66",      # Muted cream amber
-        TITLE_TXT="#6B5D4F",     # Muted bronze
-        SECTION_TXT="#8B5A2B",   # Deep sienna label
-        PILL_BG="#EADBCA",       # Warm parchment handle pill
-        PILL_TXT="#2C1810",      # Dark sepia handle text
-        LABEL_COL="#8B5A2B",     # Sienna row labels
-        DOT_LEADER="rgba(139,90,43,0.32)",  # Sienna dotted leader
-        VAL_COL="#1A1207",       # Deep ink values
-        SUB_TXT="#6B5D4F",       # Muted subtitle
-        LIVE_COL="#3D6B3C",      # Vintage green
-        BORDER_STROKE="#A67B3D", # Antique gold border
-        BORDER_GLOW="rgba(166,123,61,0.35)",
+        BG="#FAFAFA",            # Crisp light neutral
+        PANEL_BG="#FFFFFF",      # Pure white
+        PANEL_BAR="#F4F4F5",     # Neutral header bar
+        PORT_DOT="#27272A",      # Charcoal for subject
+        TRAV_DOT="#18181B",      # Deep obsidian for logo dots
+        ACCENT_1="#71717A",      # Slate zinc
+        ACCENT_2="#3F3F46",      # Dark silver
+        ACCENT_3="#18181B",      # Deep charcoal
+        TITLE_TXT="#71717A",     # Muted zinc
+        SECTION_TXT="#18181B",   # Dark charcoal label
+        PILL_BG="#E4E4E7",       # Light zinc pill
+        PILL_TXT="#09090B",      # Dark text
+        LABEL_COL="#52525B",     # Zinc label
+        DOT_LEADER="rgba(0,0,0,0.18)",
+        VAL_COL="#09090B",       # Ink black
+        SUB_TXT="#71717A",
+        LIVE_COL="#059669",      # Emerald
+        BORDER_STROKE="#E4E4E7",
+        BORDER_GLOW="rgba(0,0,0,0.06)",
         BARLINE="rgba(0,0,0,0.08)",
-        WIN_C="#B85C38", WIN_M="#D4A353", WIN_X="#5B8C5A",
+        WIN_C="#71717A", WIN_M="#A1A1AA", WIN_X="#059669",
     ),
 }
 
@@ -127,21 +127,20 @@ THEMES = {
 
 INFO_ROWS = [
     ("Subject",          "Nikhil Krishna R D"),
-    ("Role",             "ML/AI Engineer"),
+    ("Role",             "AI & Data Systems Engineer"),
     ("Origin",           "Coimbatore, Tamil Nadu"),
     ("Education",        "M.Sc. CS (Data Analytics)"),
-    ("Status",           "Dev + Screenwriter + Mentor"),
-    ("ToolChain",        "VS Code, Git, Docker, MLflow"),
-    ("Core.Lang",        "Python, SQL, R"),
-    ("Core.ML",          "sklearn, PyTorch, TF, XGBoost"),
-    ("Core.Data",        "Postgres, Mongo, Chroma"),
-    ("Core.Infra",       "Docker, GH Actions, MLflow"),
+    ("Specialization",   "Agentic AI, RAG & Econometrics"),
+    ("ToolChain",        "Python, FastAPI, PyTorch, Docker"),
+    ("Core.Lang",        "Python, SQL, TypeScript, Bash"),
+    ("Core.ML",          "PyTorch, scikit-learn, LangChain"),
+    ("Core.Data",        "PostgreSQL, ChromaDB, Pandas"),
+    ("Core.Infra",       "Docker, GitHub Actions, MLflow"),
     None,                # Section divider: - Contact -----------------
     ("Grid.Mail",        "rdnikhilkrishna2004@gmail.com"),
     ("Grid.Portfolio",   "rdnkportfolio.vercel.app"),
     ("Grid.LinkedIn",    "nikhil-krishna-r-d-773b84259"),
     ("Grid.GitHub",      "rdnk2004"),
-    ("Grid.HuggingFace", "rdnk-2004"),
 ]
 
 def esc(s):
@@ -491,52 +490,13 @@ def sample_face_dots(portrait_dots, n_target, seed=777):
         return res
 
 
-def solve_optimal_transport(pts_from, pts_to):
-    """Compute optimal transport assignment via linear sum assignment on Euclidean distance."""
-    cost_matrix = cdist(pts_from, pts_to)
-    row_ind, col_ind = linear_sum_assignment(cost_matrix)
-    reordered_to = [pts_to[j] for j in col_ind]
-    return reordered_to
-
-
-def generate_face_to_logo_trajectories(portrait_dots, grid_w, grid_h):
-    """
-    Generate seamless morphing trajectory:
-    Face -> RDNK -> Cinema Camera -> Docker -> TensorFlow -> Back to Face!
-    """
-    logo_dots = get_perfect_logo_dots(N_TRAVELLER, grid_w, grid_h)
-    
-    # Start directly on the user's facial dots
-    pts_face = sample_face_dots(portrait_dots, N_TRAVELLER)
-    
-    matched = {'face': pts_face}
-    matched['rdnk']       = solve_optimal_transport(matched['face'], logo_dots['rdnk'])
-    matched['camera']     = solve_optimal_transport(matched['rdnk'], logo_dots['camera'])
-    matched['docker']     = solve_optimal_transport(matched['camera'], logo_dots['docker'])
-    matched['tensorflow'] = solve_optimal_transport(matched['docker'], logo_dots['tensorflow'])
-    
-    return matched
-
-# ═══════════════════════════════════════════════════════════════════
-#  3. SVG Generation Pipeline
-# ═══════════════════════════════════════════════════════════════════
-
 def build_defs(t, theme_id):
     return f"""<defs>
-<linearGradient id="{theme_id}_acc" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0" stop-color="{t['ACCENT_1']}"><animate attributeName="stop-color" values="{t['ACCENT_1']};{t['ACCENT_2']};{t['ACCENT_3']};{t['ACCENT_1']}" dur="10s" repeatCount="indefinite"/></stop>
-  <stop offset="0.5" stop-color="{t['ACCENT_2']}"><animate attributeName="stop-color" values="{t['ACCENT_2']};{t['ACCENT_3']};{t['ACCENT_1']};{t['ACCENT_2']}" dur="10s" repeatCount="indefinite"/></stop>
-  <stop offset="1" stop-color="{t['ACCENT_3']}"><animate attributeName="stop-color" values="{t['ACCENT_3']};{t['ACCENT_1']};{t['ACCENT_2']}" dur="10s" repeatCount="indefinite"/></stop>
-</linearGradient>
 <linearGradient id="{theme_id}_panelGrad" x1="0" y1="0" x2="0" y2="1">
   <stop offset="0" stop-color="{t['BG']}"/>
   <stop offset="1" stop-color="{t['PANEL_BG']}"/>
 </linearGradient>
-<filter id="{theme_id}_glow8" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
-<filter id="{theme_id}_glow3" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
-<filter id="{theme_id}_txtGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="0.9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<clipPath id="{theme_id}_winClip"><rect x="2" y="2" width="{W-4}" height="{H-4}" rx="18"/></clipPath>
-<path id="tv_{theme_id}" d="M0 0h2.2v2.2h-2.2z" fill="{t['TRAV_DOT']}"/>
+<clipPath id="{theme_id}_winClip"><rect x="2" y="2" width="{W-4}" height="{H-4}" rx="16"/></clipPath>
 </defs>"""
 
 
@@ -544,8 +504,8 @@ def build_chrome(t, theme_id):
     lines = []
     a = lines.append
     
-    # Outer frame
-    a(f'<rect x="2" y="2" width="{W-4}" height="{H-4}" rx="18" fill="{t["BG"]}"/>')
+    # Outer background
+    a(f'<rect x="2" y="2" width="{W-4}" height="{H-4}" rx="16" fill="{t["BG"]}"/>')
     a(f'<g clip-path="url(#{theme_id}_winClip)">')
     a(f'<rect x="2" y="2" width="{W-4}" height="{H-4}" fill="url(#{theme_id}_panelGrad)"/>')
     
@@ -553,39 +513,32 @@ def build_chrome(t, theme_id):
     a(f'<rect x="2" y="2" width="{W-4}" height="{TITLE_H}" fill="{t["PANEL_BAR"]}"/>')
     a(f'<line x1="2" y1="{TITLE_H+2}" x2="{W-2}" y2="{TITLE_H+2}" stroke="{t["BARLINE"]}"/>')
     
-    # Traffic lights themed to vintage tones
+    # Traffic lights (minimalist zinc/emerald)
     cy = TITLE_H // 2 + 2
-    a(f'<circle cx="30" cy="{cy}" r="5.5" fill="{t["WIN_C"]}"/>')
-    a(f'<circle cx="50" cy="{cy}" r="5.5" fill="{t["WIN_M"]}"/>')
-    a(f'<circle cx="70" cy="{cy}" r="5.5" fill="{t["WIN_X"]}"/>')
+    a(f'<circle cx="30" cy="{cy}" r="5" fill="{t["WIN_C"]}"/>')
+    a(f'<circle cx="48" cy="{cy}" r="5" fill="{t["WIN_M"]}"/>')
+    a(f'<circle cx="66" cy="{cy}" r="5" fill="{t["WIN_X"]}"/>')
     
     # Header title
     a(f'<text x="{W//2}" y="{cy+4}" text-anchor="middle" font-size="12" fill="{t["TITLE_TXT"]}">'
-      f'rdnk2004 — % ./director.sh --live</text>')
+      f'rdnk2004 — % ./system.sh --status</text>')
     
     # VISUAL.MAP Frame & Accents
-    a(f'<text x="{MAP_X+2}" y="{MAP_Y-10}" font-size="10" letter-spacing="3" fill="{t["TITLE_TXT"]}">VISUAL.MAP</text>')
-    a(f'<rect x="{MAP_X}" y="{MAP_Y}" width="{MAP_W}" height="{MAP_H}" rx="10" '
-      f'fill="none" stroke="{t["BORDER_STROKE"]}" stroke-width="2" opacity="0.45" filter="url(#{theme_id}_glow3)"/>')
-    a(f'<rect x="{MAP_X}" y="{MAP_Y}" width="{MAP_W}" height="{MAP_H}" rx="10" '
-      f'fill="{t["BG"]}" stroke="{t["BORDER_GLOW"]}"/>')
+    a(f'<text x="{MAP_X+2}" y="{MAP_Y-10}" font-size="10" letter-spacing="2.5" fill="{t["TITLE_TXT"]}">SYSTEM.MAP</text>')
+    a(f'<rect x="{MAP_X}" y="{MAP_Y}" width="{MAP_W}" height="{MAP_H}" rx="8" '
+      f'fill="{t["BG"]}" stroke="{t["BORDER_STROKE"]}" stroke-width="1.2"/>')
     
     # Corner brackets on portrait panel
-    a(f'<path d="M 50 {MAP_Y} L {MAP_X} {MAP_Y} L {MAP_X} {MAP_Y+14}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="2" opacity="0.85"/>')
-    a(f'<path d="M {MAP_X+MAP_W-14} {MAP_Y} L {MAP_X+MAP_W} {MAP_Y} L {MAP_X+MAP_W} {MAP_Y+14}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="2" opacity="0.85"/>')
-    a(f'<path d="M 50 {MAP_Y+MAP_H} L {MAP_X} {MAP_Y+MAP_H} L {MAP_X} {MAP_Y+MAP_H-14}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="2" opacity="0.85"/>')
-    a(f'<path d="M {MAP_X+MAP_W-14} {MAP_Y+MAP_H} L {MAP_X+MAP_W} {MAP_Y+MAP_H} L {MAP_X+MAP_W} {MAP_Y+MAP_H-14}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="2" opacity="0.85"/>')
-    
-    # Film-strip perforation accents along the bottom edge
-    for x in range(26, W - 26, 28):
-        a(f'<rect x="{x}" y="{H-18}" width="8" height="8" rx="2" '
-          f'fill="none" stroke="{t["ACCENT_2"]}" stroke-width="0.7" opacity="0.22"/>')
+    a(f'<path d="M 50 {MAP_Y} L {MAP_X} {MAP_Y} L {MAP_X} {MAP_Y+14}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="1.8" opacity="0.75"/>')
+    a(f'<path d="M {MAP_X+MAP_W-14} {MAP_Y} L {MAP_X+MAP_W} {MAP_Y} L {MAP_X+MAP_W} {MAP_Y+14}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="1.8" opacity="0.75"/>')
+    a(f'<path d="M 50 {MAP_Y+MAP_H} L {MAP_X} {MAP_Y+MAP_H} L {MAP_X} {MAP_Y+MAP_H-14}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="1.8" opacity="0.75"/>')
+    a(f'<path d="M {MAP_X+MAP_W-14} {MAP_Y+MAP_H} L {MAP_X+MAP_W} {MAP_Y+MAP_H} L {MAP_X+MAP_W} {MAP_Y+MAP_H-14}" fill="none" stroke="{t["ACCENT_2"]}" stroke-width="1.8" opacity="0.75"/>')
           
     return "\n".join(lines)
 
 
-def build_portrait_svg(shimmer_paths, full_path, gw, gh, t, theme_id):
-    """Build the two-layer portrait: 60-group shimmer intro + loop-faded static duplicate layer."""
+def build_portrait_svg(full_path, gw, gh, t, theme_id):
+    """Build clean, crisp, static 1-bit Floyd-Steinberg dithered portrait."""
     lines = []
     a = lines.append
     
@@ -596,82 +549,16 @@ def build_portrait_svg(shimmer_paths, full_path, gw, gh, t, theme_id):
     trans_x = MAP_X + pad_x + (avail_w - gw * sc) / 2
     trans_y = MAP_Y + pad_y + (avail_h - gh * sc) / 2
     
-    # Layer 1: Shimmer-in intro (0.2s - 3.2s, once)
     a(f'<g transform="translate({trans_x:.1f},{trans_y:.1f}) scale({sc:.4f})" '
       f'fill="{t["PORT_DOT"]}" shape-rendering="crispEdges">')
-    a(f'<set attributeName="opacity" to="0" begin="{INTRO_END}s"/>')
-    
-    for i, pth in enumerate(shimmer_paths):
-        begin_t = 0.20 + i * (1.90 / N_SHIMMER)
-        a(f'<g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.9s" '
-          f'begin="{begin_t:.2f}s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1"/>'
-          f'<path d="{pth}"/></g>')
-    a('</g>')
-    
-    # Layer 2: Static duplicate layer (active after 3.2s)
-    # Timing matches 4-logo cycle: Face -> RDNK -> Cinema Camera -> Docker -> TensorFlow -> Face
-    port_kt = "0.000;0.139;0.206;0.344;0.411;0.550;0.617;0.756;0.822;0.944;0.989;1.000"
-    port_op = "1;1;0;0;0;0;0;0;0;0;0;1"
-    
-    a(f'<g transform="translate({trans_x:.1f},{trans_y:.1f}) scale({sc:.4f})" '
-      f'fill="{t["PORT_DOT"]}" shape-rendering="crispEdges" opacity="0">')
-    a(f'<set attributeName="opacity" to="1" begin="{INTRO_END}s"/>')
-    a(f'<g opacity="1">'
-      f'<animate attributeName="opacity" values="{port_op}" keyTimes="{port_kt}" '
-      f'dur="{LOOP_DUR}s" begin="{INTRO_END}s" repeatCount="indefinite"/>'
-      f'<path d="{full_path}"/>'
-      f'</g>')
+    a(f'<path d="{full_path}"/>')
     a('</g>')
     
     return "\n".join(lines), sc, trans_x, trans_y
 
 
-def build_travellers_svg(matched, sc, trans_x, trans_y, t, theme_id):
-    """
-    Build the 850 traveller dots morphing:
-    Face -> RDNK -> Cinema Camera -> Docker -> TensorFlow -> Reconstitute Face!
-    """
-    lines = []
-    a = lines.append
-    
-    key_times = "0.000;0.139;0.206;0.344;0.411;0.550;0.617;0.756;0.822;0.944;0.989;1.000"
-    op_values = "0;0;1;1;1;1;1;1;1;1;1;0"
-    
-    a(f'<g transform="translate({trans_x:.1f},{trans_y:.1f}) scale({sc:.4f})">')
-    
-    for i in range(N_TRAVELLER):
-        fc  = matched['face'][i]
-        rk  = matched['rdnk'][i]
-        cam = matched['camera'][i]
-        dk  = matched['docker'][i]
-        tf  = matched['tensorflow'][i]
-        
-        trans_vals = (f"{fc[0]:.1f} {fc[1]:.1f};"
-                      f"{fc[0]:.1f} {fc[1]:.1f};"
-                      f"{rk[0]:.1f} {rk[1]:.1f};"
-                      f"{rk[0]:.1f} {rk[1]:.1f};"
-                      f"{cam[0]:.1f} {cam[1]:.1f};"
-                      f"{cam[0]:.1f} {cam[1]:.1f};"
-                      f"{dk[0]:.1f} {dk[1]:.1f};"
-                      f"{dk[0]:.1f} {dk[1]:.1f};"
-                      f"{tf[0]:.1f} {tf[1]:.1f};"
-                      f"{tf[0]:.1f} {tf[1]:.1f};"
-                      f"{fc[0]:.1f} {fc[1]:.1f};"
-                      f"{fc[0]:.1f} {fc[1]:.1f}")
-        
-        a(f'<use href="#tv_{theme_id}" opacity="0">'
-          f'<animate attributeName="opacity" values="{op_values}" keyTimes="{key_times}" '
-          f'dur="{LOOP_DUR}s" begin="{INTRO_END}s" repeatCount="indefinite"/>'
-          f'<animateTransform attributeName="transform" type="translate" values="{trans_vals}" '
-          f'keyTimes="{key_times}" dur="{LOOP_DUR}s" begin="{INTRO_END}s" repeatCount="indefinite"/>'
-          f'</use>')
-          
-    a('</g>')
-    return "\n".join(lines)
-
-
 def build_info_panel(t, theme_id):
-    """Build right-side SYSTEM.INFO readout with animated slide-in, handle pill, and textLength dotted leaders."""
+    """Build right-side SYSTEM.INFO readout with handle pill and textLength dotted leaders."""
     lines = []
     a = lines.append
     
@@ -679,13 +566,13 @@ def build_info_panel(t, theme_id):
     rw = 655
     
     # SYSTEM.INFO Header + Divider + LIVE Badge
-    a(f'<text x="{x0}" y="106" font-size="13" letter-spacing="2" fill="{t["SECTION_TXT"]}" filter="url(#{theme_id}_txtGlow)">SYSTEM.INFO</text>')
+    a(f'<text x="{x0}" y="106" font-size="13" letter-spacing="2" fill="{t["SECTION_TXT"]}">SYSTEM.INFO</text>')
     a(f'<line x1="575" y1="102" x2="1061" y2="102" stroke="{t["BARLINE"]}"/>')
     a(f'<text x="1125" y="106" text-anchor="end" font-size="12" fill="{t["LIVE_COL"]}" font-weight="700">'
-      f'<tspan>&#9679;</tspan> LIVE<animate attributeName="opacity" values="1;0.25;1" dur="1.6s" repeatCount="indefinite"/></text>')
+      f'<tspan>&#9679;</tspan> LIVE</text>')
     
     # Handle pill
-    a(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6s" fill="freeze"/>'
+    a(f'<g>'
       f'<rect x="{x0}" y="122" width="130" height="20" rx="4" fill="{t["PILL_BG"]}"/>'
       f'<text x="{x0+12}" y="136" font-size="13" font-weight="700" fill="{t["PILL_TXT"]}">@rdnk2004</text>'
       f'<line x1="{x0+145}" y1="130" x2="1125" y2="130" stroke="{t["BARLINE"]}"/>'
@@ -693,27 +580,24 @@ def build_info_panel(t, theme_id):
     
     # Info Rows
     y = 162
-    stagger = 0.90
     cw = 8.5
     max_chars = int(rw / cw)
     
     for row in INFO_ROWS:
         if row is None:
-            a(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{stagger:.2f}s" fill="freeze"/>'
+            a(f'<g>'
               f'<text x="{x0}" y="{y}" font-size="14" textLength="{rw}" lengthAdjust="spacingAndGlyphs" xml:space="preserve">'
               f'<tspan fill="{t["SUB_TXT"]}">- Contact </tspan>'
               f'<tspan fill="{t["DOT_LEADER"]}">---------------------------------------------------------------------</tspan>'
               f'</text></g>')
             y += 23
-            stagger += 0.10
             continue
             
         label, value = row
         dots_count = max(4, max_chars - len(label) - len(value) - 2)
         dots_str = "." * dots_count
         
-        a(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{stagger:.2f}s" fill="freeze"/>'
-          f'<animateTransform attributeName="transform" type="translate" values="-8 0;0 0" dur="0.4s" begin="{stagger:.2f}s" fill="freeze"/>'
+        a(f'<g>'
           f'<text x="{x0}" y="{y}" font-size="14" textLength="{rw}" lengthAdjust="spacingAndGlyphs" xml:space="preserve">'
           f'<tspan fill="{t["LABEL_COL"]}">{esc(label)} </tspan>'
           f'<tspan fill="{t["DOT_LEADER"]}">{dots_str}</tspan>'
@@ -721,87 +605,71 @@ def build_info_panel(t, theme_id):
           f'</text></g>')
         
         y += 23
-        stagger += 0.10
         
     # Footer prompt
-    a(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="{stagger+0.2:.2f}s" fill="freeze"/>'
+    a(f'<g>'
       f'<text x="{x0}" y="572" font-size="14" fill="{t["SUB_TXT"]}">'
-      f'&#9656; More about me &amp; projects below in README &#8595; '
-      f'<tspan fill="{t["LABEL_COL"]}">&#9608;<animate attributeName="fill-opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></tspan>'
+      f'&#9656; Featured projects and engineering details below &#8595; '
       f'</text></g>')
       
     return "\n".join(lines)
 
 
-def assemble_svg(shimmer_paths, full_path, gw, gh, matched, theme):
-    """Assemble the complete animated SVG for a specific color theme."""
+def assemble_svg(full_path, gw, gh, theme):
+    """Assemble lean, high-performance, elite vector SVG hero banner."""
     t = THEMES[theme]
     tid = theme
     parts = []
     a = parts.append
     
     a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
-      f'font-family="{FONT}" role="img" aria-label="Nikhil Krishna R D — Director Cut Visual Map">')
+      f'font-family="{FONT}" role="img" aria-label="Nikhil Krishna R D — AI &amp; Data Systems Engineer">')
     
     a(build_defs(t, tid))
     a(build_chrome(t, tid))
     
-    port_svg, sc, tx, ty = build_portrait_svg(shimmer_paths, full_path, gw, gh, t, tid)
+    port_svg, sc, tx, ty = build_portrait_svg(full_path, gw, gh, t, tid)
     a(port_svg)
-    
-    trav_svg = build_travellers_svg(matched, sc, tx, ty, t, tid)
-    a(trav_svg)
     
     a(build_info_panel(t, tid))
     
     a('</g>')
     
-    # Glowing animated perimeter frame
-    a(f'<rect x="3" y="3" width="{W-6}" height="{H-6}" rx="17" '
-      f'fill="none" stroke="url(#{tid}_acc)" stroke-width="3" opacity="0.55" filter="url(#{tid}_glow8)"/>')
-    a(f'<rect x="3" y="3" width="{W-6}" height="{H-6}" rx="17" '
-      f'fill="none" stroke="url(#{tid}_acc)" stroke-width="1.6"/>')
+    # Crisp, subtle perimeter border
+    a(f'<rect x="2" y="2" width="{W-4}" height="{H-4}" rx="16" '
+      f'fill="none" stroke="{t["BORDER_STROKE"]}" stroke-width="1.2"/>')
     
     a('</svg>')
     return "\n".join(parts)
 
-# ═══════════════════════════════════════════════════════════════════
-#  Main Pipeline
-# ═══════════════════════════════════════════════════════════════════
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     print("=" * 60)
-    print("  The Director's Cut  —  Vintage Film Visual Map Generator")
+    print("  Hero Banner Generator (Lean Elite Silver Edition)")
     print("=" * 60, "\n")
     
     if not os.path.isfile(PORTRAIT_PATH):
         print(f"[!] ERROR: Portrait file not found at: {PORTRAIT_PATH}")
         sys.exit(1)
         
-    print("[1/4] Processing portrait image & subject segmentation (zero background bleed)...")
+    print("[1/3] Processing portrait image & subject segmentation...")
     gray_arr, mask, gw, gh = process_portrait(PORTRAIT_PATH, GRID_W)
     print(f"      Grid resolution: {gw} x {gh}")
     
-    print("[2/4] Dithering portrait (serpentine Floyd-Steinberg)...")
+    print("[2/3] Dithering portrait (serpentine Floyd-Steinberg)...")
     dark_dots = serpentine_dither(gray_arr, mask, dark_mode=True)
     light_dots = serpentine_dither(gray_arr, mask, dark_mode=False)
-    print(f"      Dark mode dot count : {len(dark_dots)}")
-    print(f"      Light mode dot count: {len(light_dots)}")
     
-    dark_shimmer, dark_full = dots_to_rle_paths(dark_dots, N_SHIMMER)
-    light_shimmer, light_full = dots_to_rle_paths(light_dots, N_SHIMMER)
+    _, dark_full = dots_to_rle_paths(dark_dots, N_SHIMMER)
+    _, light_full = dots_to_rle_paths(light_dots, N_SHIMMER)
     
-    print("[3/4] Generating Face-to-Logo morphing trajectories (RDNK -> Camera -> Docker -> TensorFlow -> Face)...")
-    matched_dark = generate_face_to_logo_trajectories(dark_dots, gw, gh)
-    matched_light = generate_face_to_logo_trajectories(light_dots, gw, gh)
-    print(f"      Mapped {N_TRAVELLER} facial dots -> RDNK -> Cinema Camera -> Docker -> TensorFlow -> Face!")
-    
-    print("[4/4] Assembling animated SVGs with vintage film palette...")
-    for theme, shimmer_paths, full_path, matched in [
-        ("dark", dark_shimmer, dark_full, matched_dark)
+    print("[3/3] Assembling high-performance SVGs...")
+    for theme, full_path in [
+        ("dark", dark_full),
+        ("light", light_full),
     ]:
-        svg_content = assemble_svg(shimmer_paths, full_path, gw, gh, matched, theme)
+        svg_content = assemble_svg(full_path, gw, gh, theme)
         out_file = os.path.join(OUT_DIR, f"{theme}.svg")
         with open(out_file, 'w', encoding='utf-8') as f:
             f.write(svg_content)
@@ -809,8 +677,9 @@ def main():
         print(f"      [OK] {theme}.svg generated ({size_kb:.1f} KB) -> {out_file}")
         
     print("\n" + "=" * 60)
-    print("  Generation complete! dark.svg and light.svg are ready.")
+    print("  Generation complete! Lean dark.svg and light.svg are ready.")
     print("=" * 60)
+
 
 if __name__ == '__main__':
     main()

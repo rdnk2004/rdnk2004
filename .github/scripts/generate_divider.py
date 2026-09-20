@@ -17,21 +17,21 @@ def build_divider(theme="dark"):
     H = 28
     
     if theme == "dark":
-        bg = "#0D0A06"
-        c1 = "#C0713A"
-        c2 = "#D4A353"
-        c3 = "#F5E6D3"
-        center_fill = "#D4A353"
-        center_inner = "#0D0A06"
-        dot_col = "#C0713A"
+        bg = "#09090B"
+        c1 = "#27272A"
+        c2 = "#71717A"
+        c3 = "#E4E4E7"
+        center_fill = "#E4E4E7"
+        center_inner = "#09090B"
+        dot_col = "#71717A"
     else:
-        bg = "#FAF6F0"
-        c1 = "#8B5A2B"
-        c2 = "#A67B3D"
-        c3 = "#C89D66"
-        center_fill = "#A67B3D"
-        center_inner = "#FAF6F0"
-        dot_col = "#8B5A2B"
+        bg = "#FAFAFA"
+        c1 = "#E4E4E7"
+        c2 = "#A1A1AA"
+        c3 = "#27272A"
+        center_fill = "#27272A"
+        center_inner = "#FAFAFA"
+        dot_col = "#71717A"
         
     s = []
     a = s.append
