@@ -13,6 +13,7 @@
     ],
     "category": "Agentic AI & Legal Reasoning",
     "stars": 0,
+<<<<<<< HEAD
     "pushed_at": "2026-09-20T05:33:57Z",
     "languages": {
       "Python": 349315,
@@ -20,6 +21,12 @@
       "Dockerfile": 1438,
       "JavaScript": 559,
       "CSS": 488
+=======
+    "pushed_at": "2026-09-19T16:07:23Z",
+    "languages": {
+      "Python": 349315,
+      "Dockerfile": 1438
+>>>>>>> f0c28ea2dd8ca8ea38338018b15ea087beb782f9
     }
   },
   {
