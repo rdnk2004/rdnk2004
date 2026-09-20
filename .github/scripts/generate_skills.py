@@ -16,50 +16,50 @@ OUT_DIR = os.path.join(ROOT_DIR, 'assets')
 
 THEMES = {
     "dark": {
-        "BG": "#09090B",            # Deep obsidian black
-        "PANEL": "#121215",         # Crisp dark neutral panel
-        "PANEL_BAR": "#09090B",     # Header bar
-        "ACCENT_1": "#71717A",      # Slate zinc
-        "ACCENT_2": "#E4E4E7",      # Silver accent
-        "ACCENT_3": "#FAFAFA",      # Pure crisp white
-        "TEXT": "#FAFAFA",          # Title text
-        "MUTED": "#A1A1AA",         # High-contrast readable zinc
-        "DIM": "#71717A",           # Dim metadata
-        "STROKE": "rgba(255,255,255,0.12)",
-        "STROKE_HI": "rgba(228,228,231,0.50)",
-        "STROKE_LO": "rgba(255,255,255,0.06)",
+        "BG": "#0D0A06",            # Burnt celluloid black
+        "PANEL": "#140F09",         # Warm dark chocolate
+        "PANEL_BAR": "#110B06",     # Header bar
+        "ACCENT_1": "#C0713A",      # Burnt Sienna
+        "ACCENT_2": "#D4A353",      # Warm Amber
+        "ACCENT_3": "#F5E6D3",      # Cream
+        "TEXT": "#F5E6D3",          # Title text
+        "MUTED": "#D0BFAD",         # High-contrast readable description
+        "DIM": "#8C7B6B",           # Dim metadata
+        "STROKE": "rgba(212,163,83,0.38)",
+        "STROKE_HI": "rgba(212,163,83,0.85)",
+        "STROKE_LO": "rgba(192,113,58,0.28)",
         "BARLINE": "rgba(255,255,255,0.08)",
-        "PILL_BG": "rgba(24,24,27,0.85)",
-        "PILL_STROKE": "rgba(255,255,255,0.14)",
-        "PILL_TEXT": "#FAFAFA",
-        "PILL_SUB": "#A1A1AA",
-        "CAT_BG": "rgba(255,255,255,0.06)",
-        "CAT_STROKE": "rgba(255,255,255,0.20)",
-        "EMERALD": "#10B981",
-        "CYAN": "#A1A1AA",
+        "PILL_BG": "rgba(42,27,15,0.85)",
+        "PILL_STROKE": "rgba(212,163,83,0.45)",
+        "PILL_TEXT": "#F5E6D3",
+        "PILL_SUB": "#D4A353",
+        "CAT_BG": "rgba(192,113,58,0.28)",
+        "CAT_STROKE": "rgba(192,113,58,0.75)",
+        "EMERALD": "#5B8C5A",
+        "CYAN": "#4E9F9F",
     },
     "light": {
-        "BG": "#FAFAFA",            # Crisp light neutral
-        "PANEL": "#FFFFFF",         # Pure white
-        "PANEL_BAR": "#F4F4F5",     # Header bar
-        "ACCENT_1": "#71717A",      # Slate zinc
-        "ACCENT_2": "#27272A",      # Dark silver
-        "ACCENT_3": "#18181B",      # Deep charcoal
-        "TEXT": "#09090B",          # Deep ink
-        "MUTED": "#52525B",         # High-contrast readable zinc
-        "DIM": "#71717A",           # Dim metadata
-        "STROKE": "rgba(0,0,0,0.10)",
-        "STROKE_HI": "rgba(0,0,0,0.30)",
-        "STROKE_LO": "rgba(0,0,0,0.05)",
+        "BG": "#FAF6F0",            # Vintage warm parchment
+        "PANEL": "#FFFFFF",         # Crisp white
+        "PANEL_BAR": "#F3ECE2",     # Header bar
+        "ACCENT_1": "#8B5A2B",      # Deep sienna
+        "ACCENT_2": "#A67B3D",      # Antique gold
+        "ACCENT_3": "#C89D66",      # Muted amber
+        "TEXT": "#1A1207",          # Deep ink
+        "MUTED": "#5A4C3E",         # High-contrast readable bronze
+        "DIM": "#9C8B78",           # Dim metadata
+        "STROKE": "rgba(166,123,61,0.40)",
+        "STROKE_HI": "rgba(166,123,61,0.80)",
+        "STROKE_LO": "rgba(139,90,43,0.25)",
         "BARLINE": "rgba(0,0,0,0.08)",
-        "PILL_BG": "rgba(0,0,0,0.04)",
-        "PILL_STROKE": "rgba(0,0,0,0.12)",
-        "PILL_TEXT": "#09090B",
-        "PILL_SUB": "#52525B",
-        "CAT_BG": "rgba(0,0,0,0.04)",
-        "CAT_STROKE": "rgba(0,0,0,0.15)",
-        "EMERALD": "#059669",
-        "CYAN": "#52525B",
+        "PILL_BG": "rgba(240,230,218,0.80)",
+        "PILL_STROKE": "rgba(166,123,61,0.50)",
+        "PILL_TEXT": "#1A1207",
+        "PILL_SUB": "#8B5A2B",
+        "CAT_BG": "rgba(139,90,43,0.18)",
+        "CAT_STROKE": "rgba(139,90,43,0.50)",
+        "EMERALD": "#3D6B3C",
+        "CYAN": "#2A6E6E",
     },
 }
 
@@ -68,8 +68,7 @@ CARD_W  = 578
 CARD_H  = 230
 GAP     = 14
 MARGIN  = 5
-FONT_SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Roboto,Helvetica,Arial,sans-serif"
-FONT_MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
+FONT    = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
 
 CATEGORIES = [
     {
@@ -231,7 +230,7 @@ def build_skills_svg(theme="dark"):
     a = s.append
     
     a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
-      f'font-family="{FONT_SANS}" role="img" aria-label="Nikhil Krishna R D — Technical Arsenal &amp; Applied Skill Matrix">')
+      f'font-family="{FONT}" role="img" aria-label="Nikhil Krishna R D — Technical Arsenal &amp; Applied Skill Matrix">')
     a(f'<rect width="{W}" height="{H}" fill="{t["BG"]}"/>')
     
     a(f'<defs><linearGradient id="{gid}" x1="0" y1="0" x2="1" y2="0">'

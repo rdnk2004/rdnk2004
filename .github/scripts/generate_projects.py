@@ -24,62 +24,62 @@ OUT_DIR    = os.path.join(ROOT_DIR, 'assets')
 
 THEMES = {
     "dark": {
-        "BG": "#09090B",            # Deep obsidian background
-        "CARD_BG": "#121215",       # Crisp dark neutral canvas
-        "CARD_BG_END": "#0E0E11",   # Subtle card gradient end
-        "BORDER": "rgba(255,255,255,0.12)", # Minimal zinc border
-        "BORDER_HI": "rgba(228,228,231,0.55)", # Highlight silver
-        "BORDER_LO": "rgba(255,255,255,0.06)", # Zinc low
-        "ICON_BG": "rgba(255,255,255,0.06)",
-        "ICON_BORDER": "rgba(255,255,255,0.16)",
-        "ICON_FG": "#E4E4E7",
-        "TEXT": "#FAFAFA",          # Pure crisp white primary
-        "MUTED": "#A1A1AA",         # High-legibility zinc body
-        "DIM": "#71717A",           # Dim metadata
-        "ACCENT_1": "#71717A",      # Slate zinc
-        "ACCENT_2": "#E4E4E7",      # Silver accent
-        "ACCENT_3": "#FAFAFA",      # Pure white
-        "CHIP_BG": "rgba(255,255,255,0.06)",
-        "CHIP_BORDER": "rgba(255,255,255,0.16)",
-        "CHIP_TEXT": "#E4E4E7",
-        "BAR_TRACK": "rgba(255,255,255,0.06)",
+        "BG": "#0A0704",            # Obsidian deep background
+        "CARD_BG": "#130E09",       # Rich dark chocolate canvas
+        "CARD_BG_END": "#19120C",   # Subtle card gradient end
+        "BORDER": "rgba(212,163,83,0.24)", # Refined gold border
+        "BORDER_HI": "rgba(212,163,83,0.70)", # Highlight gold
+        "BORDER_LO": "rgba(192,113,58,0.20)", # Sienna low
+        "ICON_BG": "rgba(212,163,83,0.12)",
+        "ICON_BORDER": "rgba(212,163,83,0.35)",
+        "ICON_FG": "#D4A353",
+        "TEXT": "#FAF5EE",          # Crisp light cream primary
+        "MUTED": "#BCAAA0",         # High-legibility muted body
+        "DIM": "#807060",           # Dim metadata
+        "ACCENT_1": "#C0713A",      # Sienna
+        "ACCENT_2": "#D4A353",      # Amber Gold
+        "ACCENT_3": "#F5E6D3",      # Cream
+        "CHIP_BG": "rgba(212,163,83,0.09)",
+        "CHIP_BORDER": "rgba(212,163,83,0.26)",
+        "CHIP_TEXT": "#E8D8C5",
+        "BAR_TRACK": "rgba(255,255,255,0.08)",
         "BARLINE": "rgba(255,255,255,0.08)",
-        "BTN_BG": "rgba(255,255,255,0.06)",
-        "BTN_BORDER": "rgba(255,255,255,0.18)",
-        "BTN_TEXT": "#FAFAFA",
-        "STATUS_BG": "rgba(16,185,129,0.12)",
-        "STATUS_BORDER": "rgba(16,185,129,0.30)",
-        "EMERALD": "#10B981",
-        "LANG_COLORS": ["#E4E4E7", "#A1A1AA", "#71717A", "#52525B", "#3F3F46"],
+        "BTN_BG": "rgba(212,163,83,0.12)",
+        "BTN_BORDER": "rgba(212,163,83,0.38)",
+        "BTN_TEXT": "#D4A353",
+        "STATUS_BG": "rgba(74,222,128,0.12)",
+        "STATUS_BORDER": "rgba(74,222,128,0.30)",
+        "EMERALD": "#4ADE80",
+        "LANG_COLORS": ["#D4A353", "#C0713A", "#5B8C5A", "#B85C38", "#8C7B6B"],
     },
     "light": {
-        "BG": "#FAFAFA",            # Crisp light neutral
+        "BG": "#F7F3EC",            # Warm parchment
         "CARD_BG": "#FFFFFF",       # Crisp white
-        "CARD_BG_END": "#F4F4F5",   # Neutral ivory
-        "BORDER": "rgba(0,0,0,0.10)",
-        "BORDER_HI": "rgba(0,0,0,0.35)",
-        "BORDER_LO": "rgba(0,0,0,0.05)",
-        "ICON_BG": "rgba(0,0,0,0.05)",
-        "ICON_BORDER": "rgba(0,0,0,0.15)",
-        "ICON_FG": "#18181B",
-        "TEXT": "#09090B",          # Deep charcoal
-        "MUTED": "#52525B",         # Readable zinc
-        "DIM": "#71717A",
-        "ACCENT_1": "#71717A",
-        "ACCENT_2": "#27272A",
-        "ACCENT_3": "#18181B",
-        "CHIP_BG": "rgba(0,0,0,0.04)",
-        "CHIP_BORDER": "rgba(0,0,0,0.12)",
-        "CHIP_TEXT": "#18181B",
+        "CARD_BG_END": "#FAF6F0",   # Soft ivory
+        "BORDER": "rgba(166,123,61,0.28)",
+        "BORDER_HI": "rgba(166,123,61,0.65)",
+        "BORDER_LO": "rgba(139,90,43,0.18)",
+        "ICON_BG": "rgba(166,123,61,0.09)",
+        "ICON_BORDER": "rgba(166,123,61,0.30)",
+        "ICON_FG": "#8B5A2B",
+        "TEXT": "#1C140C",          # Deep charcoal
+        "MUTED": "#5A4A3B",         # Readable brown-grey
+        "DIM": "#9C8B78",
+        "ACCENT_1": "#8B5A2B",
+        "ACCENT_2": "#A67B3D",
+        "ACCENT_3": "#C89D66",
+        "CHIP_BG": "rgba(166,123,61,0.09)",
+        "CHIP_BORDER": "rgba(166,123,61,0.26)",
+        "CHIP_TEXT": "#3D2B1C",
         "BAR_TRACK": "rgba(0,0,0,0.06)",
         "BARLINE": "rgba(0,0,0,0.08)",
-        "BTN_BG": "rgba(0,0,0,0.05)",
-        "BTN_BORDER": "rgba(0,0,0,0.20)",
-        "BTN_TEXT": "#18181B",
-        "STATUS_BG": "rgba(5,150,105,0.10)",
-        "STATUS_BORDER": "rgba(5,150,105,0.28)",
-        "EMERALD": "#059669",
-        "LANG_COLORS": ["#18181B", "#3F3F46", "#52525B", "#71717A", "#A1A1AA"],
+        "BTN_BG": "rgba(166,123,61,0.09)",
+        "BTN_BORDER": "rgba(166,123,61,0.34)",
+        "BTN_TEXT": "#8B5A2B",
+        "STATUS_BG": "rgba(22,163,74,0.10)",
+        "STATUS_BORDER": "rgba(22,163,74,0.28)",
+        "EMERALD": "#16A34A",
+        "LANG_COLORS": ["#A67B3D", "#8B5A2B", "#3D6B3C", "#B85C38", "#6B5D4F"],
     },
 }
 
@@ -400,18 +400,22 @@ def card_body(p, idx, t, is_standalone=False, theme="dark"):
     a(f'<text x="84" y="41" font-size="20" font-weight="700" fill="{t["TEXT"]}">{name}</text>')
     a(f'<text x="84" y="58" font-size="11" font-weight="600" letter-spacing="0.8" fill="{t["ACCENT_2"]}">{cat}</text>')
 
-    # 3. Clean Repository Metric Pill (Top-Right)
-    stars = p.get("stars", 0)
-    box_w = 96
-    box_h = 26
+    # 3. Dynamic Repository Activity Sparkline Graph (Top-Right)
+    box_w = 126
+    box_h = 28
     box_x = CARD_W - box_w - 24
     box_y = 23
     
-    a(f'<g role="img" aria-label="Repository status">')
+    # Inset background capsule for sparkline
+    a(f'<g role="img" aria-label="Commit activity sparkline">')
     a(f'<rect x="{box_x}" y="{box_y}" width="{box_w}" height="{box_h}" rx="6" '
       f'fill="{t["STATUS_BG"]}" stroke="{t["STATUS_BORDER"]}" stroke-width="0.9"/>')
-    a(f'<circle cx="{box_x + 14}" cy="{box_y + 13}" r="3" fill="{t["EMERALD"]}"/>')
-    a(f'<text x="{box_x + 24}" y="{box_y + 17}" font-size="11.5" font-weight="600" fill="{t["TEXT"]}">★ {stars} Stars</text>')
+    
+    # Render mini commit activity graph centered inside capsule
+    spark_points = PROJECT_SPARKLINES[idx % len(PROJECT_SPARKLINES)]
+    spark_svg = render_sparkline(spark_points, x=box_x + 9, y=box_y, width=box_w - 18, height=box_h,
+                                 stroke_color=t["EMERALD"], fill_grad_id=spark_grad_id)
+    a(spark_svg)
     a(f'</g>')
 
     # 4. Description (2 lines of crisp, readable text)
@@ -469,7 +473,7 @@ def build_single_card_svg(p, theme="dark", idx=0):
 
 def build_composite_slate_svg(projects, theme="dark"):
     t = THEMES[theme]
-    rows = math.ceil(min(len(projects), 4) / 2)
+    rows = math.ceil(len(projects) / 2)
     H = 54 + rows * (CARD_H + GAP)
     gid = f"proj_grad_{theme}"
     s = []
@@ -490,7 +494,7 @@ def build_composite_slate_svg(projects, theme="dark"):
     a(f'<text x="{W-6}" y="22" text-anchor="end" font-size="11.5" font-weight="500" font-family="{FONT_MONO}" fill="{t["DIM"]}">verified // production-grade</text>')
     a(f'<line x1="0" y1="34" x2="{W}" y2="34" stroke="url(#{gid})" stroke-width="1.8" opacity="0.85"/>')
     
-    for i, p in enumerate(projects[:4]):
+    for i, p in enumerate(projects[:6]):
         col = i % 2
         row = i // 2
         x = col * (CARD_W + GAP)

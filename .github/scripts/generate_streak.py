@@ -24,32 +24,32 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 THEME = {
-    "BG": "#09090B",            # Deep obsidian
-    "PANEL_BG": "#121215",      # Crisp dark neutral
-    "PANEL_END": "#0E0E11",     # Gradient end
-    "HEADER_BG": "#09090B",     # Header bar
-    "ACCENT_1": "#71717A",      # Slate zinc
-    "ACCENT_2": "#E4E4E7",      # Polished silver
-    "ACCENT_3": "#FAFAFA",      # Crisp pure white
-    "TEXT_PRIMARY": "#FAFAFA",  # Primary text
-    "TEXT_MUTED": "#A1A1AA",    # Muted text
-    "TEXT_DIM": "#71717A",      # Dim metadata
-    "BORDER": "#27272A",
-    "BORDER_HI": "rgba(228,228,231,0.50)",
-    "BORDER_LO": "rgba(255,255,255,0.06)",
-    "CARD_BG": "rgba(18,18,21,0.85)",
-    "CARD_STROKE": "rgba(255,255,255,0.12)",
-    "GRID_LINE": "rgba(255,255,255,0.06)",
-    "CANVAS_BG": "#09090B",
-    "ACTIVE_GREEN": "#10B981",
-    "ACTIVE_BG": "rgba(16,185,129,0.12)",
-    "ACTIVE_BORDER": "rgba(16,185,129,0.30)",
-    "PILL_BG": "rgba(24,24,27,0.85)",
-    "PILL_BORDER": "rgba(255,255,255,0.14)",
-    "PILL_TEXT": "#FAFAFA",
-    "AREA_TOP": "rgba(228,228,231,0.35)",
-    "AREA_MID": "rgba(161,161,170,0.12)",
-    "AREA_BOT": "rgba(9,9,11,0.0)",
+    "BG": "#0A0704",            # Obsidian deep celluloid
+    "PANEL_BG": "#130E09",      # Warm dark chocolate
+    "PANEL_END": "#19120C",     # Subtle gradient end
+    "HEADER_BG": "#110B06",     # Header bar
+    "ACCENT_1": "#C0713A",      # Burnt Sienna
+    "ACCENT_2": "#D4A353",      # Warm Amber Gold
+    "ACCENT_3": "#F5E6D3",      # Soft Cream
+    "TEXT_PRIMARY": "#FAF5EE",  # Crisp cream primary text
+    "TEXT_MUTED": "#C8B6A6",    # Readable bronze subtitle
+    "TEXT_DIM": "#8C7B6B",      # Dim metadata
+    "BORDER": "rgba(212,163,83,0.28)",
+    "BORDER_HI": "rgba(212,163,83,0.75)",
+    "BORDER_LO": "rgba(192,113,58,0.20)",
+    "CARD_BG": "rgba(20,15,9,0.75)",
+    "CARD_STROKE": "rgba(212,163,83,0.30)",
+    "GRID_LINE": "rgba(212,163,83,0.12)",
+    "CANVAS_BG": "#0F0B07",
+    "ACTIVE_GREEN": "#4ADE80",
+    "ACTIVE_BG": "rgba(74,222,128,0.14)",
+    "ACTIVE_BORDER": "rgba(74,222,128,0.40)",
+    "PILL_BG": "rgba(42,27,15,0.85)",
+    "PILL_BORDER": "rgba(212,163,83,0.40)",
+    "PILL_TEXT": "#F5E6D3",
+    "AREA_TOP": "rgba(212,163,83,0.45)",
+    "AREA_MID": "rgba(192,113,58,0.20)",
+    "AREA_BOT": "rgba(15,11,7,0.0)",
 }
 
 FONT_SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Roboto,Helvetica,Arial,sans-serif"
@@ -756,8 +756,8 @@ def render_activity_card(data):
         # Interactive Tooltip on hover
         tt_y = py - 12 if py > 100 else py + 34
         a(f'<g class="tooltip-pop" transform="translate({px:.1f}, {tt_y:.1f})">')
-        a(f'<rect x="-44" y="-28" width="88" height="26" rx="6" fill="#18181B" stroke="{node_fill}" stroke-width="1.2"/>')
-        a(f'<text x="0" y="-15" font-size="10.5" font-weight="600" fill="#E4E4E7" text-anchor="middle">{m["label"]} {m.get("year", "")}</text>')
+        a(f'<rect x="-44" y="-28" width="88" height="26" rx="6" fill="#18120B" stroke="{node_fill}" stroke-width="1.2"/>')
+        a(f'<text x="0" y="-15" font-size="10.5" font-weight="600" fill="#E2D5C5" text-anchor="middle">{m["label"]} {m.get("year", "")}</text>')
         a(f'<text x="0" y="-3" font-size="11.5" font-weight="700" fill="{node_fill}" text-anchor="middle">{m["count"]} commits</text>')
         a(f'</g>')
         
@@ -776,7 +776,7 @@ def render_activity_card(data):
             stem_y1, stem_y2 = pk_y - 6, by + bh
         a(f'<g class="static-callout callout-badge">')
         a(f'<line x1="{pk_x:.1f}" y1="{stem_y1:.1f}" x2="{pk_x:.1f}" y2="{stem_y2:.1f}" stroke="{t["ACCENT_3"]}" stroke-width="1.2" stroke-dasharray="2,2"/>')
-        a(f'<rect x="{bx:.1f}" y="{by:.1f}" width="{bw}" height="{bh}" rx="5" fill="#18181B" stroke="{t["ACCENT_3"]}" stroke-width="1.2"/>')
+        a(f'<rect x="{bx:.1f}" y="{by:.1f}" width="{bw}" height="{bh}" rx="5" fill="#18120B" stroke="{t["ACCENT_3"]}" stroke-width="1.2"/>')
         a(f'<text x="{bx + bw/2:.1f}" y="{by + 15:.1f}" font-size="11" font-weight="700" fill="{t["ACCENT_3"]}" text-anchor="middle">★ PEAK: {peak_val}</text>')
         a(f'</g>')
 
@@ -792,7 +792,7 @@ def render_activity_card(data):
         lstem_y2 = lby if lby > ly else lby + lh
         a(f'<g class="static-callout callout-badge">')
         a(f'<line x1="{lx:.1f}" y1="{lstem_y1:.1f}" x2="{lx:.1f}" y2="{lstem_y2:.1f}" stroke="{t["ACTIVE_GREEN"]}" stroke-width="1" stroke-dasharray="2,2"/>')
-        a(f'<rect x="{lbx:.1f}" y="{lby:.1f}" width="{lw}" height="{lh}" rx="4" fill="#18181B" stroke="{t["ACTIVE_GREEN"]}" stroke-width="1"/>')
+        a(f'<rect x="{lbx:.1f}" y="{lby:.1f}" width="{lw}" height="{lh}" rx="4" fill="#121810" stroke="{t["ACTIVE_GREEN"]}" stroke-width="1"/>')
         a(f'<text x="{lbx + lw/2:.1f}" y="{lby + 13:.1f}" font-size="10" font-weight="700" fill="{t["ACTIVE_GREEN"]}" text-anchor="middle">{l_cnt} NOW</text>')
         a(f'</g>')
             
@@ -928,8 +928,8 @@ def render_activity_card(data):
             d_date_fmt = d_date_str
             
         a(f'<g class="tooltip-pop" transform="translate({px:.1f}, {tt_y:.1f})">')
-        a(f'<rect x="-44" y="-28" width="88" height="26" rx="6" fill="#18181B" stroke="{node_fill}" stroke-width="1.2"/>')
-        a(f'<text x="0" y="-15" font-size="10.5" font-weight="600" fill="#E4E4E7" text-anchor="middle">{d_date_fmt}</text>')
+        a(f'<rect x="-44" y="-28" width="88" height="26" rx="6" fill="#18120B" stroke="{node_fill}" stroke-width="1.2"/>')
+        a(f'<text x="0" y="-15" font-size="10.5" font-weight="600" fill="#E2D5C5" text-anchor="middle">{d_date_fmt}</text>')
         a(f'<text x="0" y="-3" font-size="11.5" font-weight="700" fill="{node_fill}" text-anchor="middle">{d["count"]} commits</text>')
         a(f'</g>')
         

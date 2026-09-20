@@ -13,20 +13,9 @@
     ],
     "category": "Agentic AI & Legal Reasoning",
     "stars": 0,
-<<<<<<< HEAD
-    "pushed_at": "2026-09-20T05:33:57Z",
+    "pushed_at": "2026-08-18T02:02:58Z",
     "languages": {
-      "Python": 349315,
-      "TypeScript": 66630,
-      "Dockerfile": 1438,
-      "JavaScript": 559,
-      "CSS": 488
-=======
-    "pushed_at": "2026-09-19T16:07:23Z",
-    "languages": {
-      "Python": 349315,
-      "Dockerfile": 1438
->>>>>>> f0c28ea2dd8ca8ea38338018b15ea087beb782f9
+      "Python": 64957
     }
   },
   {
@@ -43,11 +32,11 @@
     ],
     "category": "Creative Systems & Storytelling",
     "stars": 0,
-    "pushed_at": "2026-09-05T12:03:11Z",
+    "pushed_at": "2026-08-27T15:00:18Z",
     "languages": {
-      "Python": 234135,
-      "JavaScript": 134263,
-      "CSS": 16232,
+      "Python": 233114,
+      "JavaScript": 127298,
+      "CSS": 15708,
       "HTML": 299
     }
   },
@@ -104,13 +93,13 @@
     ],
     "category": "Career AI & Automation",
     "stars": 0,
-    "pushed_at": "2026-09-06T17:37:54Z",
+    "pushed_at": "2026-08-26T06:08:16Z",
     "languages": {
-      "TypeScript": 538417,
-      "Python": 252667,
+      "TypeScript": 538206,
+      "Python": 246339,
       "CSS": 4562,
-      "JavaScript": 912,
       "HTML": 902,
+      "JavaScript": 696,
       "Mako": 635,
       "Dockerfile": 223
     }
