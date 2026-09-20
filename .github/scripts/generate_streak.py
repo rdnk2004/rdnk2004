@@ -71,8 +71,8 @@ def format_date_range(start_str, end_str):
 
 def fetch_telemetry_data(username, token=""):
     """Fetch complete telemetry: calendar, repos, PRs, issues, and streaks"""
-    public_repos = 24
-    followers = 12
+    public_repos = 26
+    followers = 16
     try:
         user_url = f"https://api.github.com/users/{username}"
         req_u = urllib.request.Request(user_url, headers={"User-Agent": "streak-telemetry"})
@@ -80,27 +80,43 @@ def fetch_telemetry_data(username, token=""):
             req_u.add_header("Authorization", f"Bearer {token}")
         with urllib.request.urlopen(req_u, timeout=10) as r:
             u_data = json.load(r)
-            public_repos = u_data.get("public_repos", 24)
-            followers = u_data.get("followers", 12)
+            public_repos = u_data.get("public_repos", 26)
+            followers = u_data.get("followers", 16)
     except Exception as e:
-        print(f"[!] Warning fetching user basic info: {e}", file=sys.stderr)
+        print(f"[!] Warning fetching user basic info via API: {e}", file=sys.stderr)
+        try:
+            prof_url = f"https://github.com/{username}"
+            req_p = urllib.request.Request(prof_url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
+            with urllib.request.urlopen(req_p, timeout=10) as rp:
+                p_html = rp.read().decode('utf-8', errors='ignore')
+            m_span = re.findall(r'<span[^>]*class="[^"]*text-bold[^"]*"[^>]*>([^<]+)</span>\s*followers', p_html, re.I)
+            if m_span:
+                followers = int(m_span[0].replace(',', ''))
+            m_repos = re.findall(r'data-tab-item="repositories".*?title="(\d+)"', p_html, re.I | re.DOTALL)
+            if not m_repos:
+                m_repos = re.findall(r'repositories.*?<span[^>]*class="Counter[^"]*"[^>]*>([^<]+)</span>', p_html, re.I | re.DOTALL)
+            if m_repos:
+                public_repos = int(m_repos[0].replace(',', ''))
+            print(f"[OK] Scraped live counts: {public_repos} repos, {followers} followers")
+        except Exception as e2:
+            print(f"[!] Warning scraping user profile HTML: {e2}", file=sys.stderr)
 
-    pr_count = 6
-    issue_count = 0
+    pr_count = 41
+    issue_count = 1
     try:
         pr_url = f"https://api.github.com/search/issues?q=author:{username}+type:pr"
         req_pr = urllib.request.Request(pr_url, headers={"User-Agent": "streak-telemetry"})
         if token:
             req_pr.add_header("Authorization", f"Bearer {token}")
         with urllib.request.urlopen(req_pr, timeout=10) as r:
-            pr_count = json.load(r).get("total_count", 6)
+            pr_count = json.load(r).get("total_count", 41)
             
         issue_url = f"https://api.github.com/search/issues?q=author:{username}+type:issue"
         req_iss = urllib.request.Request(issue_url, headers={"User-Agent": "streak-telemetry"})
         if token:
             req_iss.add_header("Authorization", f"Bearer {token}")
         with urllib.request.urlopen(req_iss, timeout=10) as r:
-            issue_count = json.load(r).get("total_count", 0)
+            issue_count = json.load(r).get("total_count", 1)
     except Exception as e:
         print(f"[!] Warning fetching PRs/Issues: {e}", file=sys.stderr)
 
