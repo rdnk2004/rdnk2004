@@ -77,10 +77,12 @@
     ],
     "category": "Financial Risk & Explainable AI",
     "stars": 0,
-    "pushed_at": "2026-10-22T12:29:51Z",
+    "pushed_at": "2026-11-25T09:24:33Z",
     "languages": {
-      "Python": 165964,
-      "Jupyter Notebook": 34354
+      "Python": 468544,
+      "Jupyter Notebook": 34354,
+      "TeX": 29617,
+      "PowerShell": 483
     }
   },
   {
